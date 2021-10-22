@@ -115,9 +115,35 @@ Please remove this note.
 
 ## YANG Models Overview
 
-The YANG data models for requesting WSON, Flexi-grid and OTN path computation are defined as augmentations of the generic Path Computation RPC defined in {{!I-D.ietf-teas-yang-path-computation}}.
+The YANG data models for requesting WSON, Flexi-grid and OTN path computation are defined as augmentations of the generic Path Computation RPC defined in {{!I-D.ietf-teas-yang-path-computation}}, as shown in {{fig-optical-pc}}.
 
-TBA: a figure showing the module relationship
+~~~~
+                    +--------------------------+    o: augment
+       TE generic   | ietf-te-path-computation |
+                    +--------------------------+
+                          o      o      o
+                          |      |      |
+                          |      |      |
+              +-----------+      |      +-----------+
+              |                  |                  |
+              |                  |                  |
+              |                  |                  |
+              |    +---------------------------+    |
+              |    | ietf-otn-path-computation |    |
+              |    +---------------------------+    |
+              |                 OTN                 |
+              |                                     |
+              |                                     |
++----------------------------+                      |
+| ietf-wson-path-computation |                      |
++----------------------------+                      |
+            WSON                                    |
+                                +----------------------------------+
+                                | ietf-flexi-grid-path-computation |
+                                +----------------------------------+
+                                            Flexi-grid
+~~~~
+{: #fig-optical-pc title="Relationship between WSON, Flexi-grid, OTN and TE path computation models"}
 
 The entities and TE attributes, such as requested path and tunnel attributes, defined in {{!I-D.ietf-teas-yang-path-computation}}, are still applicable when requestiong WSON, Flexi-grid and OTN path computation and the models defined in this document only specifies the additional technology-specific attributes/information, using the attributes defined in {{!RFC9093}}, {{!I-D.ietf-ccamp-layer0-types-ext}} and {{!I-D.ietf-ccamp-layer1-types}}.
 
@@ -251,4 +277,6 @@ otn-label-start-end, otn-label-hop and otn-label-step groupings defined in {{!I-
 
 # Acknowledgments
 
-   This document was prepared using kramdown.
+The authors of this document would like to thank the authors of {{?I-D.ietf-teas-actn-poi-applicability}} for having identified the gap and requirements to trigger this work.
+
+This document was prepared using kramdown.
