@@ -55,7 +55,7 @@ Management Datastore Architecture {{!RFC8342}}.
 
 ## Terminology and Notations 
 
-  Refer to {{!RFC7446}} and {{!RFC7581}} for the key terms used in this
+  Refer to {{?RFC7446}} and {{?RFC7581}} for the key terms used in this
   document.  The following terms are defined in {{!RFC7950}} and are not
   redefined here:
 

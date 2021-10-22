@@ -1983,18 +1983,6 @@ Internet-Draft      Yang for Optical Path Computation       October 2021
               (NETCONF)", RFC 6241, DOI 10.17487/RFC6241, June 2011,
               <https://www.rfc-editor.org/info/rfc6241>.
 
-   [RFC7446]  Lee, Y., Ed., Bernstein, G., Ed., Li, D., and W. Imajuku,
-              "Routing and Wavelength Assignment Information Model for
-              Wavelength Switched Optical Networks", RFC 7446,
-              DOI 10.17487/RFC7446, February 2015,
-              <https://www.rfc-editor.org/info/rfc7446>.
-
-   [RFC7581]  Bernstein, G., Ed., Lee, Y., Ed., Li, D., Imajuku, W., and
-              J. Han, "Routing and Wavelength Assignment Information
-              Encoding for Wavelength Switched Optical Networks",
-              RFC 7581, DOI 10.17487/RFC7581, June 2015,
-              <https://www.rfc-editor.org/info/rfc7581>.
-
    [RFC7699]  Farrel, A., King, D., Li, Y., and F. Zhang, "Generalized
               Labels for the Flexi-Grid in Lambda Switch Capable (LSC)
               Label Switching Routers", RFC 7699, DOI 10.17487/RFC7699,
@@ -2007,16 +1995,6 @@ Internet-Draft      Yang for Optical Path Computation       October 2021
    [RFC8340]  Bjorklund, M. and L. Berger, Ed., "YANG Tree Diagrams",
               BCP 215, RFC 8340, DOI 10.17487/RFC8340, March 2018,
               <https://www.rfc-editor.org/info/rfc8340>.
-
-
-
-
-
-
-Busi, et al.              Expires 25 April 2022                [Page 36]
-
-Internet-Draft      Yang for Optical Path Computation       October 2021
-
 
    [RFC8342]  Bjorklund, M., Schoenwaelder, J., Shafer, P., Watsen, K.,
               and R. Wilton, "Network Management Datastore Architecture
@@ -2033,6 +2011,13 @@ Internet-Draft      Yang for Optical Path Computation       October 2021
               DOI 10.17487/RFC9093, August 2021,
               <https://www.rfc-editor.org/info/rfc9093>.
 
+
+
+Busi, et al.              Expires 25 April 2022                [Page 36]
+
+Internet-Draft      Yang for Optical Path Computation       October 2021
+
+
 8.2.  Informative References
 
    [I-D.ietf-teas-actn-poi-applicability]
@@ -2043,6 +2028,18 @@ Internet-Draft      Yang for Optical Path Computation       October 2021
               draft-ietf-teas-actn-poi-applicability-03, 12 July 2021,
               <https://www.ietf.org/archive/id/draft-ietf-teas-actn-poi-
               applicability-03.txt>.
+
+   [RFC7446]  Lee, Y., Ed., Bernstein, G., Ed., Li, D., and W. Imajuku,
+              "Routing and Wavelength Assignment Information Model for
+              Wavelength Switched Optical Networks", RFC 7446,
+              DOI 10.17487/RFC7446, February 2015,
+              <https://www.rfc-editor.org/info/rfc7446>.
+
+   [RFC7581]  Bernstein, G., Ed., Lee, Y., Ed., Li, D., Imajuku, W., and
+              J. Han, "Routing and Wavelength Assignment Information
+              Encoding for Wavelength Switched Optical Networks",
+              RFC 7581, DOI 10.17487/RFC7581, June 2015,
+              <https://www.rfc-editor.org/info/rfc7581>.
 
 Acknowledgments
 
@@ -2066,6 +2063,9 @@ Authors' Addresses
    Huawei Technologies
 
    Email: italo.busi@huawei.com
+
+
+
 
 
 
