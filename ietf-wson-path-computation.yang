@@ -62,7 +62,7 @@ module ietf-wson-path-computation {
     This version of this YANG module is part of RFC XXXX; see
     the RFC itself for full legal notices.";
 
-  revision "2021-10-15" {
+  revision "2021-12-20" {
     description
       "Initial version.";
     reference
@@ -80,7 +80,6 @@ module ietf-wson-path-computation {
     description
        "Augment with additional constraints for WSON paths.";
     uses l0-types-ext:l0-tunnel-attributes;
-    uses l0-types-ext:l0-path-constraints;
   }
 
   /*
