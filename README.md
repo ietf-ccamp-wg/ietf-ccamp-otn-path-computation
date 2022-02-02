@@ -1,4 +1,4 @@
-# YANG Model for OTN and Optical Path Computation
+# YANG Data Models for requesting Path Computation in Optical Networks
 
 ## Scope
 
@@ -31,6 +31,11 @@ You agree to comply with all applicable IETF policies and procedures, including,
 BCP 78, 79, the TLP, and the TLP rules regarding code components (e.g. being
 subject to a Simplified BSD License) in Contributions.
 
+## Weekly Calls
+
+The contributors on this draft has (mostly) weekly informal conference calls on Thursdays at 2:00pm CET:
+
+- [Join Zoom Meeting](https://zoom.us/j/96715237995?pwd=WmcwMVZ3c1kyY0pucUhNcWVNOHNvdz09)
 
 ### Other Resources
 
