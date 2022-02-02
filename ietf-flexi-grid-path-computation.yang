@@ -63,7 +63,7 @@ module ietf-flexi-grid-path-computation {
     This version of this YANG module is part of RFC XXXX; see
     the RFC itself for full legal notices.";
 
-  revision "2021-10-15" {
+  revision "2021-12-20" {
     description
       "Initial version.";
     reference
@@ -82,7 +82,6 @@ module ietf-flexi-grid-path-computation {
        "Augment with additional constraints flexi-grid
         media channel.";
     uses l0-types-ext:l0-tunnel-attributes;
-    uses l0-types-ext:l0-path-constraints;
   }
 
   /*
