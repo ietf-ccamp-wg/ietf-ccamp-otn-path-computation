@@ -33,7 +33,7 @@ subject to a Simplified BSD License) in Contributions.
 
 ### Weekly Calls
 
-The contributors on this draft has (mostly) weekly informal conference calls on Thursdays at 2:00pm CET:
+The contributors on this draft have (mostly) weekly informal conference calls on Thursdays at 2:00pm CET:
 
 - [Join Zoom Meeting](https://zoom.us/j/96715237995?pwd=WmcwMVZ3c1kyY0pucUhNcWVNOHNvdz09)
 
