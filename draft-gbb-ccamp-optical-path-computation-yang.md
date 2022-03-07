@@ -4,7 +4,7 @@ coding: utf-8
 title: YANG Data Models for requesting Path Computation in Optical Networks
 
 abbrev: Yang for Optical Path Computation
-docname: draft-gbb-ccamp-optical-path-computation-yang-00
+docname: draft-gbb-ccamp-optical-path-computation-yang-01
 workgroup: CCAMP Working Group
 category: std
 ipr: trust200902
@@ -44,11 +44,14 @@ document conforms to the Network Management Datastore Architecture
 
 # Introduction
 
-{{!I-D.ietf-teas-yang-path-computation}} describes some use cases, where a client needs to request
-underlying SDN controllers for path computation. In some of these use cases the underlying SDN controller can control a single-layer (OTN, WSON or Flexi-grid) or multi-layer Optical network.
+{{!I-D.ietf-teas-yang-path-computation}} describes key use cases, where a client needs to request
+underlying SDN controllers for path computation. In some of these use cases, the
+underlying SDN controller can control a single-layer optical technologies, including 
+Optical Transport Network (OTN), Wavelength Switched Optical Networks (WSON), Flexi-grid, 
+and multi-layer Optical network.
 
-This document define YANG data models, which augment the generic Path Computation RPC defined in {{!I-D.ietf-teas-yang-path-computation}}, with technology-specific augmentations required to request path computation to an underlying Optical SDN controller. These models allow
-a client to delegate path computation tasks to the underlying Optical SDN controller without having to obtain optical-layer information from the controller and performing feasible path computation itself. This is especially helpful in cases where computing optically-feasible paths requires knowledge of physical-layer states, such as optical impairments, which are visible only to the Optical controller.
+This document defines YANG data models, which augment the generic Path Computation RPC defined in {{!I-D.ietf-teas-yang-path-computation}}, with technology-specific augmentations required to request path computation to an underlying Optical SDN controller. These models allow
+a client to delegate path computation tasks to the underlying Optical SDN controller without having to obtain optical-layer information from the controller and performing feasible path computation itself. This is especially helpful in cases where computing optically-feasible paths require knowledge of physical-layer states, such as optical impairments, which are visible only to the Optical controller.
 
 The YANG data model defined in this document conforms to the Network
 Management Datastore Architecture {{!RFC8342}}.
@@ -89,7 +92,8 @@ Management Datastore Architecture {{!RFC8342}}.
 
   In this document, names of data nodes and other data model objects
   are prefixed using the standard prefix associated with the
-  corresponding YANG imported modules, as shown in the following table.
+  corresponding YANG imported modules, as shown in
+  {{tab-prefixes}}.
 
 | Prefix       | YANG module                      | Reference
 | l0-types     | ietf-layer0-types                | {{!RFC9093}}
@@ -145,7 +149,7 @@ The YANG data models for requesting WSON, Flexi-grid and OTN path computation ar
 ~~~~
 {: #fig-optical-pc title="Relationship between WSON, Flexi-grid, OTN and TE path computation models"}
 
-The entities and TE attributes, such as requested path and tunnel attributes, defined in {{!I-D.ietf-teas-yang-path-computation}}, are still applicable when requestiong WSON, Flexi-grid and OTN path computation and the models defined in this document only specifies the additional technology-specific attributes/information, using the attributes defined in {{!RFC9093}}, {{!I-D.ietf-ccamp-layer0-types-ext}} and {{!I-D.ietf-ccamp-layer1-types}}.
+The entities and Traffic Engineering (TE) attributes, such as requested path and tunnel attributes, defined in {{!I-D.ietf-teas-yang-path-computation}}, are still applicable when requesting WSON, Flexi-grid and OTN path computation and the models defined in this document only specifies the additional technology-specific attributes/information, using the attributes defined in {{!RFC9093}}, {{!I-D.ietf-ccamp-layer0-types-ext}} and {{!I-D.ietf-ccamp-layer1-types}}.
 
 The YANG modules ietf-wson-path-computation, ietf-flexi-grid-path-computation and ietf-otn-path-computation defined in this document conforms
 to the Network Management Datastore Architecture (NMDA) defined in
@@ -168,19 +172,19 @@ flexi-grid networks. Therefore, the model does not define any augmentation
 for the te-bandwidth containers defined in {{!I-D.ietf-teas-yang-path-computation}}.
 
 The OTN path computation model augments all the occurrences of the te-bandwidth container
-with the OTN technology specific attributes using the otn-link-bandwidth and otn-path-bandwidth groupings defined in {{!I-D.ietf-ccamp-layer1-types}}.
+with the OTN technology-specific attributes using the otn-link-bandwidth and otn-path-bandwidth groupings defined in {{!I-D.ietf-ccamp-layer1-types}}.
 
 {: #optical-te-label}
 
 ## Label Augmentations
 
 The models augment all the occurrences of the label-restriction list
-with WSON, Flexi-grid and OTN technology specific attributes using the 
+with WSON, Flexi-grid and OTN technology-specific attributes using the 
 l0-label-range-info and flexi-grid-label-range-info groupings defined in {{!RFC9093}} and the
 otn-label-range-info grouping defined in {{!I-D.ietf-ccamp-layer1-types}}.
 
 Moreover, the models augment all the occurrences of the te-label
-container with the WSON, Flexi-grid and OTN technology specific attributes using the
+container with the WSON, Flexi-grid and OTN technology-specific attributes using the
 wson-label-start-end, wson-label-hop, wson-label-step,
 flexi-grid-label-start-end, flexi-grid-label-hop and flexi-grid-label-step defined in {{!RFC9093}} and the
 otn-label-start-end, otn-label-hop and otn-label-step groupings defined in {{!I-D.ietf-ccamp-layer1-types}}.
@@ -231,7 +235,7 @@ otn-label-start-end, otn-label-hop and otn-label-step groupings defined in {{!I-
 ## YANG Model for WSON Path Computation
 
 ~~~~
-<CODE BEGINS> file "ietf-wson-path-computation@2021-10-15.yang"
+<CODE BEGINS> file "ietf-wson-path-computation@2022-03-07.yang"
 {::include ./ietf-wson-path-computation.yang}
 <CODE ENDS>
 ~~~~
@@ -242,7 +246,7 @@ otn-label-start-end, otn-label-hop and otn-label-step groupings defined in {{!I-
 ## YANG Model for Flexi-grid Path Computation
 
 ~~~~
-<CODE BEGINS> file "ietf-flexi-grid-path-computation@2021-10-15.yang"
+<CODE BEGINS> file "ietf-flexi-grid-path-computation@2022-03-07.yang"
 {::include ./ietf-flexi-grid-path-computation.yang}
 <CODE ENDS>
 ~~~~
@@ -269,7 +273,42 @@ otn-label-start-end, otn-label-hop and otn-label-step groupings defined in {{!I-
 
 # IANA Considerations
 
-  \<Add any IANA considerations>
+   This document registers the following URIs in the "ns" subregistry
+   within the "IETF XML registry" {{!RFC3688}}.
+
+~~~~
+  URI: urn:ietf:params:xml:ns:yang:ietf-otn-path-computation
+  Registrant Contact:  The IESG.
+  XML: N/A, the requested URI is an XML namespace.
+
+  URI: urn:ietf:params:xml:ns:yang:ietf-wson-path-computation
+  Registrant Contact:  The IESG.
+  XML: N/A, the requested URI is an XML namespace.
+
+  URI: urn:ietf:params:xml:ns:yang:ietf-flexi-grid-path-computation
+  Registrant Contact:  The IESG.
+  XML: N/A, the requested URI is an XML namespace.
+~~~~
+
+   This document registers the following YANG module in the "YANG Module Names"
+   registry {{!RFC7950}}.
+
+~~~~
+  name:      ietf-otn-path-computation
+  namespace: urn:ietf:params:xml:ns:yang:ietf-otn-path-computation
+  prefix:    otn-pc
+  reference: this document
+
+  name:      ietf-wson-path-computation
+  namespace: urn:ietf:params:xml:ns:yang:ietf-wson-path-computation
+  prefix:    wson-pc
+  reference: this document
+
+  name:      ietf-flexi-grid-path-computation
+  namespace: ietf:params:xml:ns:yang:ietf-flexi-grid-path-computation
+  prefix:    flexg-pc
+  reference: this document
+~~~~
 
 --- back
 
@@ -278,5 +317,21 @@ otn-label-start-end, otn-label-hop and otn-label-step groupings defined in {{!I-
 # Acknowledgments
 
 The authors of this document would like to thank the authors of {{?I-D.ietf-teas-actn-poi-applicability}} for having identified the gap and requirements to trigger this work.
+
+The authors of this document would also like to thank 
+Young Lee, 
+Haomian Zheng, 
+Victor Lopex, 
+Ricard Vilalta, 
+Bin Yeong Yoon, 
+Jorge E. Lopez de Vergara Mendez, 
+Daniel Perdices Burrero, 
+Oscar Gonzalez de Dios, 
+Gabriele Galimberti, 
+Zafar Ali, 
+Daniel Michaud Vallinoto and 
+Dhruv Dhody 
+who have contributed to the development of path computation augmentations for WSON and Flexi-grid topology in earlier versions of
+{{?I-D.ietf-ccamp-wson-tunnel-model}} and of {{?I-D.ietf-ccamp-flexigrid-tunnel-yang}}.
 
 This document was prepared using kramdown.
