@@ -1,9 +1,9 @@
 ---
 coding: utf-8
 
-title: YANG Data Models for requesting Path Computation in Optical Transport Network (OTN)
+title: A YANG Data Model for requesting Path Computation in an Optical Transport Network (OTN)
 
-abbrev: Yang for OTN Path Computation
+abbrev: YANG for OTN Path Computation
 docname: draft-gbb-ccamp-otn-path-computation-yang-00
 workgroup: CCAMP Working Group
 category: std
@@ -34,7 +34,7 @@ contributor:
 
 --- abstract
 
-This document describes a YANG data model for a Remote Procedure Calls (RPC) to request Path Computation in Optical Transport Networks (OTN).
+This document describes a YANG data model for a Remote Procedure Calls (RPC) to request Path Computation in an Optical Transport Network (OTN).
 
 The YANG data models defined in this
 document conforms to the Network Management Datastore Architecture
