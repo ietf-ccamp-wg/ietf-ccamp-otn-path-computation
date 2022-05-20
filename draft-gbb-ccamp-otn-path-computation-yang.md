@@ -5,6 +5,7 @@ title: A YANG Data Model for requesting Path Computation in an Optical Transport
 
 abbrev: YANG for OTN Path Computation
 docname: draft-gbb-ccamp-otn-path-computation-yang-00
+submissiontype: IETF
 workgroup: CCAMP Working Group
 category: std
 ipr: trust200902
