@@ -7,9 +7,10 @@ module: ietf-otn-path-computation
           +-- odu-type?                     identityref
           +-- (oduflex-type)?
              +--:(generic)
-             |  +-- nominal-bit-rate        uint64
+             |  +-- nominal-bit-rate
+             |          l1-types:bandwidth-scientific-notation
              +--:(cbr)
-             |  +-- client-type             identityref
+             |  +-- cbr-client-type         identityref
              +--:(gfp-n-k)
              |  +-- gfp-n                   uint8
              |  +-- gfp-k?                  gfp-k
@@ -18,7 +19,8 @@ module: ietf-otn-path-computation
              +--:(flexe-aware)
              |  +-- flexe-aware-n           uint16
              +--:(packet)
-                +-- opuflex-payload-rate    uint64
+                +-- opuflex-payload-rate
+                        l1-types:bandwidth-scientific-notation
   augment /te:tunnels-path-compute/te:input/te:path-compute-info
             /te-pc:tunnel-attributes/te-pc:te-bandwidth
             /te-pc:technology:
@@ -27,9 +29,10 @@ module: ietf-otn-path-computation
           +-- odu-type?                     identityref
           +-- (oduflex-type)?
              +--:(generic)
-             |  +-- nominal-bit-rate        uint64
+             |  +-- nominal-bit-rate
+             |          l1-types:bandwidth-scientific-notation
              +--:(cbr)
-             |  +-- client-type             identityref
+             |  +-- cbr-client-type         identityref
              +--:(gfp-n-k)
              |  +-- gfp-n                   uint8
              |  +-- gfp-k?                  gfp-k
@@ -38,7 +41,8 @@ module: ietf-otn-path-computation
              +--:(flexe-aware)
              |  +-- flexe-aware-n           uint16
              +--:(packet)
-                +-- opuflex-payload-rate    uint64
+                +-- opuflex-payload-rate
+                        l1-types:bandwidth-scientific-notation
   augment /te:tunnels-path-compute/te:output/te:path-compute-result
             /te-pc:response/te-pc:computed-paths-properties
             /te-pc:computed-path-properties/te-pc:path-properties
@@ -48,9 +52,10 @@ module: ietf-otn-path-computation
           +--ro odu-type?                     identityref
           +--ro (oduflex-type)?
              +--:(generic)
-             |  +--ro nominal-bit-rate        uint64
+             |  +--ro nominal-bit-rate
+             |          l1-types:bandwidth-scientific-notation
              +--:(cbr)
-             |  +--ro client-type             identityref
+             |  +--ro cbr-client-type         identityref
              +--:(gfp-n-k)
              |  +--ro gfp-n                   uint8
              |  +--ro gfp-k?                  gfp-k
@@ -59,7 +64,8 @@ module: ietf-otn-path-computation
              +--:(flexe-aware)
              |  +--ro flexe-aware-n           uint16
              +--:(packet)
-                +--ro opuflex-payload-rate    uint64
+                +--ro opuflex-payload-rate
+                        l1-types:bandwidth-scientific-notation
   augment /te:tunnels-path-compute/te:input/te:path-compute-info
             /te-pc:path-request/te-pc:path-in-segment
             /te-pc:label-restrictions/te-pc:label-restriction:
