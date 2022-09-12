@@ -4,7 +4,7 @@ coding: utf-8
 title: A YANG Data Model for requesting Path Computation in an Optical Transport Network (OTN)
 
 abbrev: YANG for OTN Path Computation
-docname: draft-gbb-ccamp-otn-path-computation-yang-01
+docname: draft-gbb-ccamp-otn-path-computation-yang-02
 submissiontype: IETF
 workgroup: CCAMP Working Group
 category: std
@@ -35,11 +35,10 @@ contributor:
 
 --- abstract
 
-This document describes a YANG data model for a Remote Procedure Calls (RPC) to request Path Computation in an Optical Transport Network (OTN).
+This document provides a mechanism to request path computation in an Optical Transport Network (OTN) by augmenting the Remote Procedure Calls (RPCs) defined in RFC YYYY.
 
-The YANG data models defined in this
-document conforms to the Network Management Datastore Architecture
-(NMDA).
+\[RFC EDITOR NOTE: Please replace RFC YYYY with the RFC number of
+draft-ietf-teas-yang-path-computation once it has been published.
 
 --- middle
 
@@ -52,9 +51,6 @@ Optical Transport Network (OTN).
 
 This document defines a YANG data model, which augment the generic Path Computation RPC defined in {{!I-D.ietf-teas-yang-path-computation}}, with OTN technology-specific augmentations required to request path computation to an underlying OTN SDN controller. These models allow
 a client to delegate path computation tasks to the underlying SDN controller without having to obtain OTN detailed information from the controller and performing feasible path computation itself.
-
-The YANG data model defined in this document conforms to the Network
-Management Datastore Architecture {{!RFC8342}}.
 
 ## Terminology and Notations 
 
@@ -98,17 +94,17 @@ Management Datastore Architecture {{!RFC8342}}.
   {{tab-prefixes}}.
 
 | Prefix       | YANG module                      | Reference
-| l1-types     | ietf-layer1-types                | \[RFCYYYY]
-| te           | ietf-te                          | \[RFCZZZZ]
-| te-pc        | ietf-te-path-computation         | \[RFCKKKK]
+| l1-types     | ietf-layer1-types                | \[RFCZZZZ]
+| te           | ietf-te                          | \[RFCKKKK]
+| te-pc        | ietf-te-path-computation         | \[RFCYYYY]
 | otn-pc       | ietf-otn-path-computation        | RFCXXXX         
 {: #tab-prefixes title="Prefixes and corresponding YANG modules"}
 
 RFC Editor Note:
 Please replace XXXX with the RFC number assigned to this document.
-Please replace YYYY with the RFC number assigned to {{!I-D.ietf-ccamp-layer1-types}}.
-Please replace ZZZZ with the RFC number assigned to {{!I-D.ietf-teas-yang-te}}.
-Please replace KKKK with the RFC number assigned to {{!I-D.ietf-teas-yang-path-computation}}.
+Please replace YYYY with the RFC number assigned to {{!I-D.ietf-teas-yang-path-computation}}.
+Please replace ZZZZ with the RFC number assigned to {{!I-D.ietf-ccamp-layer1-types}}.
+Please replace KKKK with the RFC number assigned to {{!I-D.ietf-teas-yang-te}}.
 Please remove this note.
 
 # YANG Data Model for OTN Path Computation 
@@ -180,11 +176,20 @@ sourcecode-markers="true" sourcecode-name="ietf-otn-path-computation@2022-07-10.
 
 # Manageability Considerations
 
-  TBD. 
+This document provides a method for requesting path computations for OTN tunnels. Consideration of mechanisms to gather and collate information required for the path computations will be necessary. Furthermore, storing path computation requests and responses and triggering actions according to configured will also need to be carefully managed and secured.
+
+Future versions of this document will contain additional information.
 
 # Security Considerations
 
-  \<Add any security considerations>
+The YANG module defined in this document will be accessed via the NETCONF protocol {{!RFC6241}} or RESTCONF protocol {{!RFC8040}}. The lowest NETCONF layer is the secure transport layer, and the mandatory-to-implement secure transport is Secure Shell (SSH) {{!RFC6242}}. The lowest RESTCONF layer is HTTPS and the mandatory-to-implement secure transport is TLS {{!RFC8446}}.
+
+The Network Configuration Access Control Model (NACM) {{!RFC8341}} provides the means to restrict access to particular NETCONF or RESTCONF users to a pre-configured subset of all available NETCONF or RESTCONF protocol operations and content.
+
+Some of the RPC operations defined in this YANG module may be
+considered sensitive or vulnerable in some network environments. It is thus essential to control access to these operations.
+
+Operations defined in this document, and their sensitivities and possible vulnerabilities, will be discussed further in future versions of this document.
 
 # IANA Considerations
 
