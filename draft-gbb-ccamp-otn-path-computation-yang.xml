@@ -13,7 +13,7 @@
 
 <?rfc comments="yes"?>
 
-<rfc ipr="trust200902" docName="draft-gbb-ccamp-otn-path-computation-yang-01" category="std" consensus="true" submissionType="IETF" tocInclude="true" sortRefs="true" symRefs="true">
+<rfc ipr="trust200902" docName="draft-gbb-ccamp-otn-path-computation-yang-02" category="std" consensus="true" submissionType="IETF" tocInclude="true" sortRefs="true" symRefs="true">
   <front>
     <title abbrev="YANG for OTN Path Computation">A YANG Data Model for requesting Path Computation in an Optical Transport Network (OTN)</title>
 
@@ -36,7 +36,7 @@
       </address>
     </author>
 
-    <date year="2022" month="July" day="10"/>
+    <date year="2022" month="September" day="12"/>
 
     
     <workgroup>CCAMP Working Group</workgroup>
@@ -45,11 +45,10 @@
     <abstract>
 
 
-<t>This document describes a YANG data model for a Remote Procedure Calls (RPC) to request Path Computation in an Optical Transport Network (OTN).</t>
+<t>This document provides a mechanism to request path computation in an Optical Transport Network (OTN) by augmenting the Remote Procedure Calls (RPCs) defined in RFC YYYY.</t>
 
-<t>The YANG data models defined in this
-document conforms to the Network Management Datastore Architecture
-(NMDA).</t>
+<t>[RFC EDITOR NOTE: Please replace RFC YYYY with the RFC number of
+draft-ietf-teas-yang-path-computation once it has been published.</t>
 
 
 
@@ -71,9 +70,6 @@ Optical Transport Network (OTN).</t>
 
 <t>This document defines a YANG data model, which augment the generic Path Computation RPC defined in <xref target="I-D.ietf-teas-yang-path-computation"/>, with OTN technology-specific augmentations required to request path computation to an underlying OTN SDN controller. These models allow
 a client to delegate path computation tasks to the underlying SDN controller without having to obtain OTN detailed information from the controller and performing feasible path computation itself.</t>
-
-<t>The YANG data model defined in this document conforms to the Network
-Management Datastore Architecture <xref target="RFC8342"/>.</t>
 
 <section anchor="terminology-and-notations"><name>Terminology and Notations</name>
 
@@ -123,13 +119,13 @@ Management Datastore Architecture <xref target="RFC8342"/>.</t>
       <ttcol align='left'>Reference</ttcol>
       <c>l1-types</c>
       <c>ietf-layer1-types</c>
-      <c>[RFCYYYY]</c>
+      <c>[RFCZZZZ]</c>
       <c>te</c>
       <c>ietf-te</c>
-      <c>[RFCZZZZ]</c>
+      <c>[RFCKKKK]</c>
       <c>te-pc</c>
       <c>ietf-te-path-computation</c>
-      <c>[RFCKKKK]</c>
+      <c>[RFCYYYY]</c>
       <c>otn-pc</c>
       <c>ietf-otn-path-computation</c>
       <c>RFCXXXX</c>
@@ -137,9 +133,9 @@ Management Datastore Architecture <xref target="RFC8342"/>.</t>
 
 <t>RFC Editor Note:
 Please replace XXXX with the RFC number assigned to this document.
-Please replace YYYY with the RFC number assigned to <xref target="I-D.ietf-ccamp-layer1-types"/>.
-Please replace ZZZZ with the RFC number assigned to <xref target="I-D.ietf-teas-yang-te"/>.
-Please replace KKKK with the RFC number assigned to <xref target="I-D.ietf-teas-yang-path-computation"/>.
+Please replace YYYY with the RFC number assigned to <xref target="I-D.ietf-teas-yang-path-computation"/>.
+Please replace ZZZZ with the RFC number assigned to <xref target="I-D.ietf-ccamp-layer1-types"/>.
+Please replace KKKK with the RFC number assigned to <xref target="I-D.ietf-teas-yang-te"/>.
 Please remove this note.</t>
 
 </section>
@@ -202,10 +198,9 @@ module: ietf-otn-path-computation
           +-- odu-type?                     identityref
           +-- (oduflex-type)?
              +--:(generic)
-             |  +-- nominal-bit-rate
-             |          l1-types:bandwidth-scientific-notation
+             |  +-- nominal-bit-rate        union
              +--:(cbr)
-             |  +-- cbr-client-type         identityref
+             |  +-- client-type             identityref
              +--:(gfp-n-k)
              |  +-- gfp-n                   uint8
              |  +-- gfp-k?                  gfp-k
@@ -214,8 +209,7 @@ module: ietf-otn-path-computation
              +--:(flexe-aware)
              |  +-- flexe-aware-n           uint16
              +--:(packet)
-                +-- opuflex-payload-rate
-                        l1-types:bandwidth-scientific-notation
+                +-- opuflex-payload-rate    union
   augment /te:tunnels-path-compute/te:input/te:path-compute-info
             /te-pc:tunnel-attributes/te-pc:te-bandwidth
             /te-pc:technology:
@@ -224,10 +218,9 @@ module: ietf-otn-path-computation
           +-- odu-type?                     identityref
           +-- (oduflex-type)?
              +--:(generic)
-             |  +-- nominal-bit-rate
-             |          l1-types:bandwidth-scientific-notation
+             |  +-- nominal-bit-rate        union
              +--:(cbr)
-             |  +-- cbr-client-type         identityref
+             |  +-- client-type             identityref
              +--:(gfp-n-k)
              |  +-- gfp-n                   uint8
              |  +-- gfp-k?                  gfp-k
@@ -236,8 +229,7 @@ module: ietf-otn-path-computation
              +--:(flexe-aware)
              |  +-- flexe-aware-n           uint16
              +--:(packet)
-                +-- opuflex-payload-rate
-                        l1-types:bandwidth-scientific-notation
+                +-- opuflex-payload-rate    union
   augment /te:tunnels-path-compute/te:output/te:path-compute-result
             /te-pc:response/te-pc:computed-paths-properties
             /te-pc:computed-path-properties/te-pc:path-properties
@@ -247,10 +239,9 @@ module: ietf-otn-path-computation
           +--ro odu-type?                     identityref
           +--ro (oduflex-type)?
              +--:(generic)
-             |  +--ro nominal-bit-rate
-             |          l1-types:bandwidth-scientific-notation
+             |  +--ro nominal-bit-rate        union
              +--:(cbr)
-             |  +--ro cbr-client-type         identityref
+             |  +--ro client-type             identityref
              +--:(gfp-n-k)
              |  +--ro gfp-n                   uint8
              |  +--ro gfp-k?                  gfp-k
@@ -259,8 +250,7 @@ module: ietf-otn-path-computation
              +--:(flexe-aware)
              |  +--ro flexe-aware-n           uint16
              +--:(packet)
-                +--ro opuflex-payload-rate
-                        l1-types:bandwidth-scientific-notation
+                +--ro opuflex-payload-rate    union
   augment /te:tunnels-path-compute/te:input/te:path-compute-info
             /te-pc:path-request/te-pc:path-in-segment
             /te-pc:label-restrictions/te-pc:label-restriction:
@@ -473,11 +463,12 @@ module ietf-otn-path-computation {
     This version of this YANG module is part of RFC XXXX; see
     the RFC itself for full legal notices.";
 
-  revision "2022-07-10" {
+  revision "2022-09-12" {
     description
       "Initial version.";
     reference
-      "RFC XXXX: YANG Model for OTN and Optical Path Computation";
+      "RFC XXXX: A YANG Data Model for requesting Path Computation
+      in an Optical Transport Network (OTN)";
     // RFC Ed.: replace XXXX with actual RFC number, update date 
     // information and remove this note
   }
@@ -706,12 +697,21 @@ module ietf-otn-path-computation {
 </section>
 <section anchor="manageability-considerations"><name>Manageability Considerations</name>
 
-<t>TBD.</t>
+<t>This document provides a method for requesting path computations for OTN tunnels. Consideration of mechanisms to gather and collate information required for the path computations will be necessary. Furthermore, storing path computation requests and responses and triggering actions will also need to be carefully managed and secured.</t>
+
+<t>Future versions of this document will contain additional information.</t>
 
 </section>
 <section anchor="security-considerations"><name>Security Considerations</name>
 
-<t>&lt;Add any security considerations&gt;</t>
+<t>The YANG module defined in this document will be accessed via the NETCONF protocol <xref target="RFC6241"/> or RESTCONF protocol <xref target="RFC8040"/>. The lowest NETCONF layer is the secure transport layer, and the mandatory-to-implement secure transport is Secure Shell (SSH) <xref target="RFC6242"/>. The lowest RESTCONF layer is HTTPS and the mandatory-to-implement secure transport is TLS <xref target="RFC8446"/>.</t>
+
+<t>The Network Configuration Access Control Model (NACM) <xref target="RFC8341"/> provides the means to restrict access to particular NETCONF or RESTCONF users to a pre-configured subset of all available NETCONF or RESTCONF protocol operations and content.</t>
+
+<t>Some of the RPC operations defined in this YANG module may be
+considered sensitive or vulnerable in some network environments. It is thus essential to control access to these operations.</t>
+
+<t>Operations defined in this document, and their sensitivities and possible vulnerabilities, will be discussed further in future versions of this document.</t>
 
 </section>
 <section anchor="iana-considerations"><name>IANA Considerations</name>
@@ -795,23 +795,6 @@ module ietf-otn-path-computation {
 </reference>
 
 
-
-<reference anchor='RFC8342' target='https://www.rfc-editor.org/info/rfc8342'>
-<front>
-<title>Network Management Datastore Architecture (NMDA)</title>
-<author fullname='M. Bjorklund' initials='M.' surname='Bjorklund'><organization/></author>
-<author fullname='J. Schoenwaelder' initials='J.' surname='Schoenwaelder'><organization/></author>
-<author fullname='P. Shafer' initials='P.' surname='Shafer'><organization/></author>
-<author fullname='K. Watsen' initials='K.' surname='Watsen'><organization/></author>
-<author fullname='R. Wilton' initials='R.' surname='Wilton'><organization/></author>
-<date month='March' year='2018'/>
-<abstract><t>Datastores are a fundamental concept binding the data models written in the YANG data modeling language to network management protocols such as the Network Configuration Protocol (NETCONF) and RESTCONF. This document defines an architectural framework for datastores based on the experience gained with the initial simpler model, addressing requirements that were not well supported in the initial model.  This document updates RFC 7950.</t></abstract>
-</front>
-<seriesInfo name='RFC' value='8342'/>
-<seriesInfo name='DOI' value='10.17487/RFC8342'/>
-</reference>
-
-
 <reference anchor='I-D.ietf-ccamp-layer1-types'>
    <front>
       <title>A YANG Data Model for Layer 1 Types</title>
@@ -821,7 +804,7 @@ module ietf-otn-path-computation {
       <author fullname='Italo Busi'>
 	 <organization>Huawei Technologies</organization>
       </author>
-      <date day='8' month='April' year='2022'/>
+      <date day='11' month='July' year='2022'/>
       <abstract>
 	 <t>   This document defines a collection of common data types and groupings
    in the YANG data modeling language for use with layer 1 networks.
@@ -832,8 +815,8 @@ module ietf-otn-path-computation {
 	 </t>
       </abstract>
    </front>
-   <seriesInfo name='Internet-Draft' value='draft-ietf-ccamp-layer1-types-13'/>
-   <format target='https://www.ietf.org/archive/id/draft-ietf-ccamp-layer1-types-13.txt' type='TXT'/>
+   <seriesInfo name='Internet-Draft' value='draft-ietf-ccamp-layer1-types-14'/>
+   <format target='https://www.ietf.org/archive/id/draft-ietf-ccamp-layer1-types-14.txt' type='TXT'/>
 </reference>
 
 
@@ -891,7 +874,7 @@ module ietf-otn-path-computation {
 	 <organization>Cisco Systems Inc</organization>
       </author>
       <author fullname='Xufeng Liu'>
-	 <organization>Volta Networks</organization>
+	 <organization>IBM Corporation</organization>
       </author>
       <author fullname='Vishnu Pavan Beeram'>
 	 <organization>Juniper Networks</organization>
@@ -902,13 +885,13 @@ module ietf-otn-path-computation {
       <author fullname='Oscar Gonzalez de Dios'>
 	 <organization>Telefonica</organization>
       </author>
-      <date day='7' month='February' year='2022'/>
+      <date day='11' month='July' year='2022'/>
       <abstract>
 	 <t>   This document defines a YANG data model for the provisioning and
    management of Traffic Engineering (TE) tunnels, Label Switched Paths
-   (LSPs), and interfaces.  The model is divided into YANG modules that
-   classify data into generic, device-specific, technology agnostic, and
-   technology-specific elements.
+   (LSPs), and interfaces.  The model covers data that is independent of
+   any technology or dataplane encapsulation and is divided into two
+   YANG modules that cover device-specific, and device independent data.
 
    This model covers data for configuration, operational state, remote
    procedural calls, and event notifications.
@@ -916,8 +899,81 @@ module ietf-otn-path-computation {
 	 </t>
       </abstract>
    </front>
-   <seriesInfo name='Internet-Draft' value='draft-ietf-teas-yang-te-29'/>
-   <format target='https://www.ietf.org/archive/id/draft-ietf-teas-yang-te-29.txt' type='TXT'/>
+   <seriesInfo name='Internet-Draft' value='draft-ietf-teas-yang-te-30'/>
+   <format target='https://www.ietf.org/archive/id/draft-ietf-teas-yang-te-30.txt' type='TXT'/>
+</reference>
+
+
+
+<reference anchor='RFC8342' target='https://www.rfc-editor.org/info/rfc8342'>
+<front>
+<title>Network Management Datastore Architecture (NMDA)</title>
+<author fullname='M. Bjorklund' initials='M.' surname='Bjorklund'><organization/></author>
+<author fullname='J. Schoenwaelder' initials='J.' surname='Schoenwaelder'><organization/></author>
+<author fullname='P. Shafer' initials='P.' surname='Shafer'><organization/></author>
+<author fullname='K. Watsen' initials='K.' surname='Watsen'><organization/></author>
+<author fullname='R. Wilton' initials='R.' surname='Wilton'><organization/></author>
+<date month='March' year='2018'/>
+<abstract><t>Datastores are a fundamental concept binding the data models written in the YANG data modeling language to network management protocols such as the Network Configuration Protocol (NETCONF) and RESTCONF. This document defines an architectural framework for datastores based on the experience gained with the initial simpler model, addressing requirements that were not well supported in the initial model.  This document updates RFC 7950.</t></abstract>
+</front>
+<seriesInfo name='RFC' value='8342'/>
+<seriesInfo name='DOI' value='10.17487/RFC8342'/>
+</reference>
+
+
+
+<reference anchor='RFC8040' target='https://www.rfc-editor.org/info/rfc8040'>
+<front>
+<title>RESTCONF Protocol</title>
+<author fullname='A. Bierman' initials='A.' surname='Bierman'><organization/></author>
+<author fullname='M. Bjorklund' initials='M.' surname='Bjorklund'><organization/></author>
+<author fullname='K. Watsen' initials='K.' surname='Watsen'><organization/></author>
+<date month='January' year='2017'/>
+<abstract><t>This document describes an HTTP-based protocol that provides a programmatic interface for accessing data defined in YANG, using the datastore concepts defined in the Network Configuration Protocol (NETCONF).</t></abstract>
+</front>
+<seriesInfo name='RFC' value='8040'/>
+<seriesInfo name='DOI' value='10.17487/RFC8040'/>
+</reference>
+
+
+
+<reference anchor='RFC6242' target='https://www.rfc-editor.org/info/rfc6242'>
+<front>
+<title>Using the NETCONF Protocol over Secure Shell (SSH)</title>
+<author fullname='M. Wasserman' initials='M.' surname='Wasserman'><organization/></author>
+<date month='June' year='2011'/>
+<abstract><t>This document describes a method for invoking and running the Network Configuration Protocol (NETCONF) within a Secure Shell (SSH) session as an SSH subsystem.  This document obsoletes RFC 4742.  [STANDARDS-TRACK]</t></abstract>
+</front>
+<seriesInfo name='RFC' value='6242'/>
+<seriesInfo name='DOI' value='10.17487/RFC6242'/>
+</reference>
+
+
+
+<reference anchor='RFC8446' target='https://www.rfc-editor.org/info/rfc8446'>
+<front>
+<title>The Transport Layer Security (TLS) Protocol Version 1.3</title>
+<author fullname='E. Rescorla' initials='E.' surname='Rescorla'><organization/></author>
+<date month='August' year='2018'/>
+<abstract><t>This document specifies version 1.3 of the Transport Layer Security (TLS) protocol.  TLS allows client/server applications to communicate over the Internet in a way that is designed to prevent eavesdropping, tampering, and message forgery.</t><t>This document updates RFCs 5705 and 6066, and obsoletes RFCs 5077, 5246, and 6961.  This document also specifies new requirements for TLS 1.2 implementations.</t></abstract>
+</front>
+<seriesInfo name='RFC' value='8446'/>
+<seriesInfo name='DOI' value='10.17487/RFC8446'/>
+</reference>
+
+
+
+<reference anchor='RFC8341' target='https://www.rfc-editor.org/info/rfc8341'>
+<front>
+<title>Network Configuration Access Control Model</title>
+<author fullname='A. Bierman' initials='A.' surname='Bierman'><organization/></author>
+<author fullname='M. Bjorklund' initials='M.' surname='Bjorklund'><organization/></author>
+<date month='March' year='2018'/>
+<abstract><t>The standardization of network configuration interfaces for use with the Network Configuration Protocol (NETCONF) or the RESTCONF protocol requires a structured and secure operating environment that promotes human usability and multi-vendor interoperability.  There is a need for standard mechanisms to restrict NETCONF or RESTCONF protocol access for particular users to a preconfigured subset of all available NETCONF or RESTCONF protocol operations and content.  This document defines such an access control model.</t><t>This document obsoletes RFC 6536.</t></abstract>
+</front>
+<seriesInfo name='STD' value='91'/>
+<seriesInfo name='RFC' value='8341'/>
+<seriesInfo name='DOI' value='10.17487/RFC8341'/>
 </reference>
 
 
@@ -954,7 +1010,7 @@ module ietf-otn-path-computation {
 	 <organization>Huawei Technologies</organization>
       </author>
       <author fullname='Xufeng Liu'>
-	 <organization>Volta Networks</organization>
+	 <organization>IBM Corporation</organization>
       </author>
       <author fullname='Sergio Belotti'>
 	 <organization>Nokia</organization>
@@ -962,7 +1018,7 @@ module ietf-otn-path-computation {
       <author fullname='Oscar Gonzalez de Dios'>
 	 <organization>Telefonica</organization>
       </author>
-      <date day='7' month='March' year='2022'/>
+      <date day='11' month='July' year='2022'/>
       <abstract>
 	 <t>   This document describes a YANG data model to describe the topologies
    of an Optical Transport Network (OTN).  It is independent of control
@@ -976,8 +1032,8 @@ module ietf-otn-path-computation {
 	 </t>
       </abstract>
    </front>
-   <seriesInfo name='Internet-Draft' value='draft-ietf-ccamp-otn-topo-yang-14'/>
-   <format target='https://www.ietf.org/archive/id/draft-ietf-ccamp-otn-topo-yang-14.txt' type='TXT'/>
+   <seriesInfo name='Internet-Draft' value='draft-ietf-ccamp-otn-topo-yang-15'/>
+   <format target='https://www.ietf.org/archive/id/draft-ietf-ccamp-otn-topo-yang-15.txt' type='TXT'/>
 </reference>
 
 
@@ -1047,103 +1103,114 @@ module ietf-otn-path-computation {
   </back>
 
 <!-- ##markdown-source:
-H4sIAAAAAAAAA+09a3MbN5LfWaX/gGM+rJx4qMdmsw7zsiLZPtfaisvWVTa3
-u7UFzoAkTsPBHICxzLW1v3278ZgBhxiSkmkpSsSqpEQMutHoF7qH3XCSJDu9
-VGS8mAxJpcfJo53eTk9znbMhOSK/HJ0+IydUU/JSZCwnYyGJZP9fMaUBgryi
-ekqOxaysNNVcFIQXhBbkp1LzlObkTNJClUJqcsr0hZDnZPens9MHuAIdjSR7
-O7QLIFZ4sIRup5eJtKAzICWTdKyTyWiUpCmdlYnQRVLC9CRtpidzWkyS/YOd
-nqpGM64UjOl5CdDPn5w93ekhBRMpqnJIjo+PXr4iP8MAbuMZDgIbqGYTIedD
-onS20+OlHBItK6UP9/e/3j9EspWmRfZPmosCsM6Z2umVfEj+pkX6kCjYqGRj
-BX/NZ/YPIG7GCq3+YbZc6amQw50eIQn+jxC7teca8JEfK8XtqJAgiv+u6AXj
-5Iyl00LkYsJxLXzKZpTnQ8IRaDACoMdTM3UAay2hPuLwkDyrRID5aaUryVYi
-pwg2qcSAMz1+PMHBKPo3TE44kM5yoXVI/ak453QBpTJTByM79XGBEyxOVL9C
-Sz6qdIw7J7TgoHh/ATkFC/yUZ+RETEBZClXlun7oVssM0GORZ5mYwDKD6hwX
-SpKE0JHSkqYav59NuSKgYhUKiWRMpUAGU4RatcxQ72e13lPyms2EZuSVFCnL
-gInkmOa5IruvXx0/IFp4y7imWQwsSay9OJDIxrxgGaLRQLIxC0szsA5Imylc
-XQOoR/iSFnTCzBS0XgWsZeRIplOuWYry3+ntnr48ObKLIl9mPMtyht8+I89B
-HiKrUmuDO7337//reXJitCHRjCpraG3zu7wMWHjO5qRSjKRUMTCEiykDAihJ
-c440FYxlKuDYTq8qMibzOVrjm5NTYlRC5DmTyvAe1yLBWgOgEQxuxogY48Zh
-pWA1GFiBEWYV/iuIZae3mVwWVQUFElEU3ClPp4RWEzMRZTJhBZM8XdYKUJtQ
-tJtyGdbggAkdpvYWPE9UyVI+hmXc0mayMgzmEhYI1LPNTHwGLAkYhrgXmTYg
-Z4bLTiNB78UFuDQvUMAA42wCHjSCnqrzWkO7xYK7EpUmU/oWn8J8MdIUGIPU
-ZAz+zA2jUOEt4rEUM4M0wAL+mZRM4iTEMgZG8lEeoYprxfJxl9G1bY6sM7md
-3lqbQwm/fnr86I9fHl5emoU/+wycMBJqZGhoPxVedDiBgM8Zw65grffvf6jV
-ozkDtSiFURSwPgRfnpXTOZMHCR6E6vISUaJBIeXI11ptNMM9gREtb3mAQPgf
-8mksUPRGQAaCwr4WlRi2+Oev/7TvCMLnhdAIDmroJqI3GNr9fU6cDtVf4ah4
-y2T91elz/b2R0eJQAUN2ZGMyvzr88mCRzIZGRNQiEwTPJ5W06oNrNiRrVPxm
-CCnQgWCR4843IklLDp6jlwPLANIQPGRirSeSMXLC6UTSmV3kiCg+K3OQHuwJ
-hsup8WKSlRIs1XkA5x9Dzea1mO1aJpRKE4hdGDDDzA+Fb3czY3CkAukOHUQ4
-I4GEF9b7IqbMEmd2s8RqUPpgM68gPOLv8KmJLU+BLnIKx72yO3veUsCHJhZQ
-uHgtamXEJmB1GW5OjP4PjM2EMyjS0iwEhECghLqApGMIR2XmnhGqlEg5yC+z
-ftUcHihtCWwsRZHVEgNuw+EA82CpKseDhiqipuKiqHmp6Shxayq33Q9+t/bz
-weKyKEj088EaPStShuC5M173zJh2aNTL4H//G3D8F/j8A+E1W3jozpf40gH8
-/8LHwYN6LMEvHUxt+L/Ax8Bb/VqEj4XvwfafHv8VPjVGiECG5LOQt8RkKN/1
-X/nvqAwRkTlJ9S9REoCWPMk4+GX0smjZr3I4HhiaTE5TRsyiXgmQClJUsxEe
-KpBLTAp7irZdYwsHsn0tjvCoj3npZbQojSuhbSIIzWIIUTzXRLgckoToZ+It
-s0wCf8qsxUfzyFjGR5yDMPPt1J/gMHjL2UXXQd1KSRHr8lnfeCSKurIQJHmf
-tv04LXAPAAWHh9X71HmGf8MH5qScJ1Rqm8C0P18knZ8vTDY0bA5IB3L2pN7K
-Snv9cPUV4xALH0E2mNSx9JbmrNhBsAVUlBrPCq90rTVQtNZrNVL3Pus1y22E
-N+UlGUH0yJiNcdGHgfCWtNcGCdaHoQWAsLnmzulB0jLG+O1JMQEFBamDDeye
-PXlAqLZJNZ5TqsKcRHk7AT02iyC8rooCrCicfT1dl3i08hxQlRCUpBSDbkj7
-irXGaaiYso5ktwm8RZHPfbyKJwCA0AzcOeCAsKczHao3thekDg+DgKCZ0bXz
-Dhcd+CN3nHdr0dp0Yqd31RSe2Aw+QG0y9cUMA1XQ5AksGQGjL3g2vXQ+9kf7
-HaRxFHhDv62oqKzHdQ7HZIGGZJGmlTTxivLOtFnPoCgwkcOgvj5x1ssrEBHu
-IOfFeYDTRn+O082web8HYFeXZcCpnI5Y7tn0Ar8ssEhtiUdmmQRCFtixeddC
-co7vQlan9xH+7PQMgyw6MFCWoKrXvLgyK16CqsEpLh82drmp0A0R9pWekTi5
-lsDDDUG8LnXCiuwhaQanoqw1wE9j5Rak7xMhG7ZEQ5R2Jhae7D6LwvecF+bw
-t44Kh32C5Lm14o3DOncyQDccjSEs5LAbtNerU2qyB0Gw9f8qnMdwnBfwF/4R
-PjB6tXAc7pnswE5yjt4NhR6gHvLiH/bcITrcBSIf9JpTFUXaWzhnCWzJyOqH
-aAzAM3MeziETaMHtAuA4Z+8M8IMfFo9xs7aLkx4sPvpgwQsB+TvNkxHXYFWa
-LU3yH5+gDev9JiAQpAr0OyncC53I8ulIxpeGB4l9K2Iwr9lrvZtxmRTJeRyl
-eRhhX8UL/agT4jzCczMeWR5ZzRzZcRrCGeHjcDzC6gA7vYA4YxVyM2Fho7jB
-g68iGEuanrM2pcSpXGk1p6TzXNAsQlTw2Vj+27c7iyUJgpxl44vC3VviwvL3
-lmg/95bYWKKodMwUIV6rch0zKvvySTH31QFkBjGgl6JkEvO2GOzC5GBueL6u
-xnDN81aKZTvHsetZOkB+nK0Dgtuzdlh8+/YOSK9s8Q5mqzYPOD+l1dfot2P3
-qIJ35AyOxL5miBeJYmaxGNRS8qe6HtS2S1pZXnhW27QvsNh2RoiPQgCtJova
-FdHw8MhPMDf9vHteKbmQMFwj9cp9cwwHh33P8ZviuCg1n/F/0ZCRNJ8gRdNZ
-DMeMIXsj0Il9EoNh7/BVIp4DAslj79K8yljifuSLnsFmop3Qmu8PRWBtKPhu
-VZmKsjlbzdDHRc+6LLyszIumcmlCoyHdsbRWRjFwIipsMfktS5wXV5P44vx7
-iX+cxFvCcEJIaH5B55tbn51+L4vblIW3CyeTQBidAlgjjC2+VbjjktlqsNcN
-bd6Db9Uidps4JZqn4TulBEte4mm+E9uyyBbgVS46MnutfqhFrn5jwmJFdi+q
-uyEq/OHoXji3m3Dde73fhrTu3d7dkdW931srHTUv0qkUhUtb60h8bU7qpnQl
-Pe3QOh5L3/2k5479gmKNMUyvuh5EBbZGyFvKnzp+r1knaJyygajNtJaw49WM
-ptLFlzRGC6HCmpf+Tg/OcaxrS7CU/7t+d2kLgtlax6Amx3S4BKXEq6uI68IY
-BPM1MSuK895jiaepbHzLJHaNkoPBwTc4aPoOSqyX7leyGCIK0Abschi+m+XD
-Qg0RbNiJum+wuE6Dvt0MjuGobSfors99bwtPPbBREYsPW2neciQ0ybDxpH+4
-f3iQ7H+d7H/VTHAdBK4ct79BGWdy8OWQ/AJPfHsNAq7p+B3YBS9jW1rewUry
-D5PD/SXyffFtjH7gyMHXXV3Kri7Ww4flsWfWXZkCsueFZnIMAlYD0rmVhW6L
-1qb8D0/rGb9cezb0tdLxLbzAqeSAnOHcFnlCTqg/l/xCT86exhqbLZypyEtd
-lXj/52fkZzYakm+nWpdquLeHdWjYF3vOpKF2AAvsXUz2DNF73zs6AewF+IYh
-Id9io60WQ/P8sYf43hKH/DZ9FkPc22IPcvDxODrajWPI2r3SEWzRzugYrlj3
-cgRfV+fy996ObWNXGUjCNIs6r9O0isbaFSxAzIcNPMVndQnmuMrz+SYtvxZw
-ZdXwwM6x/z8W5VzyyVST3fQBAWs8NB3zYEOV0nV9NpycyhS/NieIaT3DjgrT
-2l7XgaZA7gAkn+fEoMXCc9PVl9W7es0yrmzRkq8BxwZejl29lQTrwZERL6g0
-3XMz5bpehbTwvlkUOIO/8LqibmB7iW132pS4V1JV1DSnPjToVGUOb4vAcS/n
-KYOAw3UJ+rJVLMK0xa+v0VPB9x/fnIDqm7kWXjGNhAFJQPMbZut3vxykngcN
-A/+gyAs2oTn2jVu3pzwPsBHAtrqa6SeuKNw93/XGaS4hYKwxTEe1CVwfBJoC
-+/cnmO/jWyhPB/bAMYzPsOEH252+gY24Hfk+INsYaxQVNY7khvhCaI5e0mu9
-d+HGex8m+39ODvb73jkumQS6p4JrDogcgYNuV+9pG8bOehSkb9hu24xHubdH
-bK/XYBjp7QIvWAFw0/L0kFRl5ho4vdsGFGGnMa7abm1qvPHe57YP9KRuTjTf
-9yyn7FN47GrIscejrlKwj9xMH1P3r5fC7PUbJ/aFCxiuXJm7UoaxHXiFX+wt
-qcWLLfkYknq0BO1cNfUayzX8DvAyOO0+BWM2KZ2MA26TV0vtN7fAOJemtfca
-S9raeVqMP51Z2/rZa9O2DoF8Cn32hNnEpiFhuwKKOQeTH9r6ktAJ3YaraL2D
-j4Jt/jJqU1l0MKC+uADOTMCqiKPKo1jtiJaF026Y+eYTe5wNXvb9ShjMPjl/
-O/V+cBtqvrK0JYpkXW1LFGh1OVMU5Or1TCtUaIOSiqtpELZheZ0JmeBVxW/Y
-YzC78Xc0ELcdiPPnNsFov0FqK5xHc+UAo97+DcUWvxoVa9VPrVexjQqo7o6K
-ue38PlRsZYnQ5t5lZb3WbYne760lX0urR3Flh/J7FHN3KVi3bNf8lrGlNGlj
-qXurrgMT+TsR/XbD8RXgG5VdXCfaNIg/LpDfXFZ16/jvQGIblF5cR16A9l5a
-n8K+IsUX17MnVt6cgNht+77tpcq37/yuk2TfPWu6EYndgPO7l9avz/ndpHxu
-zPVtVHTWkftfqeqs6136DaVueOlwLHuzt/o2XPBv4MMaoRsN2+/6zyObl7XF
-NeJX8gYg1J72bzRbf2tz2VH0hnVHK4vegp/bgU+2lgHLIZIZledMqu/6Wlas
-T4InawriHje/r5trn/quDs7We9ARz7mem4vwecZkc0EZIWc/ngzshZpYoFDJ
-rnl///Yoywgt5uA93bR0Ydr37lr4o9OjKAKyeDu6ZBMODlPaq6+am5j/5/Vz
-f2Mw6ReqjwUZdq6cGzT487x/bgoi/vryBfEz+u4m4T9+9ehRcIEmAgLiIblW
-fR5Cv7YLYKXIsS2SGtqqm+dP3jwzP0cAGUNyunf0sHWYwLpYU0ELQ2hdKzjw
-lF2BNwtlGo4FvvoBx8ztyNbyPEOWr4n2/LD/coL5rNx5TfFHcM/WwZnVrI3g
-YF3TMVy87bBhDP6TAyOanrs6T1uIwbLv+mOaK+Z1/Cg9L8RFzrKJK4ux9+4t
-lBuF3L0QVZ6RnJ8zW99Di3N7xWMDEF6QbkoJQd5AtuCJv7fSGNTlpXE87i76
-oNrJ3BRLS1cRYi7Xt/fi4YKSTyZ4WzsShUVZkX864IIq5Bmwub6V+hw4nokL
-LPn6D2jLmq2PZQAA
+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
+PFE3uJz+Px7u/OdsaQAA
 
 -->
 
