@@ -5,15 +5,15 @@
 CCAMP Working Group                                              I. Busi
 Internet-Draft                                       Huawei Technologies
 Intended status: Standards Track                                  A. Guo
-Expires: 16 March 2023                            Futurewei Technologies
+Expires: 13 April 2023                            Futurewei Technologies
                                                               S. Belotti
                                                                    Nokia
-                                                       12 September 2022
+                                                         10 October 2022
 
 
     A YANG Data Model for requesting Path Computation in an Optical
                         Transport Network (OTN)
-              draft-gbb-ccamp-otn-path-computation-yang-02
+             draft-ietf-ccamp-otn-path-computation-yang-00
 
 Abstract
 
@@ -39,7 +39,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 March 2023.
+   This Internet-Draft will expire on 13 April 2023.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Busi, et al.              Expires 16 March 2023                 [Page 1]
+Busi, et al.              Expires 13 April 2023                 [Page 1]
 
-Internet-Draft        YANG for OTN Path Computation       September 2022
+Internet-Draft        YANG for OTN Path Computation         October 2022
 
 
    and restrictions with respect to this document.  Code Components
@@ -66,22 +66,23 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-     1.1.  Terminology and Notations . . . . . . . . . . . . . . . .   2
+     1.1.  Terminology and Notations . . . . . . . . . . . . . . . .   3
      1.2.  Tree Diagram  . . . . . . . . . . . . . . . . . . . . . .   3
      1.3.  Prefix in Data Node Names . . . . . . . . . . . . . . . .   3
    2.  YANG Data Model for OTN Path Computation  . . . . . . . . . .   4
      2.1.  YANG Model Overview . . . . . . . . . . . . . . . . . . .   4
-     2.2.  Bandwidth Augmentation  . . . . . . . . . . . . . . . . .   4
+     2.2.  Bandwidth Augmentation  . . . . . . . . . . . . . . . . .   5
      2.3.  Label Augmentations . . . . . . . . . . . . . . . . . . .   5
    3.  OTN Path Computation Tree Diagram . . . . . . . . . . . . . .   5
-   4.  YANG Model for OTN Path Computation . . . . . . . . . . . . .   9
+   4.  YANG Model for OTN Path Computation . . . . . . . . . . . . .  10
    5.  Manageability Considerations  . . . . . . . . . . . . . . . .  16
    6.  Security Considerations . . . . . . . . . . . . . . . . . . .  16
-   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  16
+   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  17
    8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  17
      8.1.  Normative References  . . . . . . . . . . . . . . . . . .  17
      8.2.  Informative References  . . . . . . . . . . . . . . . . .  18
-   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  18
+   Appendix A.  Change Log . . . . . . . . . . . . . . . . . . . . .  19
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  19
    Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  19
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  19
 
@@ -101,18 +102,23 @@ Table of Contents
    obtain OTN detailed information from the controller and performing
    feasible path computation itself.
 
+
+
+
+
+
+
+
+Busi, et al.              Expires 13 April 2023                 [Page 2]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
 1.1.  Terminology and Notations
 
    Refer to [I-D.ietf-ccamp-otn-topo-yang] and
    [I-D.ietf-ccamp-layer1-types] for the OTN specific terms used in this
    document.
-
-
-
-Busi, et al.              Expires 16 March 2023                 [Page 2]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
 
    The following terms are defined in [RFC7950] and are not redefined
    here:
@@ -149,6 +155,21 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
    are prefixed using the standard prefix associated with the
    corresponding YANG imported modules, as shown in Table 1.
 
+
+
+
+
+
+
+
+
+
+
+Busi, et al.              Expires 13 April 2023                 [Page 3]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
            +==========+===========================+===========+
            | Prefix   | YANG module               | Reference |
            +==========+===========================+===========+
@@ -162,13 +183,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
            +----------+---------------------------+-----------+
 
              Table 1: Prefixes and corresponding YANG modules
-
-
-
-Busi, et al.              Expires 16 March 2023                 [Page 3]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
 
    RFC Editor Note: Please replace XXXX with the RFC number assigned to
    this document.  Please replace YYYY with the RFC number assigned to
@@ -198,6 +212,20 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
 
      Figure 1: Relationship between OTN and TE path computation models
 
+
+
+
+
+
+
+
+
+
+Busi, et al.              Expires 13 April 2023                 [Page 4]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
    The entities and Traffic Engineering (TE) attributes, such as
    requested path and tunnel attributes, defined in
    [I-D.ietf-teas-yang-path-computation], are still applicable when
@@ -216,15 +244,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
    te-bandwidth container with the OTN technology-specific attributes
    using the otn-link-bandwidth and otn-path-bandwidth groupings defined
    in [I-D.ietf-ccamp-layer1-types].
-
-
-
-
-
-Busi, et al.              Expires 16 March 2023                 [Page 4]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
 
 2.3.  Label Augmentations
 
@@ -255,6 +274,14 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
                 |  +-- nominal-bit-rate        union
                 +--:(cbr)
                 |  +-- client-type             identityref
+
+
+
+Busi, et al.              Expires 13 April 2023                 [Page 5]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
                 +--:(gfp-n-k)
                 |  +-- gfp-n                   uint8
                 |  +-- gfp-k?                  gfp-k
@@ -274,14 +301,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
                 +--:(generic)
                 |  +-- nominal-bit-rate        union
                 +--:(cbr)
-
-
-
-Busi, et al.              Expires 16 March 2023                 [Page 5]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
-
                 |  +-- client-type             identityref
                 +--:(gfp-n-k)
                 |  +-- gfp-n                   uint8
@@ -311,6 +330,14 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
                 |  +--ro flexe-client            flexe-client-rate
                 +--:(flexe-aware)
                 |  +--ro flexe-aware-n           uint16
+
+
+
+Busi, et al.              Expires 13 April 2023                 [Page 6]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
                 +--:(packet)
                    +--ro opuflex-payload-rate    union
      augment /te:tunnels-path-compute/te:input/te:path-compute-info
@@ -330,14 +357,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
           +-- odu-type-list*   identityref
           +-- priority?        uint8
      augment /te:tunnels-path-compute/te:input/te:path-compute-info
-
-
-
-Busi, et al.              Expires 16 March 2023                 [Page 6]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
-
                /te-pc:path-request/te-pc:optimizations/te-pc:algorithm
                /te-pc:metric/te-pc:optimization-metric
                /te-pc:explicit-route-exclude-objects
@@ -367,6 +386,14 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
           +-- otn
              +-- tpn?       otn-tpn
              +-- tsg?       identityref
+
+
+
+Busi, et al.              Expires 13 April 2023                 [Page 7]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
              +-- ts-list?   string
      augment /te:tunnels-path-compute/te:input/te:path-compute-info
                /te-pc:path-request/te-pc:explicit-route-objects-always
@@ -386,14 +413,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
           +-- otn
              +-- (range-type)?
                 +--:(trib-port)
-
-
-
-Busi, et al.              Expires 16 March 2023                 [Page 7]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
-
                 |  +-- tpn?   otn-tpn
                 +--:(trib-slot)
                    +-- ts?    otn-ts
@@ -423,6 +442,14 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
                /te-pc:path-request/te-pc:path-out-segment
                /te-pc:label-restrictions/te-pc:label-restriction
                /te-pc:label-start/te-pc:te-label/te-pc:technology:
+
+
+
+Busi, et al.              Expires 13 April 2023                 [Page 8]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
        +--:(otn)
           +-- otn
              +-- (range-type)?
@@ -442,14 +469,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
                 +--:(trib-slot)
                    +-- ts?    otn-ts
      augment /te:tunnels-path-compute/te:input/te:path-compute-info
-
-
-
-Busi, et al.              Expires 16 March 2023                 [Page 8]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
-
                /te-pc:path-request/te-pc:path-out-segment
                /te-pc:label-restrictions/te-pc:label-restriction
                /te-pc:label-step/te-pc:technology:
@@ -479,6 +498,14 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
           +--ro otn
              +--ro tpn?       otn-tpn
              +--ro tsg?       identityref
+
+
+
+Busi, et al.              Expires 13 April 2023                 [Page 9]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
              +--ro ts-list?   string
 
                 Figure 2: OTN path computation tree diagram
@@ -498,13 +525,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
        "I-D.ietf-teas-yang-path-computation-14: Yang model
        for requesting Path Computation.";
      }
-
-
-
-Busi, et al.              Expires 16 March 2023                 [Page 9]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
 
      import ietf-te {
        prefix "te";
@@ -534,6 +554,14 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
                   <mailto:italo.busi@huawei.com>
 
         Editor:   Sergio Belotti
+
+
+
+Busi, et al.              Expires 13 April 2023                [Page 10]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
                   <mailto:sergio.belotti@nokia.com>";
 
      description
@@ -554,14 +582,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
        (https://trustee.ietf.org/license-info).
 
        This version of this YANG module is part of RFC XXXX; see
-
-
-
-Busi, et al.              Expires 16 March 2023                [Page 10]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
-
        the RFC itself for full legal notices.";
 
      revision "2022-09-12" {
@@ -591,6 +611,13 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
        }
      }
 
+
+
+Busi, et al.              Expires 13 April 2023                [Page 11]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
      augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
            + "te-pc:tunnel-attributes/te-pc:te-bandwidth/"
            + "te-pc:technology" {
@@ -610,14 +637,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
          "Augment TE bandwidth of the computed path properties.";
        case otn {
          uses l1-types:otn-path-bandwidth;
-
-
-
-Busi, et al.              Expires 16 March 2023                [Page 11]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
-
        }
      }
 
@@ -647,6 +666,14 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
       * Augment TE label.
       */
 
+
+
+
+Busi, et al.              Expires 13 April 2023                [Page 12]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
      augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
            + "te-pc:path-request/te-pc:optimizations/te-pc:algorithm/"
            + "te-pc:metric/te-pc:optimization-metric/"
@@ -666,14 +693,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
            + "te-pc:path-request/te-pc:optimizations/te-pc:algorithm/"
            + "te-pc:metric/te-pc:optimization-metric/"
            + "te-pc:explicit-route-include-objects/"
-
-
-
-Busi, et al.              Expires 16 March 2023                [Page 12]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
-
            + "te-pc:route-object-include-object/te-pc:type/te-pc:label/"
            + "te-pc:label-hop/te-pc:te-label/te-pc:technology" {
        description
@@ -703,6 +722,14 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
            + "te-pc:label/te-pc:label-hop/te-pc:te-label/"
            + "te-pc:technology" {
        description
+
+
+
+Busi, et al.              Expires 13 April 2023                [Page 13]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
          "Augment TE label hop for the explicit route objects included
          or excluded by the path computation of the requested path.";
        case otn {
@@ -721,14 +748,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
          uses l1-types:otn-label-start-end;
        }
      }
-
-
-
-
-Busi, et al.              Expires 16 March 2023                [Page 13]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
 
      augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
            + "te-pc:path-request/te-pc:path-in-segment/"
@@ -759,6 +778,14 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
            + "te-pc:label-restrictions/te-pc:label-restriction/"
            + "te-pc:label-start/te-pc:te-label/te-pc:technology" {
        description
+
+
+
+Busi, et al.              Expires 13 April 2023                [Page 14]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
          "Augment TE label range start for the egress segment
          of the requested path.";
        case otn {
@@ -777,14 +804,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
          uses l1-types:otn-label-start-end;
        }
      }
-
-
-
-
-Busi, et al.              Expires 16 March 2023                [Page 14]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
 
      augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
            + "te-pc:path-request/te-pc:path-out-segment/"
@@ -815,6 +834,14 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
            + "te-pc:computed-paths-properties/"
            + "te-pc:computed-path-properties/te-pc:path-properties/"
            + "te-pc:path-route-objects/te-pc:path-route-object/"
+
+
+
+Busi, et al.              Expires 13 April 2023                [Page 15]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
            + "te-pc:type/te-pc:label/"
            + "te-pc:label-hop/te-pc:te-label/te-pc:technology" {
        description
@@ -828,19 +855,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
    <CODE ENDS>
 
                  Figure 3: OTN path computation YANG module
-
-
-
-
-
-
-
-
-
-Busi, et al.              Expires 16 March 2023                [Page 15]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
 
 5.  Manageability Considerations
 
@@ -875,6 +889,15 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
    possible vulnerabilities, will be discussed further in future
    versions of this document.
 
+
+
+
+
+Busi, et al.              Expires 13 April 2023                [Page 16]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
 7.  IANA Considerations
 
    This document registers the following URIs in the "ns" subregistry
@@ -886,17 +909,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
 
    This document registers the following YANG module in the "YANG Module
    Names" registry [RFC7950].
-
-
-
-
-
-
-
-Busi, et al.              Expires 16 March 2023                [Page 16]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
 
      name:      ietf-otn-path-computation
      namespace: urn:ietf:params:xml:ns:yang:ietf-otn-path-computation
@@ -915,7 +927,7 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
               types-14.txt>.
 
    [I-D.ietf-teas-yang-path-computation]
-              Busi, I., Belotti, S., Dios, O. G. D., Sharma, A., and D.
+              Busi, I., Belotti, S., de Dios, O. G., Sharma, A., and D.
               Ceccarelli, "A YANG Data Model for requesting path
               computation", Work in Progress, Internet-Draft, draft-
               ietf-teas-yang-path-computation-18, 22 March 2022,
@@ -924,7 +936,7 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
 
    [I-D.ietf-teas-yang-te]
               Saad, T., Gandhi, R., Liu, X., Beeram, V. P., Bryskin, I.,
-              and O. G. D. Dios, "A YANG Data Model for Traffic
+              and O. G. de Dios, "A YANG Data Model for Traffic
               Engineering Tunnels, Label Switched Paths and Interfaces",
               Work in Progress, Internet-Draft, draft-ietf-teas-yang-te-
               30, 11 July 2022, <https://www.ietf.org/archive/id/draft-
@@ -933,6 +945,14 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
    [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,
               DOI 10.17487/RFC3688, January 2004,
               <https://www.rfc-editor.org/info/rfc3688>.
+
+
+
+
+Busi, et al.              Expires 13 April 2023                [Page 17]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
 
    [RFC6241]  Enns, R., Ed., Bjorklund, M., Ed., Schoenwaelder, J., Ed.,
               and A. Bierman, Ed., "Network Configuration Protocol
@@ -946,13 +966,6 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
    [RFC7950]  Bjorklund, M., Ed., "The YANG 1.1 Data Modeling Language",
               RFC 7950, DOI 10.17487/RFC7950, August 2016,
               <https://www.rfc-editor.org/info/rfc7950>.
-
-
-
-Busi, et al.              Expires 16 March 2023                [Page 17]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
 
    [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
               Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
@@ -978,9 +991,25 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
 
 8.2.  Informative References
 
+   [I-D.draft-gbb-ccamp-optical-path-computation-yang]
+              Busi, I., Guo, A., and S. Belotti, "YANG Data Models for
+              requesting Path Computation in Optical Networks", Work in
+              Progress, Internet-Draft, draft-gbb-ccamp-optical-path-
+              computation-yang-02, 12 September 2022,
+              <https://www.ietf.org/archive/id/draft-gbb-ccamp-optical-
+              path-computation-yang-02.txt>.
+
    [I-D.ietf-ccamp-otn-topo-yang]
-              Zheng, H., Busi, I., Liu, X., Belotti, S., and O. G. D.
+              Zheng, H., Busi, I., Liu, X., Belotti, S., and O. G. de
               Dios, "A YANG Data Model for Optical Transport Network
+
+
+
+Busi, et al.              Expires 13 April 2023                [Page 18]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
+
               Topology", Work in Progress, Internet-Draft, draft-ietf-
               ccamp-otn-topo-yang-15, 11 July 2022,
               <https://www.ietf.org/archive/id/draft-ietf-ccamp-otn-
@@ -995,6 +1024,22 @@ Internet-Draft        YANG for OTN Path Computation       September 2022
               <https://www.ietf.org/archive/id/draft-ietf-teas-actn-poi-
               applicability-07.txt>.
 
+Appendix A.  Change Log
+
+   The initial YANG data model requesting path computation in optical
+   networks was draft-gbb-ccamp-optical-path-computation-yang-00.  This
+   document included path computation request capabilities for WSON,
+   Flexi-Grid and OTN technologies.  However, it was proposed at IETF
+   113 (March 25, 2022) to split the initial document into separate
+   documents for WDM (WSON and Flexi-Grid) and OTN technologies, as each
+   technology may be developed and implemented separately.
+
+   The WDM technology capabilities were kept in
+   [I-D.draft-gbb-ccamp-optical-path-computation-yang], and the OTN
+   capabilities were moved into this document.
+
+   Editors note, please remove this appendix before publication.
+
 Acknowledgments
 
    The authors of this document would like to thank the authors of
@@ -1002,13 +1047,6 @@ Acknowledgments
    and requirements to trigger this work.
 
    This document was prepared using kramdown.
-
-
-
-Busi, et al.              Expires 16 March 2023                [Page 18]
-
-Internet-Draft        YANG for OTN Path Computation       September 2022
-
 
 Contributors
 
@@ -1018,6 +1056,15 @@ Contributors
 
 
 Authors' Addresses
+
+
+
+
+
+Busi, et al.              Expires 13 April 2023                [Page 19]
+
+Internet-Draft        YANG for OTN Path Computation         October 2022
+
 
    Italo Busi
    Huawei Technologies
@@ -1061,4 +1108,13 @@ Authors' Addresses
 
 
 
-Busi, et al.              Expires 16 March 2023                [Page 19]
+
+
+
+
+
+
+
+
+
+Busi, et al.              Expires 13 April 2023                [Page 20]

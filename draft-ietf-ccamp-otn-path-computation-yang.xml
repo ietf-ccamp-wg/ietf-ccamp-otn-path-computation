@@ -13,7 +13,7 @@
 
 <?rfc comments="yes"?>
 
-<rfc ipr="trust200902" docName="draft-gbb-ccamp-otn-path-computation-yang-02" category="std" consensus="true" submissionType="IETF" tocInclude="true" sortRefs="true" symRefs="true">
+<rfc ipr="trust200902" docName="draft-ietf-ccamp-otn-path-computation-yang-00" category="std" consensus="true" submissionType="IETF" tocInclude="true" sortRefs="true" symRefs="true">
   <front>
     <title abbrev="YANG for OTN Path Computation">A YANG Data Model for requesting Path Computation in an Optical Transport Network (OTN)</title>
 
@@ -36,7 +36,7 @@
       </address>
     </author>
 
-    <date year="2022" month="September" day="12"/>
+    <date year="2022" month="October" day="10"/>
 
     
     <workgroup>CCAMP Working Group</workgroup>
@@ -751,20 +751,20 @@ considered sensitive or vulnerable in some network environments. It is thus esse
 <reference anchor='I-D.ietf-teas-yang-path-computation'>
    <front>
       <title>A YANG Data Model for requesting path computation</title>
-      <author fullname='Italo Busi'>
-	 <organization>Huawei Technologies</organization>
+      <author fullname='Italo Busi' initials='I.' surname='Busi'>
+         <organization>Huawei Technologies</organization>
       </author>
-      <author fullname='Sergio Belotti'>
-	 <organization>Nokia</organization>
+      <author fullname='Sergio Belotti' initials='S.' surname='Belotti'>
+         <organization>Nokia</organization>
       </author>
-      <author fullname='Oscar Gonzalez de Dios'>
-	 <organization>Telefonica</organization>
+      <author fullname='Oscar Gonzalez de Dios' initials='O. G.' surname='de Dios'>
+         <organization>Telefonica</organization>
       </author>
-      <author fullname='Anurag Sharma'>
-	 <organization>Google</organization>
+      <author fullname='Anurag Sharma' initials='A.' surname='Sharma'>
+         <organization>Google</organization>
       </author>
-      <author fullname='Daniele Ceccarelli'>
-	 <organization>Ericsson</organization>
+      <author fullname='Daniele Ceccarelli' initials='D.' surname='Ceccarelli'>
+         <organization>Ericsson</organization>
       </author>
       <date day='22' month='March' year='2022'/>
       <abstract>
@@ -798,11 +798,11 @@ considered sensitive or vulnerable in some network environments. It is thus esse
 <reference anchor='I-D.ietf-ccamp-layer1-types'>
    <front>
       <title>A YANG Data Model for Layer 1 Types</title>
-      <author fullname='Haomian Zheng'>
-	 <organization>Huawei Technologies</organization>
+      <author fullname='Haomian Zheng' initials='H.' surname='Zheng'>
+         <organization>Huawei Technologies</organization>
       </author>
-      <author fullname='Italo Busi'>
-	 <organization>Huawei Technologies</organization>
+      <author fullname='Italo Busi' initials='I.' surname='Busi'>
+         <organization>Huawei Technologies</organization>
       </author>
       <date day='11' month='July' year='2022'/>
       <abstract>
@@ -867,23 +867,23 @@ considered sensitive or vulnerable in some network environments. It is thus esse
 <reference anchor='I-D.ietf-teas-yang-te'>
    <front>
       <title>A YANG Data Model for Traffic Engineering Tunnels, Label Switched Paths and Interfaces</title>
-      <author fullname='Tarek Saad'>
-	 <organization>Juniper Networks</organization>
+      <author fullname='Tarek Saad' initials='T.' surname='Saad'>
+         <organization>Juniper Networks</organization>
       </author>
-      <author fullname='Rakesh Gandhi'>
-	 <organization>Cisco Systems Inc</organization>
+      <author fullname='Rakesh Gandhi' initials='R.' surname='Gandhi'>
+         <organization>Cisco Systems Inc</organization>
       </author>
-      <author fullname='Xufeng Liu'>
-	 <organization>IBM Corporation</organization>
+      <author fullname='Xufeng Liu' initials='X.' surname='Liu'>
+         <organization>IBM Corporation</organization>
       </author>
-      <author fullname='Vishnu Pavan Beeram'>
-	 <organization>Juniper Networks</organization>
+      <author fullname='Vishnu Pavan Beeram' initials='V. P.' surname='Beeram'>
+         <organization>Juniper Networks</organization>
       </author>
-      <author fullname='Igor Bryskin'>
-	 <organization>Individual</organization>
+      <author fullname='Igor Bryskin' initials='I.' surname='Bryskin'>
+         <organization>Individual</organization>
       </author>
-      <author fullname='Oscar Gonzalez de Dios'>
-	 <organization>Telefonica</organization>
+      <author fullname='Oscar Gonzalez de Dios' initials='O. G.' surname='de Dios'>
+         <organization>Telefonica</organization>
       </author>
       <date day='11' month='July' year='2022'/>
       <abstract>
@@ -1003,20 +1003,20 @@ considered sensitive or vulnerable in some network environments. It is thus esse
 <reference anchor='I-D.ietf-ccamp-otn-topo-yang'>
    <front>
       <title>A YANG Data Model for Optical Transport Network Topology</title>
-      <author fullname='Haomian Zheng'>
-	 <organization>Huawei Technologies</organization>
+      <author fullname='Haomian Zheng' initials='H.' surname='Zheng'>
+         <organization>Huawei Technologies</organization>
       </author>
-      <author fullname='Italo Busi'>
-	 <organization>Huawei Technologies</organization>
+      <author fullname='Italo Busi' initials='I.' surname='Busi'>
+         <organization>Huawei Technologies</organization>
       </author>
-      <author fullname='Xufeng Liu'>
-	 <organization>IBM Corporation</organization>
+      <author fullname='Xufeng Liu' initials='X.' surname='Liu'>
+         <organization>IBM Corporation</organization>
       </author>
-      <author fullname='Sergio Belotti'>
-	 <organization>Nokia</organization>
+      <author fullname='Sergio Belotti' initials='S.' surname='Belotti'>
+         <organization>Nokia</organization>
       </author>
-      <author fullname='Oscar Gonzalez de Dios'>
-	 <organization>Telefonica</organization>
+      <author fullname='Oscar Gonzalez de Dios' initials='O. G.' surname='de Dios'>
+         <organization>Telefonica</organization>
       </author>
       <date day='11' month='July' year='2022'/>
       <abstract>
@@ -1037,23 +1037,52 @@ considered sensitive or vulnerable in some network environments. It is thus esse
 </reference>
 
 
+<reference anchor='I-D.draft-gbb-ccamp-optical-path-computation-yang'>
+   <front>
+      <title>YANG Data Models for requesting Path Computation in Optical Networks</title>
+      <author fullname='Italo Busi' initials='I.' surname='Busi'>
+         <organization>Huawei Technologies</organization>
+      </author>
+      <author fullname='Aihua Guo' initials='A.' surname='Guo'>
+         <organization>Futurewei Technologies</organization>
+      </author>
+      <author fullname='Sergio Belotti' initials='S.' surname='Belotti'>
+         <organization>Nokia</organization>
+      </author>
+      <date day='12' month='September' year='2022'/>
+      <abstract>
+	 <t>   This document provides a mechanism to request path computation in
+   Optical Networks (WSON and Flexi-grid) by augmenting the Remote
+   Procedure Calls (RPCs) defined in RFC YYYY.
+
+   [RFC EDITOR NOTE: Please replace RFC YYYY with the RFC number of
+   draft-ietf-teas-yang-path-computation once it has been published.
+
+	 </t>
+      </abstract>
+   </front>
+   <seriesInfo name='Internet-Draft' value='draft-gbb-ccamp-optical-path-computation-yang-02'/>
+   <format target='https://www.ietf.org/archive/id/draft-gbb-ccamp-optical-path-computation-yang-02.txt' type='TXT'/>
+</reference>
+
+
 <reference anchor='I-D.ietf-teas-actn-poi-applicability'>
    <front>
       <title>Applicability of Abstraction and Control of Traffic Engineered Networks (ACTN) to Packet Optical Integration (POI)</title>
-      <author fullname='Fabio Peruzzini'>
-	 <organization>TIM</organization>
+      <author fullname='Fabio Peruzzini' initials='F.' surname='Peruzzini'>
+         <organization>TIM</organization>
       </author>
-      <author fullname='Jean-Francois Bouquier'>
-	 <organization>Vodafone</organization>
+      <author fullname='Jean-Francois Bouquier' initials='J.' surname='Bouquier'>
+         <organization>Vodafone</organization>
       </author>
-      <author fullname='Italo Busi'>
-	 <organization>Huawei</organization>
+      <author fullname='Italo Busi' initials='I.' surname='Busi'>
+         <organization>Huawei</organization>
       </author>
-      <author fullname='Daniel King'>
-	 <organization>Old Dog Consulting</organization>
+      <author fullname='Daniel King' initials='D.' surname='King'>
+         <organization>Old Dog Consulting</organization>
       </author>
-      <author fullname='Daniele Ceccarelli'>
-	 <organization>Ericsson</organization>
+      <author fullname='Daniele Ceccarelli' initials='D.' surname='Ceccarelli'>
+         <organization>Ericsson</organization>
       </author>
       <date day='10' month='July' year='2022'/>
       <abstract>
@@ -1082,6 +1111,15 @@ considered sensitive or vulnerable in some network environments. It is thus esse
     </references>
 
 
+<section anchor="change-log"><name>Change Log</name>
+
+<t>The initial YANG data model requesting path computation in optical networks was draft-gbb-ccamp-optical-path-computation-yang-00. This document included path computation request capabilities for WSON, Flexi-Grid and OTN technologies. However, it was proposed at IETF 113 (March 25, 2022) to split the initial document into separate documents for WDM (WSON and Flexi-Grid) and OTN technologies, as each technology may be developed and implemented separately.</t>
+
+<t>The WDM technology capabilities were kept in <xref target="I-D.draft-gbb-ccamp-optical-path-computation-yang"/>, and the OTN capabilities were moved into this document.</t>
+
+<t>Editors note, please remove this appendix before publication.</t>
+
+</section>
 <section numbered="false" anchor="acknowledgments"><name>Acknowledgments</name>
 
 <t>The authors of this document would like to thank the authors of <xref target="I-D.ietf-teas-actn-poi-applicability"/> for having identified the gap and requirements to trigger this work.</t>
@@ -1103,114 +1141,119 @@ considered sensitive or vulnerable in some network environments. It is thus esse
   </back>
 
 <!-- ##markdown-source:
-H4sIAAAAAAAAA+1dbXMbN5L+zir9Bxzz4aREQ72s1+swm8SKJDuqtWWXpats
-bm/rCpwBSZyGg7kBRjLP9v72624AQ3A4Q1IyLceJWJWUiUE3Gv2GxvABFEXR
-VidWicxGfVaaYfRkq7PVMdKkos+O2K9H58/ZCTecvVSJSNlQFawQ/1sKbYCC
-veZmzI7VJC8NN1JlTGaMZ+xVbmTMU3ZZ8EznqjDsXJgbVVyx7VeX5zs4Ah8M
-CnHdtwMgV3iwwG6rk6g44xMQJSn40ESjwSCKYz7JI2WyKIfuUTzrHk15Nor2
-D7c6uhxMpNbQZqY5UJ+dXj7b6qAEo0KVeZ8dHx+9fM1+gQacxnNsBDVwI0aq
-mPaZNslWR+ZFn5mi1OZwf/9bZAuMDc+S/+apyoDrVOitTi777B9GxbtMw0QL
-MdTwr+nE/gOEm4jM6H/SlEszVkV/q8NYhP9jzE7tzAA/9lOppW1VBZji55Lf
-CMkuRTzOVKpGEsfCp2LCZdpnEol6AyB6OqauPRhrgfWRhIfseakCzs9KUxZi
-KXOOZKNS9aQww6cjbGxkfyGKkQTRRaqMCaU/V1eSz7HU1LU3sF2fZtjB8kT3
-y0whB6Vp0s4JzyQ43t/ATsEAr9KEnagROEumy9RUD91oCRE9VWmSqBEM0yuv
-cKAoihgfaFPw2OD3y7HUDFysRCOxvFDXMhGacTYBzQALPWFGeX9n6G4svq2z
-s8GU8XKEI6CrmbFgb8REGcFeFyoWCdiCHfM01Wz7zetjvcMSMZSZSJD7m2fH
-7Ff49FDY//oHfj09Obt89Yadv7o87bPXqeBagIB5ymNRdWc3EiSlkaAlKycD
-UTA1hGiiIEKjRgYobbzUo4ipDHhJw8Zcs4EQGcvLQSr1WCQ9r8SJTJJU4Lev
-2BkYTyVlbAN2q/Pu3b+dRSe9FaN8+AAT1TGYHRR+JaashInEMBuImpuxAKVw
-FqcS7ZIJkejAEFudMktEkU5Rnxcn54z8R6WpKDSlkrqheiAjROdEgBJQLTBS
-MBo0LOEIvTL/Fay91Vlh7t6iX1mDoltRskswm04wm+JMZTz27kEWG4lMFDJe
-zKzgHKFrrKvlXesMmF2ND/dppHMRyyEM44amzpoULAsYYJnXwzNQSaAw5D2v
-tB67JC3TLGHiaapuIP95gwIHaBcjSLcN7Lm+ImujNtrNgrNSJTrpNYWVYmpg
-OCgGpUkE/DMlRYE/TCzjYaEmxDTgAsmc5aLATshlCIqUg7RBKmm0SIdk3K++
-gsSJ/UmVxOJceQ1iBwYBPgTmINO7dz9WVpqtW0bliuwFQYDki71SPhXFQYSL
-l/7wAVmiX6PwOL3Kegbk0OjL5BIm9LoeEuF/YAkgRguQnoiCQ3jN+xIkir98
-++d9JxA+z5RBcvAG1xGDsm/n9zVzpqy+Qnq/FkX11blV9X3m8/NNGTTZlrXF
-fHz46GBezJmMyKgmpsqGclQW1oo45kxkg/43a0IJTGBY1LhLUShSLXY1k5hs
-wEFBNCQPlVj5SSEEO5F8VPCJHeSIaTnJU7AezAma8zElE8jgBQRM5jMwpalg
-NBzMmdmOReVPHEG9IUAZ1D80vp3NRMAaBqI7dlCVDBQKntkkiJwSKxzNZkHV
-T/70KJjMayhp5Ft8SvXgOcjFzmGJ1nZmZzUH3KX1W+Pglak1mU3B6EU4OTX4
-HxEbKkHQpDkNBIJAceNWTCq7eJG4Z4xrrWIJ9kuqtQ6pY1WAGnOVJZXFQNuQ
-o6EfDFWmmO9hVdNjdZNVujR8ELkxtZvuez9b+3lveVkWrPHz3ga9gLUTyVMX
-vO4ZhXYY1IvktLz/J3z+ifRGzD10ab556ID+b/Bx9OAeC/SLa32NHqsHorf+
-NU/fVHIH0392/Hf4VByhEOizr0LdMtpVfN997b+jMzSYzFmq+wEtQTVPIqE0
-xCyLkV0remjQpoIHfESOMruY1VNjjUdr0RTyWHfFXWSPVr0V+6ZFYJEtGvuO
-Uhsxz3CiroVVEuRTYSO+ce/XtEtjLkFQf9v1FSwG11Lc2GJI1JNnfRuJXBeX
-3FlG4ugrc7WKz2mbL5eC9ABUsHhYv49dZvgXfKBPLGXEC2M3HfXPN1Hr5xva
-wfRnC6QjuTytprI0Xt/ffsRmirmPYmt0ahl6Q32WzCCYAjpKxWdJVrrTGGha
-m7VmVvc5641IbYU3ljlsiswN7otQGsxhYLwF77VFgs1hGAG4/TPSJT3YOwyx
-fjvNRuCgYHWIge3L0x3Gjd0I4zqlS9waaB8n4Mc0CNKbMssgisLed/P1ApdW
-mQKrHIqSmGPtC7uvbGVwkhTjqsIPRp9LtbCXTKe+XsUVAEh4AukceEDZ07or
-qSa2F1Twu0FBMOvRNvOWHBrkI7ect3tR66ywqgSpoGJx+xS/BXzJMz4S1AcT
-p4ZlS7CjIh5LmCa+dmHb5y9PjsJNPm2YbbF16CREF6R9gogGoOgbmYw/uBz7
-k/0O1jgKsqGfVqOpbMZ1CYc2YySyiuOyoHpF+2Q6G49YZLifwqK+WmNW2ysw
-Ec4gldlVwNNWf07Ts2Z6Jwdkt7dloKmUD0Tq1fQCv8ypSG9IRzRMBCULzJhe
-ebBU4iuJ5bvsBv1sdUhBlh0EqIjQ1Std3FoVL8HVYBUvdmdxua7RSQj7Go4s
-zu5k8HBCUK8XJhJZsstmjWOVVx7gu4l8A9b3GyFbtjSWKPWdWLiy+10Uvpu8
-ocXfJips9hskr616IROIvCqd9DANN9YQlrLfTtrpVFtqtgdFsM3/OuwnsF1m
-8C/8R/iA/GpuOdyj3YHt5BK9awozQNXkzd/vuEW0vw1C7nRmqyqatDO3zjKY
-Etnqx8YaQCa0Hk5hJ1Cj2wbCYSreEvHOj/PLOI3t6qSd+UfvLXmmYP/O02gg
-DUTVbMdUZqjGRWbxoGhmZN9vkBRrSF7JNsyjLLpqZkkPG5RRysw8aaW4atAg
-tTcMj4oTkRW9WYawR/g4bCfFtXLnN1A1LGNOHeYmihM8eNzAMefxlahLypwD
-5dYPcj5NFU8qa3pLbj4eLJcoKD4Wg6KR7iFCVkvOHiLktxghqjRNIQL1TZma
-Jme3L2u0cF8dQUKMgX2hclHgPqeJdq5z0Ddcj5ZzuOP6VKjF+MO2u0UgUH5c
-DAKDTUUhsNp8HALTW0eio9loLALPTxmNFfvNxCM61L2vWQ01HDXJLNKCBmui
-WtjE6LYHVUyx2m4lXNvs9iWIpPrOBh+FBEaP5v2kwVfDJTLCPdbX7f3yQqoC
-mium3k3vT+GQSB80fl8aV7mRE/l/PFQkT0co0XjSxGMiUL0N1JF90kQj3uIr
-MczPCsUTb+O0TETkfqxqXBupo+1Q6+8XK1BtaPh2V4HN8mzNo6aPqzZNnnlb
-0QuTfKHDzEPaa0+jyTGwIzpsNvo9W1xmt7P4fP8Hi3+cxWvGcEaIeHrDp+tH
-n+3+YIvPaQsfF84mgTFaDbDCGBvchX/hltlosddOTe9zNxoR27M6pXH/hO9g
-IoRuNG+kndkWTTZHr1PVsnc2+sfK5Pp3ZiyRJQ+m+jJMhT+APBjn8264HrLe
-78NaD2nvy7HVQ95baR09zeJxoTK3ba0q8ZV7UtelbdNTL62ba+kvf9Pzhf2y
-YYMx3F61PWg02Aojb2j/1PI7yipDY5c1TE3dasZuRuURYsND8xoBPSF2o7vV
-gXUc8VkRQtK/77ZDNJDMYvYCbAmd1AggscvRsBXAA8k8tmMJyOwdQhUJoXct
-CjyxyA56B99hI+Hnc0T6dssi6yML8AZE6/ffTtJ+pvtI1m9l3SUuDjHftZPB
-Nmy1sPh2nOk7C6D0xOQilh8eCbmWKGiU4M8b3cP9w4No/9to//Gsg0PCO1hp
-dw04YnTwqM9+hSf+mAgSrjht2rMDfmia0uIMlop/GB3uL4jvQaRN8oNGDr5t
-OyHr8J2ePoR5Xtp0RUCos8yIYggG1j3WOpW5UwO1SflTBqsVv4ih6nvMb/MU
-XmBXdsAusW9NPFWMuF+X/ECnl8+aDtVaOkKWxQ7t3P3lOftFDPrsr2Njct3f
-20M8FZ7JvBIFSduDAfZuRnsk9N4PTk4gewG5oc/YX/GQp1F9ev7UU/xghUN9
-03mBPs5t/vxr8PE8Wo66NjGrn9Nt4NZ4KreJV9PJ2QZ+badmf/BxbA8o5YEl
-6Oyhyzqzk4dNsHtL0JTDel7iywpKOCzTdFoBX1k77tUSLkW/9mwf+/9jlU8L
-ORobth3vMIjGQzqtDTFUalPhjGHl1ATinK0gdIQKTwbQseoKzxiDuD2wfJoy
-YosAajqdllSzeiMSqS3Ix2OZ8TyoxEOiZQHRgy0DmfGCToFNtDtEqQpL788e
-gmYQDenAyaD2HI+PGYJql4UuOZ113CV2uqTF2zJw2ktlLKDgcKfdPPwSwYS7
-7pwwZCr4/tPFCbg+9bX0WhgUDEQCmS+ExaE+6sVeBzMF/rtmL8SIp3jY2KY9
-7XWAgHZ7cpK6nzhws3u+7YOTDsALMQtMJzUVrjuBp8D8/Qrmz6PNwaxBPbAM
-4zM8qoLHdr6DibgZ+RMs9pwlOSp6HEtJ+EwZiVnSe71P4ZS9D3HxOTjs+uS4
-EBKYnjJpJDByAvbaU72X7Q6XH3geax0L9xLs7TF7xKnXbzjSBEmzBB6zsz27
-rMwTd27RZ3lgEZ5zRW+rn+iZJe+9r+3xx5PqTB5937OKtU/hsYNO49GGCnBj
-H7mevgTv3m3Hs9ed5bxvXH1xa0DqUpM3zcDHx/yRisob8EA4VrCeLcO0oKuz
-fP1F6Loj/BAsjp9CMesgE5sJN6mrhVMnn0FxbldXn2vTHq++rWvST+smb3Xv
-lbu8FoN8Cn/2gtl90EyEzRqoKTnQdtLCUcIk9DlSRe2VfSPZ+u+u1rVFiwKq
-8/qwUABXzZxUnsXyRLRonPo5ke8+ccZZ493gb0TB4pPrt9Xve5/DzZciYRqZ
-rILCNBItRz81ktwe/rTEhdZAYNzOg/D0kfeZUAneVfyEPQeajb+agLnpJHib
-D+1H6i+c6g7n2dy6wKimf0+1xW/GxWpwq9Uuthbe6stxMTedP4aLLUUUrZ9d
-lsK7Ppfp/dxq9rWyeha3Tih/RDO3I8fabbvip48NbZPWtrqP6qowKf4gpt9s
-Ob6EfC2Uxl2qTWL8cYX8+raqTkz/ASy2BlLjLvYCtg/W+hTx1YDVuFs8ifz+
-DCQ+d+7b3Fb58ye/u2yyv7xouheL3UPye7DWby/53ad97i31rYVRa9n73wqk
-1vYu/Z62bnjlbdPuzd4pO9OCfwMfQorutWz/0n8eWR8F1+wRv5E3AKH31H+j
-2fhbmw8tGDmEKS3FyAW/zoOeLPQB0RPRhBdXotDfd01Rii4LnqzAzz21P8f/
-JTrYp9uOug42Z+EhfCBTaaZ0Z7tMRBHey9V6D7sZq6T+w3t9JroC47m46M2P
-gSaobnSnaB5xuoPWXkCapvhbevjbQnUPtjfo4og3eGveQLBMxJDLeTHtsWdl
-gVwnqhC7DMEvTbL6eWj3O72NPvsN1qPRyMLEeBwMw1Ot6BZ0FH2AF5cXwuJx
-JqTYxCJMRFwWDuVi7/j3cAe9cEGw5esQJ+GNfIEW3C2gF8i2zWzzN+m13pfn
-lcVjVBb0uJbc4odOL49fnT9DkxsFlpi/4xmU/+b0orHHk326mpgASqm6wYvK
-PS8CuSHchC4OJqWAZj0Ig57uzu4vxHuFwVTTyKgIb2a2IKYFMmB3YdsuxgIm
-s31x8fPOTNrDmiyV2JUwP19evr64y7CXLy78nB89ehzcYejhJMdzV1wfkYqx
-kW6st8CV7fOj45c7s1udUblVlBl3U7S7Yt9WRc5U2ISoHRmXKS8qFYeGgURV
-2BUSYYmRv3BbEOQJgUrge3j9HL/mMqULJpu4VObF5cGFmI3OzNgre7c6F7Mb
-/Ol616Br3fNCr5zwKfgeXW9H/ouSCfinkdcCZbgu0wwYoWTS/ZmAzKlWZNcS
-FnaCRfXYmbFeVWqGXpwRoggmXv11gEpl9m8MzOQj8V+1izu7M9s5iCwqGWe3
-huZK29vpvcSYTiX9wQQXX4nUcUkBNrS5CEcYrsgFLs7Pjs6PGmKcOWhXFcuF
-GEkoMQvrOLMr2//jzZm/Wpx1M91F89u+xZTYIKDJPyfE2d9fvmC+R9c5558e
-P3kS3LSLhMC4z+4EgEbqN3YAhOIdWxRq38Iaz04vntMPuCBGn53vHe3Wym8Y
-F+3NMxK0AmP3vGS30M0cDs6pwEPJsY2uUbe1ilfI4n3yXh/2z6LQZ+nMK4k/
-QnsWaEyj2aoCGyvQXH/ekWaKwT8RMuDxlQPSW+iaSL7vDmEpE74qOIqvMnWT
-imTkcIc2r83hOedWEVWmCUvllbAxxrMrexfsjCD8SwqE1QZ7g9hKRv6CWypB
-IP3hyu7+dkQAJ6UrpXnu1mYqAuwFmjigXZ2tUJgeGv7Uxw3XqDNQc3V9/RVo
-PFE3uJz+Px7u/OdsaQAA
+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
 
 -->
 
