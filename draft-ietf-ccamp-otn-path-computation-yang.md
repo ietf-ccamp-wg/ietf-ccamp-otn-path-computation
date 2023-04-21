@@ -4,7 +4,7 @@ coding: utf-8
 title: A YANG Data Model for requesting Path Computation in an Optical Transport Network (OTN)
 
 abbrev: YANG for OTN Path Computation
-docname: draft-ietf-ccamp-otn-path-computation-yang-00
+docname: draft-ietf-ccamp-otn-path-computation-yang-01
 submissiontype: IETF
 workgroup: CCAMP Working Group
 category: std
