@@ -5,15 +5,15 @@
 CCAMP Working Group                                              I. Busi
 Internet-Draft                                       Huawei Technologies
 Intended status: Standards Track                                  A. Guo
-Expires: 23 October 2023                          Futurewei Technologies
+Expires: 22 April 2024                            Futurewei Technologies
                                                               S. Belotti
                                                                    Nokia
-                                                           21 April 2023
+                                                         20 October 2023
 
 
     A YANG Data Model for requesting Path Computation in an Optical
                         Transport Network (OTN)
-             draft-ietf-ccamp-otn-path-computation-yang-01
+             draft-ietf-ccamp-otn-path-computation-yang-02
 
 Abstract
 
@@ -39,7 +39,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 October 2023.
+   This Internet-Draft will expire on 22 April 2024.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Busi, et al.             Expires 23 October 2023                [Page 1]
+Busi, et al.              Expires 22 April 2024                 [Page 1]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
    and restrictions with respect to this document.  Code Components
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Busi, et al.             Expires 23 October 2023                [Page 2]
+Busi, et al.              Expires 22 April 2024                 [Page 2]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
 1.1.  Terminology and Notations
@@ -165,9 +165,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023                [Page 3]
+Busi, et al.              Expires 22 April 2024                 [Page 3]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
            +==========+===========================+===========+
@@ -221,9 +221,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023                [Page 4]
+Busi, et al.              Expires 22 April 2024                 [Page 4]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
    The entities and Traffic Engineering (TE) attributes, such as
@@ -277,9 +277,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023                [Page 5]
+Busi, et al.              Expires 22 April 2024                 [Page 5]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
                 +--:(gfp-n-k)
@@ -333,9 +333,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023                [Page 6]
+Busi, et al.              Expires 22 April 2024                 [Page 6]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
                 +--:(packet)
@@ -389,9 +389,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023                [Page 7]
+Busi, et al.              Expires 22 April 2024                 [Page 7]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
              +-- ts-list?   string
@@ -445,9 +445,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023                [Page 8]
+Busi, et al.              Expires 22 April 2024                 [Page 8]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
        +--:(otn)
@@ -501,9 +501,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023                [Page 9]
+Busi, et al.              Expires 22 April 2024                 [Page 9]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
              +--ro ts-list?   string
@@ -557,9 +557,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023               [Page 10]
+Busi, et al.              Expires 22 April 2024                [Page 10]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
                   <mailto:sergio.belotti@nokia.com>";
@@ -613,9 +613,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023               [Page 11]
+Busi, et al.              Expires 22 April 2024                [Page 11]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
      augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
@@ -669,9 +669,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023               [Page 12]
+Busi, et al.              Expires 22 April 2024                [Page 12]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
      augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
@@ -725,9 +725,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023               [Page 13]
+Busi, et al.              Expires 22 April 2024                [Page 13]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
          "Augment TE label hop for the explicit route objects included
@@ -781,9 +781,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023               [Page 14]
+Busi, et al.              Expires 22 April 2024                [Page 14]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
          "Augment TE label range start for the egress segment
@@ -837,9 +837,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023               [Page 15]
+Busi, et al.              Expires 22 April 2024                [Page 15]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
            + "te-pc:type/te-pc:label/"
@@ -893,9 +893,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023               [Page 16]
+Busi, et al.              Expires 22 April 2024                [Page 16]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
 7.  IANA Considerations
@@ -922,25 +922,25 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
    [I-D.ietf-ccamp-layer1-types]
               Zheng, H. and I. Busi, "A YANG Data Model for Layer 1
               Types", Work in Progress, Internet-Draft, draft-ietf-
-              ccamp-layer1-types-15, 23 November 2022,
+              ccamp-layer1-types-16, 10 July 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
-              layer1-types-15>.
+              layer1-types-16>.
 
    [I-D.ietf-teas-yang-path-computation]
-              Busi, I., Belotti, S., de Dios, O. G., Sharma, A., Shi,
-              Y., and D. Ceccarelli, "A YANG Data Model for requesting
-              path computation", Work in Progress, Internet-Draft,
-              draft-ietf-teas-yang-path-computation-20, 10 March 2023,
+              Busi, I., Belotti, S., de Dios, O. G., Sharma, A., and Y.
+              Shi, "A YANG Data Model for requesting path computation",
+              Work in Progress, Internet-Draft, draft-ietf-teas-yang-
+              path-computation-21, 7 July 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              yang-path-computation-20>.
+              yang-path-computation-21>.
 
    [I-D.ietf-teas-yang-te]
-              Saad, T., Gandhi, R., Liu, X., Beeram, V. P., Bryskin, I.,
-              and O. G. de Dios, "A YANG Data Model for Traffic
-              Engineering Tunnels, Label Switched Paths and Interfaces",
-              Work in Progress, Internet-Draft, draft-ietf-teas-yang-te-
-              32, 12 March 2023, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-teas-yang-te-32>.
+              Saad, T., Gandhi, R., Liu, X., Beeram, V. P., and I.
+              Bryskin, "A YANG Data Model for Traffic Engineering
+              Tunnels, Label Switched Paths and Interfaces", Work in
+              Progress, Internet-Draft, draft-ietf-teas-yang-te-34, 1
+              October 2023, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-teas-yang-te-34>.
 
    [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,
               DOI 10.17487/RFC3688, January 2004,
@@ -949,9 +949,9 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023               [Page 17]
+Busi, et al.              Expires 22 April 2024                [Page 17]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
    [RFC6241]  Enns, R., Ed., Bjorklund, M., Ed., Schoenwaelder, J., Ed.,
@@ -1005,24 +1005,24 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-Busi, et al.             Expires 23 October 2023               [Page 18]
+Busi, et al.              Expires 22 April 2024                [Page 18]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
               Topology", Work in Progress, Internet-Draft, draft-ietf-
-              ccamp-otn-topo-yang-16, 23 November 2022,
+              ccamp-otn-topo-yang-17, 10 July 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
-              otn-topo-yang-16>.
+              otn-topo-yang-17>.
 
    [I-D.ietf-teas-actn-poi-applicability]
               Peruzzini, F., Bouquier, J., Busi, I., King, D., and D.
               Ceccarelli, "Applicability of Abstraction and Control of
               Traffic Engineered Networks (ACTN) to Packet Optical
               Integration (POI)", Work in Progress, Internet-Draft,
-              draft-ietf-teas-actn-poi-applicability-08, 11 January
-              2023, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              teas-actn-poi-applicability-08>.
+              draft-ietf-teas-actn-poi-applicability-09, 7 July 2023,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              actn-poi-applicability-09>.
 
 Appendix A.  Change Log
 
@@ -1052,6 +1052,7 @@ Contributors
 
    Daniel King
    Old Dog Consulting
+
    Email: daniel@olddog.co.uk
 
 
@@ -1060,24 +1061,26 @@ Authors' Addresses
 
 
 
-
-Busi, et al.             Expires 23 October 2023               [Page 19]
+Busi, et al.              Expires 22 April 2024                [Page 19]
 
-Internet-Draft        YANG for OTN Path Computation           April 2023
+Internet-Draft        YANG for OTN Path Computation         October 2023
 
 
    Italo Busi
    Huawei Technologies
+
    Email: italo.busi@huawei.com
 
 
    Aihua Guo
    Futurewei Technologies
+
    Email: aihuaguo.ietf@gmail.com
 
 
    Sergio Belotti
    Nokia
+
    Email: sergio.belotti@nokia.com
 
 
@@ -1114,7 +1117,4 @@ Internet-Draft        YANG for OTN Path Computation           April 2023
 
 
 
-
-
-
-Busi, et al.             Expires 23 October 2023               [Page 20]
+Busi, et al.              Expires 22 April 2024                [Page 20]
