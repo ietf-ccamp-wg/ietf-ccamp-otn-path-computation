@@ -2,8 +2,8 @@
 
 ## Scope
 
-This repository is to facilitate the work on the [IETF CCAMP](https://datatracker.ietf.org/wg/ccamp/documents/) Individual Internet-Draft,
-"[A YANG Data Model for Requesting Path Computation in OTN Networks](https://datatracker.ietf.org/doc/draft-gbb-ccamp-otn-path-computation-yang/)".
+This repository is to facilitate the work on the [IETF CCAMP](https://datatracker.ietf.org/wg/ccamp/documents/) wg Internet-Draft,
+"[A YANG Data Model for Requesting Path Computation in OTN Networks](https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-otn-path-computation-yang)".
 
 ## Abstract
 
