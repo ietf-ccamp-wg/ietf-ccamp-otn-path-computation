@@ -1,0 +1,411 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2024-10-24T01:23:55.516509+00:00",
+  "repo": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOHEJQVM5GZbI7",
+      "title": "Complete Security Considerations",
+      "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/issues/1",
+      "state": "OPEN",
+      "author": "aguoietf",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "italobusi"
+      ],
+      "labels": [],
+      "body": "Propose text for the Security Considerations section\r\nCopied from https://github.com/aguoietf/ietf-ccamp-optical-path-computation/issues/11\r\n",
+      "createdAt": "2022-03-25T17:46:11Z",
+      "updatedAt": "2022-09-12T13:18:19Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "The text on Security Considerations should be updated once the YANG model is stable.\r\n",
+          "createdAt": "2022-09-12T13:17:53Z",
+          "updatedAt": "2022-09-12T13:17:53Z"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "I_kwDOHEJQVM5GZbUL",
+      "title": "Complete Manageability Considerations",
+      "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/issues/2",
+      "state": "CLOSED",
+      "author": "aguoietf",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Copied from https://github.com/aguoietf/ietf-ccamp-optical-path-computation/issues/10",
+      "createdAt": "2022-03-25T17:47:02Z",
+      "updatedAt": "2024-10-22T00:04:29Z",
+      "closedAt": "2024-10-22T00:04:29Z",
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "The text on Manageability Considerations should be updated once the document is stable.",
+          "createdAt": "2022-09-12T13:18:51Z",
+          "updatedAt": "2022-09-12T13:18:51Z"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOHEJQVM5GZbZj",
+      "title": "Update document for OTN path computation",
+      "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/issues/3",
+      "state": "CLOSED",
+      "author": "aguoietf",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "italobusi"
+      ],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-03-25T17:47:27Z",
+      "updatedAt": "2022-06-27T20:39:16Z",
+      "closedAt": "2022-06-27T20:39:15Z",
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "Closed with #4 ",
+          "createdAt": "2022-06-27T20:39:15Z",
+          "updatedAt": "2022-06-27T20:39:15Z"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "I_kwDOHEJQVM5Mq-2U",
+      "title": "Check IETF validation warning",
+      "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/issues/5",
+      "state": "CLOSED",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Check the IETF validation warning:\r\n\r\n> `\r\n> ietf-otn-path-computation@2022-04-28.yang:62: warning: RFC 8407: 3.1: The IETF Trust Copyright statement seems to be missing or is not correct (see pyang --ietf-help for details).\r\n> `\r\n> ",
+      "createdAt": "2022-06-27T20:40:19Z",
+      "updatedAt": "2022-07-21T15:42:17Z",
+      "closedAt": "2022-07-21T15:42:17Z",
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "Fixed with 3f7c154b73a5281a78470f819bf083cdf73b9393",
+          "createdAt": "2022-07-21T15:42:17Z",
+          "updatedAt": "2022-07-21T15:42:17Z"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "I_kwDOHEJQVM5RpxA9",
+      "title": "Fix idnits warnings",
+      "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/issues/7",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "danielkinguk"
+      ],
+      "labels": [],
+      "body": "The following ID-nits have been identified:\r\n\r\n>   == Unused Reference: 'I-D.ietf-teas-actn-poi-applicability' is defined on\r\n>      line 854, but no explicit reference was found in the text\r\n> \r\n\r\nThis draft is informatively referenced in the Acknowledgements section\r\n\r\nReference: https://author-tools.ietf.org/api/idnits?url=https://www.ietf.org/archive/id/draft-gbb-ccamp-otn-path-computation-yang-02.txt",
+      "createdAt": "2022-09-12T13:21:36Z",
+      "updatedAt": "2022-10-10T12:31:51Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "- [ ] @danielkinguk : check with the tools team\r\n",
+          "createdAt": "2022-10-06T12:56:33Z",
+          "updatedAt": "2022-10-06T12:56:33Z"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "I_kwDOHEJQVM5TOXb7",
+      "title": "Tom Petch's WG adoption comments",
+      "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/issues/8",
+      "state": "CLOSED",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "danielkinguk"
+      ],
+      "labels": [],
+      "body": "> I do not have a problem with the WG doing this work but think that the approach is going to confuse and mislead.\r\n> \r\n> The content of this started life elsewhere, under a different name, and I can see nothing in the I-D or in the datatracker to record this history.  I have seen ADs fail to understand that there has been a name change and go off on the wrong track as a result.\r\n> \r\n> I think that both the otn and the optical I-D need statements in them about this history.\r\n> \r\n> I think also that this is one of those rare cases when changing the name on adoption would be a good thing, not so much for this I-D as for draft-gbb-optical-path-computation-yang which is materially different from its precursor.\r\n\r\nAuthors>> TBD\r\n\r\nSee: https://mailarchive.ietf.org/arch/msg/ccamp/ygSbuE0XIJkq0JgpUY7k1VRdhak/",
+      "createdAt": "2022-10-04T13:24:51Z",
+      "updatedAt": "2022-10-10T12:28:25Z",
+      "closedAt": "2022-10-10T12:28:25Z",
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "Proposal from Daniel and Daniele shared on the list:\r\n\r\n> Maybe the I-D authors could add an appendix with a change log describing the\r\n> reasoning behind the split, and a note suggesting the appendix is removed\r\n> before publication. It would clearly show the history and reason for the\r\n> split without requiring an entry in the datatracker. \r\n\r\nSee: https://mailarchive.ietf.org/arch/msg/ccamp/BmKmv2Dri-mcHf_LzkM9lzsE_c8/\r\n\r\n> The appendix sounds great. That would solve the issue and won't cause any problem with the Datatracker.\r\n> \r\n> You can introduce it in the WG -00 version as it's not changing the content of the draft.\r\n\r\nSee: https://mailarchive.ietf.org/arch/msg/ccamp/bwtywOs8IJ6idI0YabzUPLjIHZo/\r\n",
+          "createdAt": "2022-10-04T13:26:07Z",
+          "updatedAt": "2022-10-04T13:26:07Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "- [x] @danielkinguk : provide a text proposal for the appendix text",
+          "createdAt": "2022-10-06T12:45:40Z",
+          "updatedAt": "2022-10-10T12:06:36Z"
+        },
+        {
+          "author": "danielkinguk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Appendix A. Change Log \r\n\r\nThe initial YANG data model requesting path computation in optical networks was draft-gbb-ccamp-optical-path-computation-yang-00. This document included path computation request capabilities for WSON, Flexi-Grid and OTN technologies. However, it was proposed at IETF 113 (March 25, 2022) to split the initial document into separate documents for WDM (WSON and Flexi-Grid) and OTN technologies, as each technology may be developed and implemented separately.  \r\n\r\nThe WDM technology capabilities were kept in [draft-gbb-ccamp-optical-path-computation-yang], and the OTN capabilities were moved into a new document [draft-gbb-ccamp-otn-path-computation-yang].  \r\n\r\nEditors note, please remove this appendix before publication.\r\n",
+          "createdAt": "2022-10-07T09:20:06Z",
+          "updatedAt": "2022-10-07T09:20:06Z"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "I_kwDOHEJQVM6GkPfS",
+      "title": "Fix YANG compilation errors",
+      "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/issues/9",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "italobusi"
+      ],
+      "labels": [],
+      "body": "```\r\nietf-otn-path-computation@2022-09-12.yang:\r\npyang 2.6.0: pyang --verbose --ietf -p {libs} {model}:\r\n# module search path: /tmp/tmpm5jm4ycu:/a/www/ietf-ftp/yang/rfcmod/:/a/www/ietf-ftp/yang/draftmod/:/a/www/ietf-ftp/yang/ianamod/:/a/www/ietf-ftp/yang/catalogmod/:.:/usr/local/share/yang/modules\r\n# read /tmp/tmpm5jm4ycu/ietf-otn-path-computation@2022-09-12.yang (CL)\r\n# read /a/www/ietf-ftp/yang/catalogmod/ietf-te-path-computation@2021-09-06.yang\r\n# read /a/www/ietf-ftp/yang/catalogmod/ietf-te@2021-02-20.yang\r\n# read /a/www/ietf-ftp/yang/draftmod/ietf-te-types@2024-02-22.yang\r\n# read /usr/local/share/yang/modules/ietf/ietf-inet-types.yang\r\n# read /a/www/ietf-ftp/yang/catalogmod/ietf-inet-types@2021-02-22.yang\r\n# read /usr/local/share/yang/modules/ietf/ietf-yang-types.yang\r\n# read /a/www/ietf-ftp/yang/draftmod/ietf-yang-types@2023-01-23.yang\r\n# read /usr/local/share/yang/modules/ietf/ietf-routing-types.yang\r\n# read /a/www/ietf-ftp/yang/rfcmod/ietf-routing-types@2017-12-04.yang\r\n# read /usr/local/share/yang/modules/ietf/ietf-network.yang\r\n# read /a/www/ietf-ftp/yang/rfcmod/ietf-network@2018-02-26.yang\r\n# read /usr/local/share/yang/modules/ietf/ietf-network-topology.yang\r\n# read /a/www/ietf-ftp/yang/rfcmod/ietf-network-topology@2018-02-26.yang\r\n# read /a/www/ietf-ftp/yang/draftmod/ietf-layer1-types@2024-02-22.yang\r\n/tmp/tmpm5jm4ycu/ietf-otn-path-computation@2022-09-12.yang:171: error: node ietf-te-path-computation::explicit-route-objects-always is not found\r\n/tmp/tmpm5jm4ycu/ietf-otn-path-computation@2022-09-12.yang:184: error: node ietf-te-path-computation::explicit-route-objects-always is not found\r\n\r\nyanglint SO 1.9.2: yanglint --verbose -p {tmplib} -p {rfclib} -p {draftlib} -p {ianalib} -p {cataloglib} {model} -i:\r\nwarn: Missing status in deprecated subtree (/ietf-te-types:{grouping}[generic-path-optimization]/optimizations/algorithm/metric/tiebreakers/tiebreaker), inheriting.\r\nwarn: Missing status in deprecated subtree (/ietf-te-types:{grouping}[generic-path-optimization]/optimizations/algorithm/metric/tiebreakers/tiebreaker/tiebreaker-type), inheriting.\r\nerr : Failed to resolve augment \"/ietf-te:tunnels-path-compute/ietf-te:input/ietf-te:path-compute-info/ietf-te-path-computation:path-request/ietf-te-path-computation:explicit-route-objects-always/ietf-te-path-computation:route-object-exclude-always/ietf-te-path-computation:type/ietf-te-path-computation:label/ietf-te-path-computation:label-hop/ietf-te-path-computation:te-label/ietf-te-path-computation:technology\". (/ietf-otn-path-computation:{augment}[/ietf-te:tunnels-path-compute/ietf-te:input/ietf-te:path-compute-info/ietf-te-path-computation:path-request/ietf-te-path-computation:explicit-route-objects-always/ietf-te-path-computation:route-object-exclude-always/ietf-te-path-computation:type/ietf-te-path-computation:label/ietf-te-path-computation:label-hop/ietf-te-path-computation:te-label/ietf-te-path-computation:technology])\r\nerr : Failed to resolve augment \"/ietf-te:tunnels-path-compute/ietf-te:input/ietf-te:path-compute-info/ietf-te-path-computation:path-request/ietf-te-path-computation:explicit-route-objects-always/ietf-te-path-computation:route-object-include-exclude/ietf-te-path-computation:type/ietf-te-path-computation:label/ietf-te-path-computation:label-hop/ietf-te-path-computation:te-label/ietf-te-path-computation:technology\". (/ietf-otn-path-computation:{augment}[/ietf-te:tunnels-path-compute/ietf-te:input/ietf-te:path-compute-info/ietf-te-path-computation:path-request/ietf-te-path-computation:explicit-route-objects-always/ietf-te-path-computation:route-object-include-exclude/ietf-te-path-computation:type/ietf-te-path-computation:label/ietf-te-path-computation:label-hop/ietf-te-path-computation:te-label/ietf-te-path-computation:technology])\r\nerr : Module \"ietf-otn-path-computation\" parsing failed.\r\n```",
+      "createdAt": "2024-04-22T23:50:40Z",
+      "updatedAt": "2024-04-22T23:50:45Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
+  "pulls": [
+    {
+      "number": 4,
+      "id": "PR_kwDOHEJQVM427Ll1",
+      "title": "Updated document for OTN path computation",
+      "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/pull/4",
+      "state": "MERGED",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Updated I-D to describe only OTN path computation\r\n\r\nUpdated YANG model to:\r\n- align with the te-pc prefix\r\n- align with latest version of layer1-types\r\n",
+      "createdAt": "2022-04-28T07:21:18Z",
+      "updatedAt": "2022-06-27T20:38:24Z",
+      "baseRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
+      "baseRefName": "main",
+      "baseRefOid": "c1754554fd7012ac6522280ab822e5aaa59b6c87",
+      "headRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
+      "headRefName": "new-draft",
+      "headRefOid": "6db39bd0086a061d215fc9a37bcfdbb134194dc2",
+      "closedAt": "2022-06-27T20:38:21Z",
+      "mergedAt": "2022-06-27T20:38:21Z",
+      "mergedBy": "italobusi",
+      "mergeCommit": {
+        "oid": "d6792356179e33f5c212017b09b95e9b85916935"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOHEJQVM46ZjDb",
+          "commit": {
+            "abbreviatedOid": "00ad7fb"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-05-20T09:06:30Z",
+          "updatedAt": "2022-05-20T09:06:30Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOHEJQVM46ZjdK",
+          "commit": {
+            "abbreviatedOid": "00ad7fb"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-05-20T09:07:51Z",
+          "updatedAt": "2022-05-20T09:07:51Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOHEJQVM46eTXe",
+          "commit": {
+            "abbreviatedOid": "00ad7fb"
+          },
+          "author": "aguoietf",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-05-22T22:08:57Z",
+          "updatedAt": "2022-05-22T22:08:57Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOHEJQVM47COvk",
+          "commit": {
+            "abbreviatedOid": "00ad7fb"
+          },
+          "author": "danielkinguk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-05-31T13:21:04Z",
+          "updatedAt": "2022-05-31T13:21:04Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOHEJQVM4-w-an",
+      "title": "Aligned with optical-path-computation",
+      "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/pull/6",
+      "state": "MERGED",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Aligned to some of the changes in https://github.com/aguoietf/ietf-ccamp-optical-path-computation/pull/21 and in https://github.com/aguoietf/ietf-ccamp-optical-path-computation/pull/22\r\n",
+      "createdAt": "2022-09-12T09:23:22Z",
+      "updatedAt": "2022-09-12T13:13:38Z",
+      "baseRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
+      "baseRefName": "main",
+      "baseRefOid": "3f7c154b73a5281a78470f819bf083cdf73b9393",
+      "headRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
+      "headRefName": "wg-adoption",
+      "headRefOid": "8a51277379d170e062182dccb2bb388cd79cf49a",
+      "closedAt": "2022-09-12T13:13:34Z",
+      "mergedAt": "2022-09-12T13:13:34Z",
+      "mergedBy": "italobusi",
+      "mergeCommit": {
+        "oid": "d4e4a4c02ec2ccdbdaf7996b1216e2e718be57bf"
+      },
+      "comments": [
+        {
+          "author": "danielkinguk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Looks good to me.",
+          "createdAt": "2022-09-12T11:26:40Z",
+          "updatedAt": "2022-09-12T11:26:40Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOHEJQVM5BzIqc",
+          "commit": {
+            "abbreviatedOid": "6f3623f"
+          },
+          "author": "danielkinguk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-09-12T11:27:21Z",
+          "updatedAt": "2022-09-12T11:27:21Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOHEJQVM5BzfP5",
+          "commit": {
+            "abbreviatedOid": "6f3623f"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-09-12T12:30:54Z",
+          "updatedAt": "2022-09-12T12:32:41Z",
+          "comments": [
+            {
+              "originalPosition": 64,
+              "body": ".....according to configured will also need...\r\nI would think the words missing would be \"tunnels\" probably but the sentence has to be completed",
+              "createdAt": "2022-09-12T12:30:54Z",
+              "updatedAt": "2022-09-12T12:32:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOHEJQVM5Bz3QZ",
+          "commit": {
+            "abbreviatedOid": "6f3623f"
+          },
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-12T13:13:22Z",
+          "updatedAt": "2022-09-12T13:13:23Z",
+          "comments": [
+            {
+              "originalPosition": 64,
+              "body": "Fixed in https://github.com/aguoietf/ietf-ccamp-otn-path-computation/pull/6/commits/8a51277379d170e062182dccb2bb388cd79cf49a\r\n",
+              "createdAt": "2022-09-12T13:13:22Z",
+              "updatedAt": "2022-09-12T13:13:23Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
