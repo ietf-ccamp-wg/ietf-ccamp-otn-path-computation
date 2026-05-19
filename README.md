@@ -1,30 +1,12 @@
-# A YANG Data Model for requesting Path Computation in an Optical Transport Network (OTN)
+# "Internet-Draft with YANG Modules" Template Repository
 
-This is the working area for the IETF [CCAMP Working Group](https://datatracker.ietf.org/wg/ccamp/documents/) Internet-Draft, "A YANG Data Model for requesting Path Computation in an Optical Transport Network (OTN)".
+Use this repository as a template if you want to start working on
+[IETF](https://www.ietf.org/) documents with YANG Modules. This covers validation of YANG modules, generation of trees, and validation of JSON examples.
 
-* [Editor's Copy](https://ietf-ccamp-wg.github.io/ietf-ccamp-otn-path-computation/#go.draft-ietf-ccamp-otn-path-computation-yang.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-ccamp-otn-path-computation-yang)
-* [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-otn-path-computation-yang)
-* [Compare Editor's Copy to Working Group Draft](https://ietf-ccamp-wg.github.io/ietf-ccamp-otn-path-computation/#go.draft-ietf-ccamp-otn-path-computation-yang.diff)
+[Click here to create a new repository using the template](https://github.com/IETF-OPS-AD/I-D-with-yang-template/generate).
+Make sure to check "Include all branches" when creating your repository.
 
+Once you have created your own repository, start work by
+[renaming the `draft-todo-yourname-protocol.md` file](../../edit/main/draft-todo-yourname-protocol.md) and adding your YANG files under "yang" folder.
 
-## Contributing
-
-See the
-[guidelines for contributions](https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/blob/main/CONTRIBUTING.md).
-
-Contributions can be made by creating pull requests.
-The GitHub interface supports creating pull requests using the Edit (✏) button.
-
-
-## Command Line Usage
-
-Formatted text and HTML versions of the draft can be built using `make`.
-
-```sh
-$ make
-```
-
-Command line usage requires that you have the necessary software installed.  See
-[the instructions](https://github.com/martinthomson/i-d-template/blob/main/doc/SETUP.md).
-
+This repository leverages [martinthomson/internet-draft-template](https://github.com/martinthomson/internet-draft-template) to build I-Ds and extends it to provide required tools to support IETF documents that include YANG mdoules.
