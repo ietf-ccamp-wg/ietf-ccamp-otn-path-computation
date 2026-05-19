@@ -3,7 +3,7 @@ module: ietf-otn-path-computation
   augment /te:tunnels-path-compute/te:input/te:path-compute-info
             /te-pc:path-request/te-pc:te-bandwidth/te-pc:technology:
     +--:(otn)
-       +-- otn
+       +-- otn-bandwidth
           +-- odu-type?                     identityref
           +-- (oduflex-type)?
              +--:(generic)
@@ -23,7 +23,7 @@ module: ietf-otn-path-computation
             /te-pc:tunnel-attributes/te-pc:te-bandwidth
             /te-pc:technology:
     +--:(otn)
-       +-- otn
+       +-- otn-bandwidth
           +-- odu-type?                     identityref
           +-- (oduflex-type)?
              +--:(generic)
@@ -44,7 +44,7 @@ module: ietf-otn-path-computation
             /te-pc:computed-path-properties/te-pc:path-properties
             /te-pc:te-bandwidth/te-pc:technology:
     +--:(otn)
-       +--ro otn
+       +--ro otn-bandwidth
           +--ro odu-type?                     identityref
           +--ro (oduflex-type)?
              +--:(generic)
@@ -83,7 +83,7 @@ module: ietf-otn-path-computation
             /te-pc:route-object-exclude-object/te-pc:type/te-pc:label
             /te-pc:label-hop/te-pc:te-label/te-pc:technology:
     +--:(otn)
-       +-- otn
+       +-- otn-label
           +-- tpn?       otn-tpn
           +-- tsg?       identityref
           +-- ts-list?   string
@@ -94,26 +94,26 @@ module: ietf-otn-path-computation
             /te-pc:route-object-include-object/te-pc:type/te-pc:label
             /te-pc:label-hop/te-pc:te-label/te-pc:technology:
     +--:(otn)
-       +-- otn
+       +-- otn-label
           +-- tpn?       otn-tpn
           +-- tsg?       identityref
           +-- ts-list?   string
   augment /te:tunnels-path-compute/te:input/te:path-compute-info
-            /te-pc:path-request/te-pc:explicit-route-objects-always
+            /te-pc:path-request/te-pc:explicit-route-objects
             /te-pc:route-object-exclude-always/te-pc:type/te-pc:label
             /te-pc:label-hop/te-pc:te-label/te-pc:technology:
     +--:(otn)
-       +-- otn
+       +-- otn-label
           +-- tpn?       otn-tpn
           +-- tsg?       identityref
           +-- ts-list?   string
   augment /te:tunnels-path-compute/te:input/te:path-compute-info
-            /te-pc:path-request/te-pc:explicit-route-objects-always
+            /te-pc:path-request/te-pc:explicit-route-objects
             /te-pc:route-object-include-exclude/te-pc:type
             /te-pc:label/te-pc:label-hop/te-pc:te-label
             /te-pc:technology:
     +--:(otn)
-       +-- otn
+       +-- otn-label
           +-- tpn?       otn-tpn
           +-- tsg?       identityref
           +-- ts-list?   string
@@ -122,73 +122,55 @@ module: ietf-otn-path-computation
             /te-pc:label-restrictions/te-pc:label-restriction
             /te-pc:label-start/te-pc:te-label/te-pc:technology:
     +--:(otn)
-       +-- otn
-          +-- (range-type)?
-             +--:(trib-port)
-             |  +-- tpn?   otn-tpn
-             +--:(trib-slot)
-                +-- ts?    otn-ts
+       +-- otn-label
+          +-- tpn?   otn-tpn
+          +-- ts?    otn-ts
   augment /te:tunnels-path-compute/te:input/te:path-compute-info
             /te-pc:path-request/te-pc:path-in-segment
             /te-pc:label-restrictions/te-pc:label-restriction
             /te-pc:label-end/te-pc:te-label/te-pc:technology:
     +--:(otn)
-       +-- otn
-          +-- (range-type)?
-             +--:(trib-port)
-             |  +-- tpn?   otn-tpn
-             +--:(trib-slot)
-                +-- ts?    otn-ts
+       +-- otn-label
+          +-- tpn?   otn-tpn
+          +-- ts?    otn-ts
   augment /te:tunnels-path-compute/te:input/te:path-compute-info
             /te-pc:path-request/te-pc:path-in-segment
             /te-pc:label-restrictions/te-pc:label-restriction
             /te-pc:label-step/te-pc:technology:
     +--:(otn)
-       +-- otn
-          +-- (range-type)?
-             +--:(trib-port)
-             |  +-- tpn?   otn-tpn
-             +--:(trib-slot)
-                +-- ts?    otn-ts
+       +-- otn-label-step
+          +-- tpn?   otn-tpn
+          +-- ts?    otn-ts
   augment /te:tunnels-path-compute/te:input/te:path-compute-info
             /te-pc:path-request/te-pc:path-out-segment
             /te-pc:label-restrictions/te-pc:label-restriction
             /te-pc:label-start/te-pc:te-label/te-pc:technology:
     +--:(otn)
-       +-- otn
-          +-- (range-type)?
-             +--:(trib-port)
-             |  +-- tpn?   otn-tpn
-             +--:(trib-slot)
-                +-- ts?    otn-ts
+       +-- otn-label
+          +-- tpn?   otn-tpn
+          +-- ts?    otn-ts
   augment /te:tunnels-path-compute/te:input/te:path-compute-info
             /te-pc:path-request/te-pc:path-out-segment
             /te-pc:label-restrictions/te-pc:label-restriction
             /te-pc:label-end/te-pc:te-label/te-pc:technology:
     +--:(otn)
-       +-- otn
-          +-- (range-type)?
-             +--:(trib-port)
-             |  +-- tpn?   otn-tpn
-             +--:(trib-slot)
-                +-- ts?    otn-ts
+       +-- otn-label
+          +-- tpn?   otn-tpn
+          +-- ts?    otn-ts
   augment /te:tunnels-path-compute/te:input/te:path-compute-info
             /te-pc:path-request/te-pc:path-out-segment
             /te-pc:label-restrictions/te-pc:label-restriction
             /te-pc:label-step/te-pc:technology:
     +--:(otn)
-       +-- otn
-          +-- (range-type)?
-             +--:(trib-port)
-             |  +-- tpn?   otn-tpn
-             +--:(trib-slot)
-                +-- ts?    otn-ts
+       +-- otn-label-step
+          +-- tpn?   otn-tpn
+          +-- ts?    otn-ts
   augment /te:tunnels-path-compute/te:input/te:path-compute-info
             /te-pc:synchronization/te-pc:exclude-objects
             /te-pc:excludes/te-pc:type/te-pc:label/te-pc:label-hop
             /te-pc:te-label/te-pc:technology:
     +--:(otn)
-       +-- otn
+       +-- otn-label
           +-- tpn?       otn-tpn
           +-- tsg?       identityref
           +-- ts-list?   string
@@ -199,7 +181,7 @@ module: ietf-otn-path-computation
             /te-pc:type/te-pc:label/te-pc:label-hop/te-pc:te-label
             /te-pc:technology:
     +--:(otn)
-       +--ro otn
+       +--ro otn-label
           +--ro tpn?       otn-tpn
           +--ro tsg?       identityref
           +--ro ts-list?   string
