@@ -5,10 +5,10 @@
 CCAMP Working Group                                              I. Busi
 Internet-Draft                                       Huawei Technologies
 Intended status: Standards Track                                  A. Guo
-Expires: 15 October 2026                          Futurewei Technologies
+Expires: 20 November 2026                         Futurewei Technologies
                                                               S. Belotti
                                                                    Nokia
-                                                           13 April 2026
+                                                             19 May 2026
 
 
     A YANG Data Model for requesting Path Computation in an Optical
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 October 2026.
+   This Internet-Draft will expire on 20 November 2026.
 
 Copyright Notice
 
@@ -804,9 +804,9 @@ Table of Contents
               Busi, I., Belotti, S., de Dios, O. G., Sharma, A., and Y.
               Shi, "A YANG Data Model for requesting path computation",
               Work in Progress, Internet-Draft, draft-ietf-teas-yang-
-              path-computation-26, 5 February 2026,
+              path-computation-28, 12 May 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              yang-path-computation-26>.
+              yang-path-computation-28>.
 
    [I-D.ietf-teas-yang-te]
               Saad, T., Gandhi, R., Liu, X., Beeram, V. P., and I.
