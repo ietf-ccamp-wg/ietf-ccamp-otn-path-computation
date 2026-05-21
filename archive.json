@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-30T01:44:42.198574+00:00",
+  "timestamp": "2026-05-21T02:59:08.248939+00:00",
   "repo": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
   "labels": [
     {
@@ -406,6 +406,32 @@
           ]
         }
       ]
+    },
+    {
+      "number": 10,
+      "id": "PR_kwDOHEJQVM7dC4Lj",
+      "title": "Preparation for WG LC",
+      "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/pull/10",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-05-19T11:31:50Z",
+      "updatedAt": "2026-05-19T11:31:50Z",
+      "baseRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
+      "baseRefName": "main",
+      "baseRefOid": "fe3dc9bd7fe95a7e066c1b6d6fa1e404e5391e97",
+      "headRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
+      "headRefName": "wg-lc-prep",
+      "headRefOid": "40bd5c5141d7cf418f0fdf8f5162771b71704a22",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
