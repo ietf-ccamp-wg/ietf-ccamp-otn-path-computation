@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-05-21T02:59:08.248939+00:00",
+  "timestamp": "2026-05-24T02:56:10.574739+00:00",
   "repo": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
   "labels": [
     {
@@ -419,7 +419,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-05-19T11:31:50Z",
-      "updatedAt": "2026-05-19T11:31:50Z",
+      "updatedAt": "2026-05-21T14:36:01Z",
       "baseRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
       "baseRefName": "main",
       "baseRefOid": "fe3dc9bd7fe95a7e066c1b6d6fa1e404e5391e97",
@@ -431,7 +431,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOHEJQVM8AAAABAo6gRg",
+          "commit": {
+            "abbreviatedOid": "40bd5c5"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-05-21T14:36:01Z",
+          "updatedAt": "2026-05-21T14:36:01Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
