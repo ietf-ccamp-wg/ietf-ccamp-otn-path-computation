@@ -47,9 +47,6 @@ contributor:
 
 This document provides a mechanism to request path computation in an Optical Transport Network (OTN) by augmenting the Remote Procedure Calls (RPCs) defined in RFC YYYY.
 
-\[RFC EDITOR NOTE: Please replace RFC YYYY with the RFC number of
-draft-ietf-teas-yang-path-computation once it has been published.
-
 --- middle
 
 # Introduction
@@ -61,6 +58,22 @@ Optical Transport Network (OTN).
 
 This document defines a YANG data model, which augment the generic Path Computation RPC defined in {{!I-D.ietf-teas-yang-path-computation}}, with OTN technology-specific augmentations required to request path computation to an underlying OTN SDN controller. These models allow
 a client to delegate path computation tasks to the underlying SDN controller without having to obtain OTN detailed information from the controller and performing feasible path computation itself.
+
+## Editorial Note (To be removed by RFC Editor)
+
+> Note to the RFC Editor: This section is to be removed prior to publication.
+
+This document contains placeholder values that need to be replaced
+with finalized values at the time of publication.  This note
+summarizes all of the substitutions that are needed.
+
+Please apply the following replacements:
+
+- XXXX --> the assigned RFC number for this I-D
+- YYYY --> the assigned RFC number for {{!I-D.ietf-teas-yang-path-computation}}
+- ZZZZ --> the assigned RFC number for {{!I-D.ietf-ccamp-layer1-types}}
+- KKKK --> the assigned RFC number for {{!I-D.ietf-teas-yang-te}}
+- 2026-05-19 --> the actual date of the publication of this document
 
 ## Terminology and Notations
 
@@ -110,28 +123,21 @@ a client to delegate path computation tasks to the underlying SDN controller wit
 | otn-pc       | ietf-otn-path-computation        | RFCXXXX
 {: #tab-prefixes title="Prefixes and corresponding YANG modules"}
 
-> RFC Editor Note:
-Please replace XXXX with the RFC number assigned to this document.
-Please replace YYYY with the RFC number assigned to {{!I-D.ietf-teas-yang-path-computation}}.
-Please replace ZZZZ with the RFC number assigned to {{!I-D.ietf-ccamp-layer1-types}}.
-Please replace KKKK with the RFC number assigned to {{!I-D.ietf-teas-yang-te}}.
-Please remove this note.
-
 # YANG Data Model for OTN Path Computation
 
 ## YANG Model Overview
 
 The YANG data model for requesting OTN path computation is defined as an augmentation of the generic Path Computation RPC defined in {{!I-D.ietf-teas-yang-path-computation}}, as shown in {{fig-otn-pc}}.
 
-~~~~ ascii-art
-                    +--------------------------+    o: augment
+~~~~ aasvg
+                    +--------------------------+
        TE generic   | ietf-te-path-computation |
                     +--------------------------+
-                                 o
+                                 ^
                                  |
+                                 | Augments
                                  |
-                                 |
-                   +---------------------------+
+                   +-------------+-------------+
        OTN         | ietf-otn-path-computation |
                    +---------------------------+
 ~~~~
@@ -139,20 +145,12 @@ The YANG data model for requesting OTN path computation is defined as an augment
 
 The entities and Traffic Engineering (TE) attributes, such as requested path and tunnel attributes, defined in {{!I-D.ietf-teas-yang-path-computation}}, are still applicable when requesting OTN path computation and the models defined in this document only specifies the additional OTN technology-specific attributes/information, using the attributes defined in {{!I-D.ietf-ccamp-layer1-types}}.
 
-The YANG module ietf-otn-path-computation defined in this document conforms
-to the Network Management Datastore Architecture (NMDA) defined in
-{{!RFC8342}}.
-
-{: #otn-te-bandwidh}
-
-## Bandwidth Augmentation
+## Bandwidth Augmentation {#otn-te-bandwidh}
 
 The OTN path computation model augments all the occurrences of the te-bandwidth container
 with the OTN technology-specific attributes using the otn-link-bandwidth and otn-path-bandwidth groupings defined in {{!I-D.ietf-ccamp-layer1-types}}.
 
-{: #otn-te-label}
-
-## Label Augmentations
+## Label Augmentations {#otn-te-label}
 
 The OTN path computation model augments all the occurrences of the label-restriction list
 with OTN technology-specific attributes using the
@@ -162,67 +160,73 @@ Moreover, the model augments all the occurrences of the te-label
 container with the OTN technology-specific attributes using the
 otn-label-start-end, otn-label-hop and otn-label-step groupings defined in {{!I-D.ietf-ccamp-layer1-types}}.
 
-{: #otn-pc-tree}
-
-# OTN Path Computation Tree Diagram
-
-{{fig-otn-pc-tree}} below shows the tree diagram of the YANG data model defined in module ietf-otn-path-computation.yang.
-
-~~~~ ascii-art
-{::include ./ietf-otn-path-computation.tree}
-~~~~
-{: #fig-otn-pc-tree title="OTN path computation tree diagram"
-artwork-name="ietf-otn-path-computation.tree"}
-
-{: #otn-pc-yang}
-
-# YANG Model for OTN Path Computation
+# YANG Model for OTN Path Computation {#otn-pc-yang}
 
 ~~~~ yang
-{::include ./ietf-otn-path-computation.yang}
+{::include yang/ietf-otn-path-computation.yang}
 ~~~~
 {: #fig-otn-pc-yang title="OTN path computation YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-otn-path-computation@2022-07-10.yang"}
-
-# Manageability Considerations
-
-This document provides a method for requesting path computations for OTN tunnels. Consideration of mechanisms to gather and collate information required for the path computations will be necessary. Furthermore, storing path computation requests and responses and triggering actions will also need to be carefully managed and secured.
-
-Future versions of this document will contain additional information.
+sourcecode-markers="true" sourcecode-name="ietf-otn-path-computation@2026-05-19.yang"}
 
 # Security Considerations
 
-The YANG module defined in this document will be accessed via the NETCONF protocol {{!RFC6241}} or RESTCONF protocol {{!RFC8040}}. The lowest NETCONF layer is the secure transport layer, and the mandatory-to-implement secure transport is Secure Shell (SSH) {{!RFC6242}}. The lowest RESTCONF layer is HTTPS and the mandatory-to-implement secure transport is TLS {{!RFC8446}}.
+This section is modeled after the template described in {{Section 3.7 of ?RFC9907}}.
 
-The Network Configuration Access Control Model (NACM) {{!RFC8341}} provides the means to restrict access to particular NETCONF or RESTCONF users to a pre-configured subset of all available NETCONF or RESTCONF protocol operations and content.
+The "ietf-otn-path-computation" YANG module defines a data model that is
+designed to be accessed via YANG-based management protocols, such as
+NETCONF {{?RFC6241}} and RESTCONF {{?RFC8040}}. These YANG-based management
+protocols (1) have to use a secure transport layer (e.g., SSH {{?RFC4252}}, TLS {{?RFC8446}},
+and QUIC {{?RFC9000}}) and (2) have to use mutual authentication.
 
-Some of the RPC operations defined in this YANG module may be
-considered sensitive or vulnerable in some network environments. It is thus essential to control access to these operations.
+The Network Configuration Access Control Model (NACM) {{!RFC8341}}
+provides the means to restrict access for particular NETCONF or
+RESTCONF users to a preconfigured subset of all available NETCONF or
+RESTCONF protocol operations and content.
 
-Operations defined in this document, and their sensitivities and possible vulnerabilities, will be discussed further in future versions of this document.
+There are no particularly sensitive RPC or action operations.
+
+This YANG module uses groupings from other YANG modules that
+define nodes that may be considered sensitive or vulnerable
+in network environments.  Refer to the Security Considerations
+of {{!I-D.ietf-ccamp-layer1-types}} for information as to which nodes may
+be considered sensitive or vulnerable in network environments.
+
+The YANG module defined in this document augments the "tunnels-path-compute" and the "tunnel-actions" RPCs, defined in {{!I-D.ietf-teas-yang-te}} and in {{!I-D.ietf-teas-yang-path-computation}}, with OTN technology-specific attributes. The security considerations provided in {{!I-D.ietf-teas-yang-te}} and in {{!I-D.ietf-teas-yang-path-computation}} are also applicable to the YANG module defined in this document.
 
 # IANA Considerations
 
-   This document registers the following URIs in the "ns" subregistry
-   within the "IETF XML registry" {{!RFC3688}}.
+IANA is requested to register the following URI in the "ns"
+registry within the "IETF XML Registry" group {{?RFC3688}}:
 
 ~~~~
-  URI: urn:ietf:params:xml:ns:yang:ietf-otn-path-computation
-  Registrant Contact:  The IESG.
-  XML: N/A, the requested URI is an XML namespace.
+   URI: urn:ietf:params:xml:ns:yang:ietf-otn-path-computation
+   Registrant Contact: The IESG
+   XML: N/A; the requested URI is an XML namespace.
 ~~~~
 
-   This document registers the following YANG module in the "YANG Module Names"
-   registry {{!RFC7950}}.
+IANA is requested to register the following YANG module in the "YANG
+Module Names" registry {{!RFC6020}} within the "YANG Parameters"
+registry group.
 
 ~~~~
-  name:      ietf-otn-path-computation
-  namespace: urn:ietf:params:xml:ns:yang:ietf-otn-path-computation
-  prefix:    otn-pc
-  reference: this document
+   Name:         ietf-otn-path-computation
+   Maintained by IANA?  N
+   Namespace:    urn:ietf:params:xml:ns:yang:ietf-otn-path-computation
+   Prefix:       otn-pc
+   Reference:    RFC XXXX
 ~~~~
 
 --- back
+
+# OTN Path Computation Tree Diagram {#otn-pc-tree}
+
+{{fig-otn-pc-tree}} below shows the tree diagram of the YANG data model defined in module ietf-otn-path-computation.yang. See {{?RFC8340}} for an explanation of the symbols used. The data type of every leaf node is shown near the right end of the corresponding line.
+
+~~~~ ascii-art
+{::include-fold yang/trees/ietf-otn-path-computation.tree}
+~~~~
+{: #fig-otn-pc-tree title="OTN path computation tree diagram"
+artwork-name="ietf-otn-path-computation.tree"}
 
 # Change Log
 
