@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-05-24T02:56:10.574739+00:00",
+  "timestamp": "2026-05-28T02:50:43.234729+00:00",
   "repo": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
   "labels": [
     {
@@ -412,24 +412,26 @@
       "id": "PR_kwDOHEJQVM7dC4Lj",
       "title": "Preparation for WG LC",
       "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/pull/10",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "italobusi",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-05-19T11:31:50Z",
-      "updatedAt": "2026-05-21T14:36:01Z",
+      "updatedAt": "2026-05-27T10:00:11Z",
       "baseRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
       "baseRefName": "main",
       "baseRefOid": "fe3dc9bd7fe95a7e066c1b6d6fa1e404e5391e97",
       "headRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
       "headRefName": "wg-lc-prep",
       "headRefOid": "40bd5c5141d7cf418f0fdf8f5162771b71704a22",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-05-27T10:00:11Z",
+      "mergedAt": "2026-05-27T10:00:10Z",
+      "mergedBy": "italobusi",
+      "mergeCommit": {
+        "oid": "77d1da8fad239b4a7bd90acbf45bbc9d5c9254ce"
+      },
       "comments": [],
       "reviews": [
         {
@@ -443,6 +445,19 @@
           "body": "",
           "createdAt": "2026-05-21T14:36:01Z",
           "updatedAt": "2026-05-21T14:36:01Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOHEJQVM8AAAABBCzSMA",
+          "commit": {
+            "abbreviatedOid": "40bd5c5"
+          },
+          "author": "aguoietf",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "looks good to me.",
+          "createdAt": "2026-05-26T15:18:07Z",
+          "updatedAt": "2026-05-26T15:18:07Z",
           "comments": []
         }
       ]
