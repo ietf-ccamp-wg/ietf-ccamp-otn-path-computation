@@ -166,7 +166,7 @@ otn-label-start-end, otn-label-hop and otn-label-step groupings defined in {{!I-
 {::include yang/ietf-otn-path-computation.yang}
 ~~~~
 {: #fig-otn-pc-yang title="OTN path computation YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-otn-path-computation@2026-05-19.yang"}
+sourcecode-markers="true" sourcecode-name="ietf-otn-path-computation@2026-07-29.yang"}
 
 # Security Considerations
 
@@ -222,7 +222,7 @@ registry group.
 
 {{fig-otn-pc-tree}} below shows the tree diagram of the YANG data model defined in module ietf-otn-path-computation.yang. See {{?RFC8340}} for an explanation of the symbols used. The data type of every leaf node is shown near the right end of the corresponding line.
 
-~~~~ ascii-art
+~~~~ yangtree
 {::include-fold yang/trees/ietf-otn-path-computation.tree}
 ~~~~
 {: #fig-otn-pc-tree title="OTN path computation tree diagram"
