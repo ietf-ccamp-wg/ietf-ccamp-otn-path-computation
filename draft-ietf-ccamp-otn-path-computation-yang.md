@@ -148,7 +148,7 @@ The entities and Traffic Engineering (TE) attributes, such as requested path and
 ## Bandwidth Augmentation {#otn-te-bandwidh}
 
 The OTN path computation model augments all the occurrences of the te-bandwidth container
-with the OTN technology-specific attributes using the otn-link-bandwidth and otn-path-bandwidth groupings defined in {{!I-D.ietf-ccamp-layer1-types}}.
+with the OTN technology-specific attributes using the otn-path-bandwidth grouping defined in {{!I-D.ietf-ccamp-layer1-types}}.
 
 ## Label Augmentations {#otn-te-label}
 
