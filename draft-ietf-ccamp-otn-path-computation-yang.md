@@ -228,6 +228,24 @@ registry group.
 {: #fig-otn-pc-tree title="OTN path computation tree diagram"
 artwork-name="ietf-otn-path-computation.tree"}
 
+# JSON Examples
+
+This appendix contains an example of an instance data tree in JSON
+encoding {{?RFC7951}}.
+
+The example instantiates the "ietf-otn-path-computation" model to request the computation of the primary and secondary paths described in {{Appendix B of ?I-D.ietf-ccamp-otn-tunnel-model}}.
+
+~~~~ ascii-art
+POST /restconf/operations/ietf-te:tunnels-path-compute HTTP/1.1
+Host: example.com
+Content-Type: application/yang-data+json
+
+~~~~
+
+~~~~ json
+{::include-fold yang/examples/otn-path-computation-example.json}
+~~~~
+
 # Change Log
 
 The initial YANG data model requesting path computation in optical networks was draft-gbb-ccamp-optical-path-computation-yang-00. This document included path computation request capabilities for WSON, Flexi-Grid and OTN technologies. However, it was proposed at IETF 113 (March 25, 2022) to split the initial document into separate documents for WDM (WSON and Flexi-Grid) and OTN technologies, as each technology may be developed and implemented separately.
