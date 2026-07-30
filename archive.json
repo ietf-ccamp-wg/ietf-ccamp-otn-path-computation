@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-14T02:08:28.199229+00:00",
+  "timestamp": "2026-07-30T02:03:15.433873+00:00",
   "repo": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
   "labels": [
     {
@@ -47,6 +47,11 @@
       "name": "wontfix",
       "description": "This will not be worked on",
       "color": "ffffff"
+    },
+    {
+      "name": "wait-PR",
+      "description": "",
+      "color": "fef2c0"
     }
   ],
   "issues": [
@@ -55,7 +60,7 @@
       "id": "I_kwDOHEJQVM5GZbI7",
       "title": "Complete Security Considerations",
       "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/issues/1",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "aguoietf",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -66,8 +71,8 @@
       ],
       "body": "Propose text for the Security Considerations section\r\nCopied from https://github.com/aguoietf/ietf-ccamp-optical-path-computation/issues/11\r\n",
       "createdAt": "2022-03-25T17:46:11Z",
-      "updatedAt": "2026-07-13T12:33:34Z",
-      "closedAt": null,
+      "updatedAt": "2026-07-29T22:20:05Z",
+      "closedAt": "2026-07-29T22:20:05Z",
       "comments": [
         {
           "author": "italobusi",
@@ -75,6 +80,13 @@
           "body": "The text on Security Considerations should be updated once the YANG model is stable.\r\n",
           "createdAt": "2022-09-12T13:17:53Z",
           "updatedAt": "2022-09-12T13:17:53Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "Security considerations have ben already added in [draft-ietf-ccamp-otn-path-computation-yang-08](https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-otn-path-computation-yang-08) and aligned with the template in RFC9907.",
+          "createdAt": "2026-07-29T22:20:05Z",
+          "updatedAt": "2026-07-29T22:20:05Z"
         }
       ]
     },
@@ -157,7 +169,7 @@
       "id": "I_kwDOHEJQVM5RpxA9",
       "title": "Fix idnits warnings",
       "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/issues/7",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "italobusi",
       "authorAssociation": "MEMBER",
       "assignees": [
@@ -166,8 +178,8 @@
       "labels": [],
       "body": "The following ID-nits have been identified:\r\n\r\n>   == Unused Reference: 'I-D.ietf-teas-actn-poi-applicability' is defined on\r\n>      line 854, but no explicit reference was found in the text\r\n> \r\n\r\nThis draft is informatively referenced in the Acknowledgements section\r\n\r\nReference: https://author-tools.ietf.org/api/idnits?url=https://www.ietf.org/archive/id/draft-gbb-ccamp-otn-path-computation-yang-02.txt",
       "createdAt": "2022-09-12T13:21:36Z",
-      "updatedAt": "2022-10-10T12:31:51Z",
-      "closedAt": null,
+      "updatedAt": "2026-07-29T22:18:53Z",
+      "closedAt": "2026-07-29T22:18:53Z",
       "comments": [
         {
           "author": "italobusi",
@@ -175,6 +187,13 @@
           "body": "- [ ] @danielkinguk : check with the tools team\r\n",
           "createdAt": "2022-10-06T12:56:33Z",
           "updatedAt": "2022-10-06T12:56:33Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "There are no more nits pointing to unused references in [draft-ietf-ccamp-otn-path-computation-yang-08](https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-otn-path-computation-yang-08)",
+          "createdAt": "2026-07-29T22:18:53Z",
+          "updatedAt": "2026-07-29T22:18:53Z"
         }
       ]
     },
@@ -223,7 +242,7 @@
       "id": "I_kwDOHEJQVM6GkPfS",
       "title": "Fix YANG compilation errors",
       "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/issues/9",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "italobusi",
       "authorAssociation": "MEMBER",
       "assignees": [
@@ -232,9 +251,17 @@
       "labels": [],
       "body": "```\r\nietf-otn-path-computation@2022-09-12.yang:\r\npyang 2.6.0: pyang --verbose --ietf -p {libs} {model}:\r\n# module search path: /tmp/tmpm5jm4ycu:/a/www/ietf-ftp/yang/rfcmod/:/a/www/ietf-ftp/yang/draftmod/:/a/www/ietf-ftp/yang/ianamod/:/a/www/ietf-ftp/yang/catalogmod/:.:/usr/local/share/yang/modules\r\n# read /tmp/tmpm5jm4ycu/ietf-otn-path-computation@2022-09-12.yang (CL)\r\n# read /a/www/ietf-ftp/yang/catalogmod/ietf-te-path-computation@2021-09-06.yang\r\n# read /a/www/ietf-ftp/yang/catalogmod/ietf-te@2021-02-20.yang\r\n# read /a/www/ietf-ftp/yang/draftmod/ietf-te-types@2024-02-22.yang\r\n# read /usr/local/share/yang/modules/ietf/ietf-inet-types.yang\r\n# read /a/www/ietf-ftp/yang/catalogmod/ietf-inet-types@2021-02-22.yang\r\n# read /usr/local/share/yang/modules/ietf/ietf-yang-types.yang\r\n# read /a/www/ietf-ftp/yang/draftmod/ietf-yang-types@2023-01-23.yang\r\n# read /usr/local/share/yang/modules/ietf/ietf-routing-types.yang\r\n# read /a/www/ietf-ftp/yang/rfcmod/ietf-routing-types@2017-12-04.yang\r\n# read /usr/local/share/yang/modules/ietf/ietf-network.yang\r\n# read /a/www/ietf-ftp/yang/rfcmod/ietf-network@2018-02-26.yang\r\n# read /usr/local/share/yang/modules/ietf/ietf-network-topology.yang\r\n# read /a/www/ietf-ftp/yang/rfcmod/ietf-network-topology@2018-02-26.yang\r\n# read /a/www/ietf-ftp/yang/draftmod/ietf-layer1-types@2024-02-22.yang\r\n/tmp/tmpm5jm4ycu/ietf-otn-path-computation@2022-09-12.yang:171: error: node ietf-te-path-computation::explicit-route-objects-always is not found\r\n/tmp/tmpm5jm4ycu/ietf-otn-path-computation@2022-09-12.yang:184: error: node ietf-te-path-computation::explicit-route-objects-always is not found\r\n\r\nyanglint SO 1.9.2: yanglint --verbose -p {tmplib} -p {rfclib} -p {draftlib} -p {ianalib} -p {cataloglib} {model} -i:\r\nwarn: Missing status in deprecated subtree (/ietf-te-types:{grouping}[generic-path-optimization]/optimizations/algorithm/metric/tiebreakers/tiebreaker), inheriting.\r\nwarn: Missing status in deprecated subtree (/ietf-te-types:{grouping}[generic-path-optimization]/optimizations/algorithm/metric/tiebreakers/tiebreaker/tiebreaker-type), inheriting.\r\nerr : Failed to resolve augment \"/ietf-te:tunnels-path-compute/ietf-te:input/ietf-te:path-compute-info/ietf-te-path-computation:path-request/ietf-te-path-computation:explicit-route-objects-always/ietf-te-path-computation:route-object-exclude-always/ietf-te-path-computation:type/ietf-te-path-computation:label/ietf-te-path-computation:label-hop/ietf-te-path-computation:te-label/ietf-te-path-computation:technology\". (/ietf-otn-path-computation:{augment}[/ietf-te:tunnels-path-compute/ietf-te:input/ietf-te:path-compute-info/ietf-te-path-computation:path-request/ietf-te-path-computation:explicit-route-objects-always/ietf-te-path-computation:route-object-exclude-always/ietf-te-path-computation:type/ietf-te-path-computation:label/ietf-te-path-computation:label-hop/ietf-te-path-computation:te-label/ietf-te-path-computation:technology])\r\nerr : Failed to resolve augment \"/ietf-te:tunnels-path-compute/ietf-te:input/ietf-te:path-compute-info/ietf-te-path-computation:path-request/ietf-te-path-computation:explicit-route-objects-always/ietf-te-path-computation:route-object-include-exclude/ietf-te-path-computation:type/ietf-te-path-computation:label/ietf-te-path-computation:label-hop/ietf-te-path-computation:te-label/ietf-te-path-computation:technology\". (/ietf-otn-path-computation:{augment}[/ietf-te:tunnels-path-compute/ietf-te:input/ietf-te:path-compute-info/ietf-te-path-computation:path-request/ietf-te-path-computation:explicit-route-objects-always/ietf-te-path-computation:route-object-include-exclude/ietf-te-path-computation:type/ietf-te-path-computation:label/ietf-te-path-computation:label-hop/ietf-te-path-computation:te-label/ietf-te-path-computation:technology])\r\nerr : Module \"ietf-otn-path-computation\" parsing failed.\r\n```",
       "createdAt": "2024-04-22T23:50:40Z",
-      "updatedAt": "2024-04-22T23:50:45Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-07-29T22:18:19Z",
+      "closedAt": "2026-07-29T22:18:19Z",
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "There are no more YANG compilation errors in [draft-ietf-ccamp-otn-path-computation-yang-08](https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-otn-path-computation-yang-08)",
+          "createdAt": "2026-07-29T22:18:19Z",
+          "updatedAt": "2026-07-29T22:18:19Z"
+        }
+      ]
     },
     {
       "number": 11,
@@ -252,9 +279,9 @@
         "documentation",
         "enhancement"
       ],
-      "body": "> Document: draft-ietf-ccamp-otn-path-computation-yang\n> Title: A YANG Data Model for requesting Path Computation in an Optical\n> Transport Network (OTN) Reviewer: Dhruv Dhody Review result: Has Nits\n> \n> Hello\n> \n> I have been selected to do a routing directorate \u201cearly\u201d review of this draft.\n> https://datatracker.ietf.org/doc/draft-ietf-ccamp-otn-path-computation-yang/\n> \n> The routing directorate will, on request from the working group chair, perform\n> an \u201cearly\u201d review of a draft before it is submitted for publication to the\n> IESG. The early review can be performed at any time during the draft\u2019s lifetime\n> as a working group document. The purpose of the early review depends on the\n> stage that the document has reached.\n> \n> As this document is in working group last call, my focus for the review was to\n> determine whether the document is ready to be published. Please consider my\n> comments along with the other working group last call comments.\n> \n> For more information about the Routing Directorate, please see\n> https://wiki.ietf.org/en/group/rtg/RtgDir\n> \n> Document: draft-ietf-ccamp-otn-path-computation-yang\n> Reviewer: Dhruv Dhody\n> Review Date: 2026-07-12\n> Intended Status: Standards\n> \n> ## Summary:\n> I have some minor concerns about this document that I think should be resolved\n> before it is submitted to the IESG.\n> \n> ## Comments:\n> \n> The document is generally well organized and readable. It clearly builds on the\n> existing TE Path Computation YANG model and limits itself to OTN-specific\n> augmentations. The structure follows that of the underlying model closely,\n> which makes the document relatively easy to follow for readers familiar with it.\n> \n> ## Minor:\n> \n> - Remove otn-link-bandwidth from this text - \"with the OTN technology-specific\n> attributes using the otn-link-bandwidth and otn-path-bandwidth groupings\", as I\n> did not find any use of that grouping in the YANG model.\n> \n\n- [ ] To fix\n\n> - This might be a copy-paste-error, where the description says 'end' but it\n> should be 'step'\n> ````\n>   augment \"/te:tunnels-path-compute/te:input/te:path-compute-info/\"\n>         + \"te-pc:path-request/te-pc:path-out-segment/\"\n>         + \"te-pc:label-restrictions/te-pc:label-restriction/\"\n>         + \"te-pc:label-step/te-pc:technology\" {\n>     description\n>       \"Augment TE label range end for the egress segment\n>        of the requested path.\";\n>     case otn {\n>       uses l1-types:otn-label-step;\n>     }\n> ````\n> \n\n- [ ] To fix\n\n> - The security consideration says that the YANG module defined in this document\n> augments the \"tunnels-path-compute\" and the \"tunnel-actions\" RPCs; but i did\n> not find any \"tunnel-actions\" in the YANG.\n> \n\nSee #1 \n\n> - RFC 9907 recommends usage examples for YANG modules, did the WG consider\n> adding it?\n> \n\nSee #12 \n\n> Thanks!\n> Dhruv\n> \n\nSee: https://mailarchive.ietf.org/arch/msg/ccamp/aChbscem8uqPuLid9qHSlRCrJtA/",
+      "body": "> Document: draft-ietf-ccamp-otn-path-computation-yang\n> Title: A YANG Data Model for requesting Path Computation in an Optical\n> Transport Network (OTN) Reviewer: Dhruv Dhody Review result: Has Nits\n> \n> Hello\n> \n> I have been selected to do a routing directorate \u201cearly\u201d review of this draft.\n> https://datatracker.ietf.org/doc/draft-ietf-ccamp-otn-path-computation-yang/\n> \n> The routing directorate will, on request from the working group chair, perform\n> an \u201cearly\u201d review of a draft before it is submitted for publication to the\n> IESG. The early review can be performed at any time during the draft\u2019s lifetime\n> as a working group document. The purpose of the early review depends on the\n> stage that the document has reached.\n> \n> As this document is in working group last call, my focus for the review was to\n> determine whether the document is ready to be published. Please consider my\n> comments along with the other working group last call comments.\n> \n> For more information about the Routing Directorate, please see\n> https://wiki.ietf.org/en/group/rtg/RtgDir\n> \n> Document: draft-ietf-ccamp-otn-path-computation-yang\n> Reviewer: Dhruv Dhody\n> Review Date: 2026-07-12\n> Intended Status: Standards\n> \n> ## Summary:\n> I have some minor concerns about this document that I think should be resolved\n> before it is submitted to the IESG.\n> \n> ## Comments:\n> \n> The document is generally well organized and readable. It clearly builds on the\n> existing TE Path Computation YANG model and limits itself to OTN-specific\n> augmentations. The structure follows that of the underlying model closely,\n> which makes the document relatively easy to follow for readers familiar with it.\n> \n> ## Minor:\n> \n> - Remove otn-link-bandwidth from this text - \"with the OTN technology-specific\n> attributes using the otn-link-bandwidth and otn-path-bandwidth groupings\", as I\n> did not find any use of that grouping in the YANG model.\n> \n\n[Italo] We will remove otn-link-bandwidth as suggested\n\n- [x] To fix\n\n> - This might be a copy-paste-error, where the description says 'end' but it\n> should be 'step'\n> ````\n>   augment \"/te:tunnels-path-compute/te:input/te:path-compute-info/\"\n>         + \"te-pc:path-request/te-pc:path-out-segment/\"\n>         + \"te-pc:label-restrictions/te-pc:label-restriction/\"\n>         + \"te-pc:label-step/te-pc:technology\" {\n>     description\n>       \"Augment TE label range end for the egress segment\n>        of the requested path.\";\n>     case otn {\n>       uses l1-types:otn-label-step;\n>     }\n> ````\n> \n\n[Italo] We will c/end/step/ as suggested\n\n- [x] To fix\n\n> - The security consideration says that the YANG module defined in this document\n> augments the \"tunnels-path-compute\" and the \"tunnel-actions\" RPCs; but i did\n> not find any \"tunnel-actions\" in the YANG.\n> \n\n[Italo] We will remove tunnel-actions since it is not augmented by this model\n\n- [x] To fix\n\n> - RFC 9907 recommends usage examples for YANG modules, did the WG consider\n> adding it?\n> \n\n[Italo] We will add a JSON example\n\nSee #12 \n\n> Thanks!\n> Dhruv\n> \n\nSee: https://mailarchive.ietf.org/arch/msg/ccamp/aChbscem8uqPuLid9qHSlRCrJtA/",
       "createdAt": "2026-07-13T12:24:53Z",
-      "updatedAt": "2026-07-13T12:32:59Z",
+      "updatedAt": "2026-07-29T22:22:20Z",
       "closedAt": null,
       "comments": []
     },
@@ -505,6 +532,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDOHEJQVM74ObNT",
+      "title": "Address Rtgdir early review comments",
+      "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/pull/13",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Address Rtgdir early review comments: see #11 \r\n- Added JSON examples: fix #12 \r\n\r\n---\r\n\r\n[Diff with main](https://author-tools.ietf.org/api/iddiff?url_1=https://ietf-ccamp-wg.github.io/ietf-ccamp-otn-path-computation/draft-ietf-ccamp-otn-path-computation-yang.txt&url_2=https://ietf-ccamp-wg.github.io/ietf-ccamp-otn-path-computation/rtg-dir/draft-ietf-ccamp-otn-path-computation-yang.txt)",
+      "createdAt": "2026-07-29T22:16:59Z",
+      "updatedAt": "2026-07-29T22:28:03Z",
+      "baseRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
+      "baseRefName": "main",
+      "baseRefOid": "58dd07d92fbbe12ab04817f41d714321e5785c64",
+      "headRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
+      "headRefName": "rtg-dir",
+      "headRefOid": "b53dac2cf58acd0114d4c9a260ae6d11e43d5753",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
