@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-08-02T02:27:37.312048+00:00",
+  "timestamp": "2026-08-06T02:12:47.576414+00:00",
   "repo": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
   "labels": [
     {
@@ -554,7 +554,7 @@
       "labels": [],
       "body": "Address Rtgdir early review comments: see #11 \r\n- Added JSON examples: fix #12 \r\n\r\n---\r\n\r\n[Diff with main](https://author-tools.ietf.org/api/iddiff?url_1=https://ietf-ccamp-wg.github.io/ietf-ccamp-otn-path-computation/draft-ietf-ccamp-otn-path-computation-yang.txt&url_2=https://ietf-ccamp-wg.github.io/ietf-ccamp-otn-path-computation/rtg-dir/draft-ietf-ccamp-otn-path-computation-yang.txt)",
       "createdAt": "2026-07-29T22:16:59Z",
-      "updatedAt": "2026-07-29T22:28:03Z",
+      "updatedAt": "2026-08-04T21:54:35Z",
       "baseRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
       "baseRefName": "main",
       "baseRefOid": "58dd07d92fbbe12ab04817f41d714321e5785c64",
@@ -566,7 +566,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOHEJQVM8AAAABIaLm_w",
+          "commit": {
+            "abbreviatedOid": "b53dac2"
+          },
+          "author": "aguoietf",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "the json example looks fine (and straightforward) and I suppose it has been validated with yanglint/tool validation, so all good.",
+          "createdAt": "2026-08-04T21:54:34Z",
+          "updatedAt": "2026-08-04T21:54:34Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
