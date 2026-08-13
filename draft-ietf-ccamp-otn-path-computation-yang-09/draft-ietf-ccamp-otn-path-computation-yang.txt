@@ -1,0 +1,1014 @@
+
+
+
+
+CCAMP Working Group                                              I. Busi
+Internet-Draft                                       Huawei Technologies
+Intended status: Standards Track                                  A. Guo
+Expires: 14 February 2027                         Futurewei Technologies
+                                                              S. Belotti
+                                                                   Nokia
+                                                          13 August 2026
+
+
+    A YANG Data Model for requesting Path Computation in an Optical
+                        Transport Network (OTN)
+           draft-ietf-ccamp-otn-path-computation-yang-latest
+
+Abstract
+
+   This document provides a mechanism to request path computation in an
+   Optical Transport Network (OTN) by augmenting the Remote Procedure
+   Calls (RPCs) defined in RFC YYYY.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at https://ietf-ccamp-
+   wg.github.io/ietf-ccamp-otn-path-computation/draft-ietf-ccamp-otn-
+   path-computation-yang.html.  Status information for this document may
+   be found at https://datatracker.ietf.org/doc/draft-ietf-ccamp-otn-
+   path-computation-yang/.
+
+   Discussion of this document takes place on the Common Control and
+   Measurement Plane Working Group mailing list (mailto:ccamp@ietf.org),
+   which is archived at https://mailarchive.ietf.org/arch/browse/ccamp/.
+   Subscribe at https://www.ietf.org/mailman/listinfo/ccamp/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 14 February 2027.
+
+Copyright Notice
+
+   Copyright (c) 2026 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+     1.1.  Editorial Note (To be removed by RFC Editor)
+     1.2.  Terminology and Notations
+     1.3.  Tree Diagram
+     1.4.  Prefix in Data Node Names
+   2.  YANG Data Model for OTN Path Computation
+     2.1.  YANG Model Overview
+     2.2.  Bandwidth Augmentation
+     2.3.  Label Augmentations
+   3.  YANG Model for OTN Path Computation
+   4.  Security Considerations
+   5.  IANA Considerations
+   6.  References
+     6.1.  Normative References
+     6.2.  Informative References
+   Appendix A.  OTN Path Computation Tree Diagram
+   Appendix B.  JSON Examples
+   Appendix C.  Change Log
+   Acknowledgments
+   Contributors
+   Authors' Addresses
+
+1.  Introduction
+
+   [I-D.ietf-teas-yang-path-computation] describes key use cases, where
+   a client needs to request underlying SDN controllers for path
+   computation.  In some of these use cases, the underlying SDN
+   controller can control an Optical Transport Network (OTN).
+
+   This document defines a YANG data model, which augment the generic
+   Path Computation RPC defined in
+   [I-D.ietf-teas-yang-path-computation], with OTN technology-specific
+   augmentations required to request path computation to an underlying
+   OTN SDN controller.  These models allow a client to delegate path
+   computation tasks to the underlying SDN controller without having to
+   obtain OTN detailed information from the controller and performing
+   feasible path computation itself.
+
+1.1.  Editorial Note (To be removed by RFC Editor)
+
+      Note to the RFC Editor: This section is to be removed prior to
+      publication.
+
+   This document contains placeholder values that need to be replaced
+   with finalized values at the time of publication.  This note
+   summarizes all of the substitutions that are needed.
+
+   Please apply the following replacements:
+
+   *  XXXX --> the assigned RFC number for this I-D
+
+   *  YYYY --> the assigned RFC number for
+      [I-D.ietf-teas-yang-path-computation]
+
+   *  ZZZZ --> the assigned RFC number for [I-D.ietf-ccamp-layer1-types]
+
+   *  KKKK --> the assigned RFC number for [I-D.ietf-teas-yang-te]
+
+   *  2026-05-19 --> the actual date of the publication of this document
+
+1.2.  Terminology and Notations
+
+   Refer to [I-D.ietf-ccamp-otn-topo-yang] and
+   [I-D.ietf-ccamp-layer1-types] for the OTN specific terms used in this
+   document.
+
+   The following terms are defined in [RFC7950] and are not redefined
+   here:
+
+   *  client
+
+   *  server
+
+   *  augment
+
+   *  data model
+
+   *  data node
+
+   The following terms are defined in [RFC6241] and are not redefined
+   here:
+
+   *  configuration data
+
+   *  state data
+
+   The terminology for describing YANG data models is found in
+   [RFC7950].
+
+1.3.  Tree Diagram
+
+   A simplified graphical representation of the data model is used in
+   Appendix A of this document.  The meaning of the symbols in these
+   diagrams is defined in [RFC8340].
+
+1.4.  Prefix in Data Node Names
+
+   In this document, names of data nodes and other data model objects
+   are prefixed using the standard prefix associated with the
+   corresponding YANG imported modules, as shown in Table 1.
+
+           +==========+===========================+===========+
+           | Prefix   | YANG module               | Reference |
+           +==========+===========================+===========+
+           | l1-types | ietf-layer1-types         | [RFCZZZZ] |
+           +----------+---------------------------+-----------+
+           | te       | ietf-te                   | [RFCKKKK] |
+           +----------+---------------------------+-----------+
+           | te-pc    | ietf-te-path-computation  | [RFCYYYY] |
+           +----------+---------------------------+-----------+
+           | otn-pc   | ietf-otn-path-computation | RFCXXXX   |
+           +----------+---------------------------+-----------+
+
+             Table 1: Prefixes and corresponding YANG modules
+
+2.  YANG Data Model for OTN Path Computation
+
+2.1.  YANG Model Overview
+
+   The YANG data model for requesting OTN path computation is defined as
+   an augmentation of the generic Path Computation RPC defined in
+   [I-D.ietf-teas-yang-path-computation], as shown in Figure 1.
+
+                       +--------------------------+
+          TE generic   | ietf-te-path-computation |
+                       +--------------------------+
+                                    ^
+                                    |
+                                    | Augments
+                                    |
+                      +-------------+-------------+
+          OTN         | ietf-otn-path-computation |
+                      +---------------------------+
+
+     Figure 1: Relationship between OTN and TE path computation models
+
+   The entities and Traffic Engineering (TE) attributes, such as
+   requested path and tunnel attributes, defined in
+   [I-D.ietf-teas-yang-path-computation], are still applicable when
+   requesting OTN path computation and the models defined in this
+   document only specifies the additional OTN technology-specific
+   attributes/information, using the attributes defined in
+   [I-D.ietf-ccamp-layer1-types].
+
+2.2.  Bandwidth Augmentation
+
+   The OTN path computation model augments all the occurrences of the
+   te-bandwidth container with the OTN technology-specific attributes
+   using the otn-path-bandwidth grouping defined in
+   [I-D.ietf-ccamp-layer1-types].
+
+2.3.  Label Augmentations
+
+   The OTN path computation model augments all the occurrences of the
+   label-restriction list with OTN technology-specific attributes using
+   the otn-label-range-info grouping defined in
+   [I-D.ietf-ccamp-layer1-types].
+
+   Moreover, the model augments all the occurrences of the te-label
+   container with the OTN technology-specific attributes using the otn-
+   label-start-end, otn-label-hop and otn-label-step groupings defined
+   in [I-D.ietf-ccamp-layer1-types].
+
+3.  YANG Model for OTN Path Computation
+
+   <CODE BEGINS> file "ietf-otn-path-computation@2026-07-29.yang"
+   module ietf-otn-path-computation {
+     yang-version 1.1;
+     namespace "urn:ietf:params:xml:ns:yang:ietf-otn-path-computation";
+     prefix otn-pc;
+
+     import ietf-te-path-computation {
+       prefix te-pc;
+       reference
+         "RFC YYYY: A YANG Data Model for requesting path computation";
+     }
+     import ietf-te {
+       prefix te;
+       reference
+         "RFC KKKK: A YANG Data Model for Traffic Engineering Tunnels,
+                    Label Switched Paths, and Interfaces";
+     }
+     import ietf-layer1-types {
+       prefix l1-types;
+       reference
+         "RFC ZZZZ: Common YANG Data Types for Layer 1 Networks";
+     }
+
+     organization
+       "IETF CCAMP Working Group";
+     contact
+       "WG Web: <https://datatracker.ietf.org/wg/ccamp/>
+        WG List:  <mailto:ccamp@ietf.org>
+
+        Editor:   Aihua Guo
+                  <mailto:aihuaguo.ietf@gmail.com>
+
+        Editor:   Italo Busi
+                  <mailto:italo.busi@huawei.com>
+
+        Editor:   Sergio Belotti
+                  <mailto:sergio.belotti@nokia.com>";
+     description
+       "This module defines a model for requesting
+        OTN Path Computation.
+
+        Copyright (c) 2026 IETF Trust and the persons identified as
+        authors of the code.  All rights reserved.
+
+        Redistribution and use in source and binary forms, with or
+        without modification, is permitted pursuant to, and subject to
+        the license terms contained in, the Revised BSD License set
+        forth in Section 4.c of the IETF Trust's Legal Provisions
+        Relating to IETF Documents
+        (https://trustee.ietf.org/license-info).
+
+        All revisions of IETF and IANA published modules can be found
+        at the YANG Parameters registry group
+        (https://www.iana.org/assignments/yang-parameters).
+
+        This version of this YANG module is part of RFC XXXX; see
+        the RFC itself for full legal notices.";
+
+     revision 2026-07-29 {
+       description
+         "Initial version.";
+       reference
+         "RFC XXXX: A YANG Data Model for requesting Path Computation
+                    in an Optical Transport Network (OTN)";
+     }
+
+     /*
+      * Data nodes
+      */
+     /*
+      * Augment TE bandwidth
+      */
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:path-request/te-pc:te-bandwidth/te-pc:technology" {
+       description
+         "Augment TE bandwidth of the requested path.";
+       case otn {
+         uses l1-types:otn-path-bandwidth;
+       }
+     }
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:tunnel-attributes/te-pc:te-bandwidth/"
+           + "te-pc:technology" {
+       description
+         "Augment TE bandwidth of the requested tunnel attributes.";
+       case otn {
+         uses l1-types:otn-path-bandwidth;
+       }
+     }
+
+     augment "/te:tunnels-path-compute/te:output/"
+           + "te:path-compute-result/te-pc:response/"
+           + "te-pc:computed-paths-properties/"
+           + "te-pc:computed-path-properties/te-pc:path-properties/"
+           + "te-pc:te-bandwidth/te-pc:technology" {
+       description
+         "Augment TE bandwidth of the computed path properties.";
+       case otn {
+         uses l1-types:otn-path-bandwidth;
+       }
+     }
+
+     /*
+      * Augment TE label range information
+      */
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:path-request/te-pc:path-in-segment/"
+           + "te-pc:label-restrictions/te-pc:label-restriction" {
+       description
+         "Augment TE label range information for the ingress segment
+          of the requested path.";
+       uses l1-types:otn-label-range-info;
+     }
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:path-request/te-pc:path-out-segment/"
+           + "te-pc:label-restrictions/te-pc:label-restriction" {
+       description
+         "Augment TE label range information for the egress segment
+          of the requested path.";
+       uses l1-types:otn-label-range-info;
+     }
+
+     /*
+      * Augment TE label.
+      */
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:path-request/te-pc:optimizations/te-pc:algorithm/"
+           + "te-pc:metric/te-pc:optimization-metric/"
+           + "te-pc:explicit-route-exclude-objects/"
+           + "te-pc:route-object-exclude-object/te-pc:type/"
+           + "te-pc:label/te-pc:label-hop/te-pc:te-label/"
+           + "te-pc:technology" {
+       description
+         "Augment TE label hop for the optimization of the explicit
+          route objects excluded by the path computation of the
+          requested path.";
+       case otn {
+         uses l1-types:otn-label-hop;
+       }
+     }
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:path-request/te-pc:optimizations/te-pc:algorithm/"
+           + "te-pc:metric/te-pc:optimization-metric/"
+           + "te-pc:explicit-route-include-objects/"
+           + "te-pc:route-object-include-object/te-pc:type/"
+           + "te-pc:label/te-pc:label-hop/te-pc:te-label/"
+           + "te-pc:technology" {
+       description
+         "Augment TE label hop for the optimization of the explicit
+          route objects included by the path computation of the
+          requested path.";
+       case otn {
+         uses l1-types:otn-label-hop;
+       }
+     }
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:path-request/te-pc:explicit-route-objects/"
+           + "te-pc:route-object-exclude-always/"
+           + "te-pc:type/te-pc:label/te-pc:label-hop/te-pc:te-label/"
+           + "te-pc:technology" {
+       description
+         "Augment TE label hop for the explicit route objects always
+          excluded by the path computation of the requested path.";
+       case otn {
+         uses l1-types:otn-label-hop;
+       }
+     }
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:path-request/te-pc:explicit-route-objects/"
+           + "te-pc:route-object-include-exclude/te-pc:type/"
+           + "te-pc:label/te-pc:label-hop/te-pc:te-label/"
+           + "te-pc:technology" {
+       description
+         "Augment TE label hop for the explicit route objects included
+          or excluded by the path computation of the requested path.";
+       case otn {
+         uses l1-types:otn-label-hop;
+       }
+     }
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:path-request/te-pc:path-in-segment/"
+           + "te-pc:label-restrictions/te-pc:label-restriction/"
+           + "te-pc:label-start/te-pc:te-label/te-pc:technology" {
+       description
+         "Augment TE label range start for the ingress segment
+          of the requested path.";
+       case otn {
+         uses l1-types:otn-label-start-end;
+       }
+     }
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:path-request/te-pc:path-in-segment/"
+           + "te-pc:label-restrictions/te-pc:label-restriction/"
+           + "te-pc:label-end/te-pc:te-label/te-pc:technology" {
+       description
+         "Augment TE label range end for the ingress segment
+          of the requested path.";
+       case otn {
+         uses l1-types:otn-label-start-end;
+       }
+     }
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:path-request/te-pc:path-in-segment/"
+           + "te-pc:label-restrictions/te-pc:label-restriction/"
+           + "te-pc:label-step/te-pc:technology" {
+       description
+         "Augment TE label range step for the ingress segment
+          of the requested path.";
+       case otn {
+         uses l1-types:otn-label-step;
+       }
+     }
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:path-request/te-pc:path-out-segment/"
+           + "te-pc:label-restrictions/te-pc:label-restriction/"
+           + "te-pc:label-start/te-pc:te-label/te-pc:technology" {
+       description
+         "Augment TE label range start for the egress segment
+          of the requested path.";
+       case otn {
+         uses l1-types:otn-label-start-end;
+       }
+     }
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:path-request/te-pc:path-out-segment/"
+           + "te-pc:label-restrictions/te-pc:label-restriction/"
+           + "te-pc:label-end/te-pc:te-label/te-pc:technology" {
+       description
+         "Augment TE label range end for the egress segment
+          of the requested path.";
+       case otn {
+         uses l1-types:otn-label-start-end;
+       }
+     }
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:path-request/te-pc:path-out-segment/"
+           + "te-pc:label-restrictions/te-pc:label-restriction/"
+           + "te-pc:label-step/te-pc:technology" {
+       description
+         "Augment TE label range step for the egress segment
+          of the requested path.";
+       case otn {
+         uses l1-types:otn-label-step;
+       }
+     }
+
+     augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+           + "te-pc:synchronization/te-pc:exclude-objects/"
+           + "te-pc:excludes/te-pc:type/te-pc:label/te-pc:label-hop/"
+           + "te-pc:te-label/te-pc:technology" {
+       description
+         "Augment TE label hop for the explicit route objects to always
+          exclude from synchronized path computation.";
+       case otn {
+         uses l1-types:otn-label-hop;
+       }
+     }
+
+     augment "/te:tunnels-path-compute/te:output/"
+           + "te:path-compute-result/te-pc:response/"
+           + "te-pc:computed-paths-properties/"
+           + "te-pc:computed-path-properties/te-pc:path-properties/"
+           + "te-pc:path-route-objects/te-pc:path-route-object/"
+           + "te-pc:type/te-pc:label/"
+           + "te-pc:label-hop/te-pc:te-label/te-pc:technology" {
+       description
+         "Augment TE label hop for the route object of the computed
+          path.";
+       case otn {
+         uses l1-types:otn-label-hop;
+       }
+     }
+   }
+   <CODE ENDS>
+
+                 Figure 2: OTN path computation YANG module
+
+4.  Security Considerations
+
+   This section is modeled after the template described in Section 3.7
+   of [RFC9907].
+
+   The "ietf-otn-path-computation" YANG module defines a data model that
+   is designed to be accessed via YANG-based management protocols, such
+   as NETCONF [RFC6241] and RESTCONF [RFC8040].  These YANG-based
+   management protocols (1) have to use a secure transport layer (e.g.,
+   SSH [RFC4252], TLS [RFC8446], and QUIC [RFC9000]) and (2) have to use
+   mutual authentication.
+
+   The Network Configuration Access Control Model (NACM) [RFC8341]
+   provides the means to restrict access for particular NETCONF or
+   RESTCONF users to a preconfigured subset of all available NETCONF or
+   RESTCONF protocol operations and content.
+
+   There are no particularly sensitive RPC or action operations.
+
+   This YANG module uses groupings from other YANG modules that define
+   nodes that may be considered sensitive or vulnerable in network
+   environments.  Refer to the Security Considerations of
+   [I-D.ietf-ccamp-layer1-types] for information as to which nodes may
+   be considered sensitive or vulnerable in network environments.
+
+   The YANG module defined in this document augments the "tunnels-path-
+   compute" RPC, defined in [I-D.ietf-teas-yang-te] and in
+   [I-D.ietf-teas-yang-path-computation], with OTN technology-specific
+   attributes.  The security considerations provided in
+   [I-D.ietf-teas-yang-te] and in [I-D.ietf-teas-yang-path-computation]
+   are also applicable to the YANG module defined in this document.
+
+5.  IANA Considerations
+
+   IANA is requested to register the following URI in the "ns" registry
+   within the "IETF XML Registry" group [RFC3688]:
+
+      URI: urn:ietf:params:xml:ns:yang:ietf-otn-path-computation
+      Registrant Contact: The IESG
+      XML: N/A; the requested URI is an XML namespace.
+
+   IANA is requested to register the following YANG module in the "YANG
+   Module Names" registry [RFC6020] within the "YANG Parameters"
+   registry group.
+
+     Name:         ietf-otn-path-computation
+     Maintained by IANA?  N
+     Namespace:    urn:ietf:params:xml:ns:yang:ietf-otn-path-computation
+     Prefix:       otn-pc
+     Reference:    RFC XXXX
+
+6.  References
+
+6.1.  Normative References
+
+   [I-D.ietf-ccamp-layer1-types]
+              Zheng, H. and I. Busi, "Common YANG Data Types for Layer 1
+              Networks", Work in Progress, Internet-Draft, draft-ietf-
+              ccamp-layer1-types-19, 16 June 2026,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
+              layer1-types-19>.
+
+   [I-D.ietf-teas-yang-path-computation]
+              Busi, I., Belotti, S., de Dios, O. G., Sharma, A., and Y.
+              Shi, "A YANG Data Model for requesting path computation",
+              Work in Progress, Internet-Draft, draft-ietf-teas-yang-
+              path-computation-28, 12 May 2026,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              yang-path-computation-28>.
+
+   [I-D.ietf-teas-yang-te]
+              Saad, T., Gandhi, R., Liu, X., Beeram, V. P., and I.
+              Bryskin, "A YANG Data Model for Traffic Engineering
+              Tunnels, Label Switched Paths, and Interfaces", Work in
+              Progress, Internet-Draft, draft-ietf-teas-yang-te-44, 26
+              March 2026, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-teas-yang-te-44>.
+
+   [RFC6020]  Bjorklund, M., Ed., "YANG - A Data Modeling Language for
+              the Network Configuration Protocol (NETCONF)", RFC 6020,
+              DOI 10.17487/RFC6020, October 2010,
+              <https://www.rfc-editor.org/rfc/rfc6020>.
+
+   [RFC6241]  Enns, R., Ed., Bjorklund, M., Ed., Schoenwaelder, J., Ed.,
+              and A. Bierman, Ed., "Network Configuration Protocol
+              (NETCONF)", RFC 6241, DOI 10.17487/RFC6241, June 2011,
+              <https://www.rfc-editor.org/rfc/rfc6241>.
+
+   [RFC7950]  Bjorklund, M., Ed., "The YANG 1.1 Data Modeling Language",
+              RFC 7950, DOI 10.17487/RFC7950, August 2016,
+              <https://www.rfc-editor.org/rfc/rfc7950>.
+
+   [RFC8340]  Bjorklund, M. and L. Berger, Ed., "YANG Tree Diagrams",
+              BCP 215, RFC 8340, DOI 10.17487/RFC8340, March 2018,
+              <https://www.rfc-editor.org/rfc/rfc8340>.
+
+   [RFC8341]  Bierman, A. and M. Bjorklund, "Network Configuration
+              Access Control Model", STD 91, RFC 8341,
+              DOI 10.17487/RFC8341, March 2018,
+              <https://www.rfc-editor.org/rfc/rfc8341>.
+
+6.2.  Informative References
+
+   [I-D.draft-gbb-ccamp-optical-path-computation-yang]
+              Busi, I., Guo, A., and S. Belotti, "YANG Data Models for
+              requesting Path Computation in Optical Networks", Work in
+              Progress, Internet-Draft, draft-gbb-ccamp-optical-path-
+              computation-yang-02, 12 September 2022,
+              <https://datatracker.ietf.org/doc/html/draft-gbb-ccamp-
+              optical-path-computation-yang-02>.
+
+   [I-D.ietf-ccamp-otn-topo-yang]
+              Zheng, H., Busi, I., Liu, X., Belotti, S., and O. G. de
+              Dios, "A YANG Data Model for Optical Transport Network
+              Topology", Work in Progress, Internet-Draft, draft-ietf-
+              ccamp-otn-topo-yang-21, 16 June 2026,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
+              otn-topo-yang-21>.
+
+   [I-D.ietf-ccamp-otn-tunnel-model]
+              Zheng, H., Busi, I., Belotti, S., Lopez, V., and Y. Xu, "A
+              YANG Data Model for Optical Transport Network (OTN)
+              Tunnels and Label Switched Paths", Work in Progress,
+              Internet-Draft, draft-ietf-ccamp-otn-tunnel-model-25, 27
+              May 2026, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-ccamp-otn-tunnel-model-25>.
+
+   [I-D.ietf-teas-actn-poi-applicability]
+              Peruzzini, F., Bouquier, J., Busi, I., King, D., and D.
+              Ceccarelli, "Applicability of Abstraction and Control of
+              Traffic Engineered Networks (ACTN) to Packet Optical
+              Integration (POI)", Work in Progress, Internet-Draft,
+              draft-ietf-teas-actn-poi-applicability-19, 11 June 2026,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              actn-poi-applicability-19>.
+
+   [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,
+              DOI 10.17487/RFC3688, January 2004,
+              <https://www.rfc-editor.org/rfc/rfc3688>.
+
+   [RFC4252]  Ylonen, T. and C. Lonvick, Ed., "The Secure Shell (SSH)
+              Authentication Protocol", RFC 4252, DOI 10.17487/RFC4252,
+              January 2006, <https://www.rfc-editor.org/rfc/rfc4252>.
+
+   [RFC7951]  Lhotka, L., "JSON Encoding of Data Modeled with YANG",
+              RFC 7951, DOI 10.17487/RFC7951, August 2016,
+              <https://www.rfc-editor.org/rfc/rfc7951>.
+
+   [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
+              Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
+              <https://www.rfc-editor.org/rfc/rfc8040>.
+
+   [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
+              Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
+              <https://www.rfc-editor.org/rfc/rfc8446>.
+
+   [RFC9000]  Iyengar, J., Ed. and M. Thomson, Ed., "QUIC: A UDP-Based
+              Multiplexed and Secure Transport", RFC 9000,
+              DOI 10.17487/RFC9000, May 2021,
+              <https://www.rfc-editor.org/rfc/rfc9000>.
+
+   [RFC9907]  Bierman, A., Boucadair, M., Ed., and Q. Wu, "Guidelines
+              for Authors and Reviewers of Documents Containing YANG
+              Data Models", BCP 216, RFC 9907, DOI 10.17487/RFC9907,
+              March 2026, <https://www.rfc-editor.org/rfc/rfc9907>.
+
+Appendix A.  OTN Path Computation Tree Diagram
+
+   Figure 3 below shows the tree diagram of the YANG data model defined
+   in module ietf-otn-path-computation.yang.  See [RFC8340] for an
+   explanation of the symbols used.  The data type of every leaf node is
+   shown near the right end of the corresponding line.
+
+   module: ietf-otn-path-computation
+
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:path-request/te-pc:te-bandwidth/te-pc:technology:
+       +--:(otn)
+          +-- otn-bandwidth
+             +-- odu-type?                     identityref
+             +-- (oduflex-type)?
+                +--:(generic)
+                |  +-- nominal-bit-rate        union
+                +--:(cbr)
+                |  +-- client-type             identityref
+                +--:(gfp-n-k)
+                |  +-- gfp-n                   uint8
+                |  +-- gfp-k?                  gfp-k
+                +--:(flexe-client)
+                |  +-- flexe-client            flexe-client-rate
+                +--:(flexe-aware)
+                |  +-- flexe-aware-n           uint16
+                +--:(packet)
+                   +-- opuflex-payload-rate    union
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:tunnel-attributes/te-pc:te-bandwidth
+               /te-pc:technology:
+       +--:(otn)
+          +-- otn-bandwidth
+             +-- odu-type?                     identityref
+             +-- (oduflex-type)?
+                +--:(generic)
+                |  +-- nominal-bit-rate        union
+                +--:(cbr)
+                |  +-- client-type             identityref
+                +--:(gfp-n-k)
+                |  +-- gfp-n                   uint8
+                |  +-- gfp-k?                  gfp-k
+                +--:(flexe-client)
+                |  +-- flexe-client            flexe-client-rate
+                +--:(flexe-aware)
+                |  +-- flexe-aware-n           uint16
+                +--:(packet)
+                   +-- opuflex-payload-rate    union
+     augment /te:tunnels-path-compute/te:output/te:path-compute-result
+               /te-pc:response/te-pc:computed-paths-properties
+               /te-pc:computed-path-properties/te-pc:path-properties
+               /te-pc:te-bandwidth/te-pc:technology:
+       +--:(otn)
+          +--ro otn-bandwidth
+             +--ro odu-type?                     identityref
+             +--ro (oduflex-type)?
+                +--:(generic)
+                |  +--ro nominal-bit-rate        union
+                +--:(cbr)
+                |  +--ro client-type             identityref
+                +--:(gfp-n-k)
+                |  +--ro gfp-n                   uint8
+                |  +--ro gfp-k?                  gfp-k
+                +--:(flexe-client)
+                |  +--ro flexe-client            flexe-client-rate
+                +--:(flexe-aware)
+                |  +--ro flexe-aware-n           uint16
+                +--:(packet)
+                   +--ro opuflex-payload-rate    union
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:path-request/te-pc:path-in-segment
+               /te-pc:label-restrictions/te-pc:label-restriction:
+       +-- otn-label-range
+          +-- range-type?      otn-label-range-type
+          +-- tsg?             identityref
+          +-- odu-type-list*   identityref
+          +-- priority?        uint8
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:path-request/te-pc:path-out-segment
+               /te-pc:label-restrictions/te-pc:label-restriction:
+       +-- otn-label-range
+          +-- range-type?      otn-label-range-type
+          +-- tsg?             identityref
+          +-- odu-type-list*   identityref
+          +-- priority?        uint8
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:path-request/te-pc:optimizations/te-pc:algorithm
+               /te-pc:metric/te-pc:optimization-metric
+               /te-pc:explicit-route-exclude-objects
+               /te-pc:route-object-exclude-object/te-pc:type/te-pc:label
+               /te-pc:label-hop/te-pc:te-label/te-pc:technology:
+       +--:(otn)
+          +-- otn-label
+             +-- tpn?       otn-tpn
+             +-- tsg?       identityref
+             +-- ts-list?   string
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:path-request/te-pc:optimizations/te-pc:algorithm
+               /te-pc:metric/te-pc:optimization-metric
+               /te-pc:explicit-route-include-objects
+               /te-pc:route-object-include-object/te-pc:type/te-pc:label
+               /te-pc:label-hop/te-pc:te-label/te-pc:technology:
+       +--:(otn)
+          +-- otn-label
+             +-- tpn?       otn-tpn
+             +-- tsg?       identityref
+             +-- ts-list?   string
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:path-request/te-pc:explicit-route-objects
+               /te-pc:route-object-exclude-always/te-pc:type/te-pc:label
+               /te-pc:label-hop/te-pc:te-label/te-pc:technology:
+       +--:(otn)
+          +-- otn-label
+             +-- tpn?       otn-tpn
+             +-- tsg?       identityref
+             +-- ts-list?   string
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:path-request/te-pc:explicit-route-objects
+               /te-pc:route-object-include-exclude/te-pc:type
+               /te-pc:label/te-pc:label-hop/te-pc:te-label
+               /te-pc:technology:
+       +--:(otn)
+          +-- otn-label
+             +-- tpn?       otn-tpn
+             +-- tsg?       identityref
+             +-- ts-list?   string
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:path-request/te-pc:path-in-segment
+               /te-pc:label-restrictions/te-pc:label-restriction
+               /te-pc:label-start/te-pc:te-label/te-pc:technology:
+       +--:(otn)
+          +-- otn-label
+             +-- tpn?   otn-tpn
+             +-- ts?    otn-ts
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:path-request/te-pc:path-in-segment
+               /te-pc:label-restrictions/te-pc:label-restriction
+               /te-pc:label-end/te-pc:te-label/te-pc:technology:
+       +--:(otn)
+          +-- otn-label
+             +-- tpn?   otn-tpn
+             +-- ts?    otn-ts
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:path-request/te-pc:path-in-segment
+               /te-pc:label-restrictions/te-pc:label-restriction
+               /te-pc:label-step/te-pc:technology:
+       +--:(otn)
+          +-- otn-label-step
+             +-- tpn?   otn-tpn
+             +-- ts?    otn-ts
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:path-request/te-pc:path-out-segment
+               /te-pc:label-restrictions/te-pc:label-restriction
+               /te-pc:label-start/te-pc:te-label/te-pc:technology:
+       +--:(otn)
+          +-- otn-label
+             +-- tpn?   otn-tpn
+             +-- ts?    otn-ts
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:path-request/te-pc:path-out-segment
+               /te-pc:label-restrictions/te-pc:label-restriction
+               /te-pc:label-end/te-pc:te-label/te-pc:technology:
+       +--:(otn)
+          +-- otn-label
+             +-- tpn?   otn-tpn
+             +-- ts?    otn-ts
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:path-request/te-pc:path-out-segment
+               /te-pc:label-restrictions/te-pc:label-restriction
+               /te-pc:label-step/te-pc:technology:
+       +--:(otn)
+          +-- otn-label-step
+             +-- tpn?   otn-tpn
+             +-- ts?    otn-ts
+     augment /te:tunnels-path-compute/te:input/te:path-compute-info
+               /te-pc:synchronization/te-pc:exclude-objects
+               /te-pc:excludes/te-pc:type/te-pc:label/te-pc:label-hop
+               /te-pc:te-label/te-pc:technology:
+       +--:(otn)
+          +-- otn-label
+             +-- tpn?       otn-tpn
+             +-- tsg?       identityref
+             +-- ts-list?   string
+     augment /te:tunnels-path-compute/te:output/te:path-compute-result
+               /te-pc:response/te-pc:computed-paths-properties
+               /te-pc:computed-path-properties/te-pc:path-properties
+               /te-pc:path-route-objects/te-pc:path-route-object
+               /te-pc:type/te-pc:label/te-pc:label-hop/te-pc:te-label
+               /te-pc:technology:
+       +--:(otn)
+          +--ro otn-label
+             +--ro tpn?       otn-tpn
+             +--ro tsg?       identityref
+             +--ro ts-list?   string
+
+                Figure 3: OTN path computation tree diagram
+
+Appendix B.  JSON Examples
+
+   This appendix contains an example of an instance data tree in JSON
+   encoding [RFC7951].
+
+   The example instantiates the "ietf-otn-path-computation" model to
+   request the computation of the primary and secondary paths described
+   in Appendix B of [I-D.ietf-ccamp-otn-tunnel-model].
+
+   POST /restconf/operations/ietf-te:tunnels-path-compute HTTP/1.1
+   Host: example.com
+   Content-Type: application/yang-data+json
+
+   =============== NOTE: '\' line wrapping per RFC 8792 ================
+
+   {
+     "ietf-te:tunnels-path-compute": {
+       "path-compute-info": {
+         "ietf-te-path-computation:path-request": [
+           {
+             "request-id": 1,
+             "tunnel-reference": {
+               "tunnel-attributes-ref": "OTN Tunnel Example",
+               "path-name": "primary-path-1",
+               "primary-path": {
+                 "co-routed": true
+               }
+             }
+           },
+           {
+             "request-id": 2,
+             "tunnel-reference": {
+               "tunnel-attributes-ref": "OTN Tunnel Example",
+               "path-name": "secondary-path-1",
+               "secondary-path": {
+                 "primary-path-ref": [
+                   {
+                     "path-request-ref": 1
+                   }
+                 ]
+               }
+             }
+           }
+         ],
+         "ietf-te-path-computation:tunnel-attributes": [
+           {
+             "tunnel-name": "OTN Tunnel Example",
+             "encoding": "ietf-te-types:lsp-encoding-oduk",
+             "switching-type": "ietf-te-types:switching-otn",
+             "source": {
+               "node-id": "example:D1",
+               "te-node-id": "192.0.0.1"
+             },
+             "destination": {
+               "node-id": "example:D2",
+               "te-node-id": "192.0.0.2"
+             },
+             "bidirectional": true,
+             "protection-type": "ietf-te-types:lsp-protection-unidir-1-\
+                                                                plus-1",
+             "network-id": "example:otn-topology-example",
+             "te-topology-identifier": {
+               "topology-id": "otn-topology-example"
+             },
+             "te-bandwidth": {
+               "ietf-otn-path-computation:otn-bandwidth": {
+                 "odu-type": "ietf-layer1-types:ODU2"
+               }
+             }
+           }
+         ]
+       }
+     }
+   }
+
+Appendix C.  Change Log
+
+   The initial YANG data model requesting path computation in optical
+   networks was draft-gbb-ccamp-optical-path-computation-yang-00.  This
+   document included path computation request capabilities for WSON,
+   Flexi-Grid and OTN technologies.  However, it was proposed at IETF
+   113 (March 25, 2022) to split the initial document into separate
+   documents for WDM (WSON and Flexi-Grid) and OTN technologies, as each
+   technology may be developed and implemented separately.
+
+   The WDM technology capabilities were kept in
+   [I-D.draft-gbb-ccamp-optical-path-computation-yang], and the OTN
+   capabilities were moved into this document.
+
+   Editors note, please remove this appendix before publication.
+
+Acknowledgments
+
+   The authors of this document would like to thank the authors of
+   [I-D.ietf-teas-actn-poi-applicability] for having identified the gap
+   and requirements to trigger this work.
+
+   This document was prepared using kramdown.
+
+Contributors
+
+   Daniel King
+   Old Dog Consulting
+   Email: daniel@olddog.co.uk
+
+
+Authors' Addresses
+
+   Italo Busi
+   Huawei Technologies
+   Email: italo.busi@huawei.com
+
+
+   Aihua Guo
+   Futurewei Technologies
+   Email: aihuaguo.ietf@gmail.com
+
+
+   Sergio Belotti
+   Nokia
+   Email: sergio.belotti@nokia.com
