@@ -5,10 +5,10 @@
 CCAMP Working Group                                              I. Busi
 Internet-Draft                                       Huawei Technologies
 Intended status: Standards Track                                  A. Guo
-Expires: 30 January 2027                          Futurewei Technologies
+Expires: 14 February 2027                         Futurewei Technologies
                                                               S. Belotti
                                                                    Nokia
-                                                            29 July 2026
+                                                          13 August 2026
 
 
     A YANG Data Model for requesting Path Computation in an Optical
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 January 2027.
+   This Internet-Draft will expire on 14 February 2027.
 
 Copyright Notice
 
@@ -554,12 +554,11 @@ Table of Contents
    be considered sensitive or vulnerable in network environments.
 
    The YANG module defined in this document augments the "tunnels-path-
-   compute" and the "tunnel-actions" RPCs, defined in
-   [I-D.ietf-teas-yang-te] and in [I-D.ietf-teas-yang-path-computation],
-   with OTN technology-specific attributes.  The security considerations
-   provided in [I-D.ietf-teas-yang-te] and in
-   [I-D.ietf-teas-yang-path-computation] are also applicable to the YANG
-   module defined in this document.
+   compute" RPC, defined in [I-D.ietf-teas-yang-te] and in
+   [I-D.ietf-teas-yang-path-computation], with OTN technology-specific
+   attributes.  The security considerations provided in
+   [I-D.ietf-teas-yang-te] and in [I-D.ietf-teas-yang-path-computation]
+   are also applicable to the YANG module defined in this document.
 
 5.  IANA Considerations
 
