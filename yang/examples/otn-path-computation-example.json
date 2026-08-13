@@ -1,0 +1,58 @@
+{
+  "ietf-te:tunnels-path-compute": {
+    "path-compute-info": {
+      "ietf-te-path-computation:path-request": [
+        {
+          "request-id": 1,
+          "tunnel-reference": {
+            "tunnel-attributes-ref": "OTN Tunnel Example",
+            "path-name": "primary-path-1",
+            "primary-path": {
+              "co-routed": true
+            }
+          }
+        },
+        {
+          "request-id": 2,
+          "tunnel-reference": {
+            "tunnel-attributes-ref": "OTN Tunnel Example",
+            "path-name": "secondary-path-1",
+            "secondary-path": {
+              "primary-path-ref": [
+                {
+                  "path-request-ref": 1
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "ietf-te-path-computation:tunnel-attributes": [
+        {
+          "tunnel-name": "OTN Tunnel Example",
+          "encoding": "ietf-te-types:lsp-encoding-oduk",
+          "switching-type": "ietf-te-types:switching-otn",
+          "source": {
+            "node-id": "example:D1",
+            "te-node-id": "192.0.0.1"
+          },
+          "destination": {
+            "node-id": "example:D2",
+            "te-node-id": "192.0.0.2"
+          },
+          "bidirectional": true,
+          "protection-type": "ietf-te-types:lsp-protection-unidir-1-plus-1",
+          "network-id": "example:otn-topology-example",
+          "te-topology-identifier": {
+            "topology-id": "otn-topology-example"
+          },
+          "te-bandwidth": {
+            "ietf-otn-path-computation:otn-bandwidth": {
+              "odu-type": "ietf-layer1-types:ODU2"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

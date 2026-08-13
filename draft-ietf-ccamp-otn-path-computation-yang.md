@@ -148,7 +148,7 @@ The entities and Traffic Engineering (TE) attributes, such as requested path and
 ## Bandwidth Augmentation {#otn-te-bandwidh}
 
 The OTN path computation model augments all the occurrences of the te-bandwidth container
-with the OTN technology-specific attributes using the otn-link-bandwidth and otn-path-bandwidth groupings defined in {{!I-D.ietf-ccamp-layer1-types}}.
+with the OTN technology-specific attributes using the otn-path-bandwidth grouping defined in {{!I-D.ietf-ccamp-layer1-types}}.
 
 ## Label Augmentations {#otn-te-label}
 
@@ -166,7 +166,7 @@ otn-label-start-end, otn-label-hop and otn-label-step groupings defined in {{!I-
 {::include yang/ietf-otn-path-computation.yang}
 ~~~~
 {: #fig-otn-pc-yang title="OTN path computation YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-otn-path-computation@2026-05-19.yang"}
+sourcecode-markers="true" sourcecode-name="ietf-otn-path-computation@2026-07-29.yang"}
 
 # Security Considerations
 
@@ -191,7 +191,7 @@ in network environments.  Refer to the Security Considerations
 of {{!I-D.ietf-ccamp-layer1-types}} for information as to which nodes may
 be considered sensitive or vulnerable in network environments.
 
-The YANG module defined in this document augments the "tunnels-path-compute" and the "tunnel-actions" RPCs, defined in {{!I-D.ietf-teas-yang-te}} and in {{!I-D.ietf-teas-yang-path-computation}}, with OTN technology-specific attributes. The security considerations provided in {{!I-D.ietf-teas-yang-te}} and in {{!I-D.ietf-teas-yang-path-computation}} are also applicable to the YANG module defined in this document.
+The YANG module defined in this document augments the "tunnels-path-compute" RPC, defined in {{!I-D.ietf-teas-yang-te}} and in {{!I-D.ietf-teas-yang-path-computation}}, with OTN technology-specific attributes. The security considerations provided in {{!I-D.ietf-teas-yang-te}} and in {{!I-D.ietf-teas-yang-path-computation}} are also applicable to the YANG module defined in this document.
 
 # IANA Considerations
 
@@ -222,11 +222,29 @@ registry group.
 
 {{fig-otn-pc-tree}} below shows the tree diagram of the YANG data model defined in module ietf-otn-path-computation.yang. See {{?RFC8340}} for an explanation of the symbols used. The data type of every leaf node is shown near the right end of the corresponding line.
 
-~~~~ ascii-art
+~~~~ yangtree
 {::include-fold yang/trees/ietf-otn-path-computation.tree}
 ~~~~
 {: #fig-otn-pc-tree title="OTN path computation tree diagram"
 artwork-name="ietf-otn-path-computation.tree"}
+
+# JSON Examples
+
+This appendix contains an example of an instance data tree in JSON
+encoding {{?RFC7951}}.
+
+The example instantiates the "ietf-otn-path-computation" model to request the computation of the primary and secondary paths described in {{Appendix B of ?I-D.ietf-ccamp-otn-tunnel-model}}.
+
+~~~~ ascii-art
+POST /restconf/operations/ietf-te:tunnels-path-compute HTTP/1.1
+Host: example.com
+Content-Type: application/yang-data+json
+
+~~~~
+
+~~~~ json
+{::include-fold yang/examples/otn-path-computation-example.json}
+~~~~
 
 # Change Log
 
