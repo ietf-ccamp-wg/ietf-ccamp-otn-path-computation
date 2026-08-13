@@ -191,7 +191,7 @@ in network environments.  Refer to the Security Considerations
 of {{!I-D.ietf-ccamp-layer1-types}} for information as to which nodes may
 be considered sensitive or vulnerable in network environments.
 
-The YANG module defined in this document augments the "tunnels-path-compute" and the "tunnel-actions" RPCs, defined in {{!I-D.ietf-teas-yang-te}} and in {{!I-D.ietf-teas-yang-path-computation}}, with OTN technology-specific attributes. The security considerations provided in {{!I-D.ietf-teas-yang-te}} and in {{!I-D.ietf-teas-yang-path-computation}} are also applicable to the YANG module defined in this document.
+The YANG module defined in this document augments the "tunnels-path-compute" RPC, defined in {{!I-D.ietf-teas-yang-te}} and in {{!I-D.ietf-teas-yang-path-computation}}, with OTN technology-specific attributes. The security considerations provided in {{!I-D.ietf-teas-yang-te}} and in {{!I-D.ietf-teas-yang-path-computation}} are also applicable to the YANG module defined in this document.
 
 # IANA Considerations
 
