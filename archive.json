@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-08-06T02:12:47.576414+00:00",
+  "timestamp": "2026-08-16T01:04:50.657381+00:00",
   "repo": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
   "labels": [
     {
@@ -268,7 +268,7 @@
       "id": "I_kwDOHEJQVM8AAAABIn0jfw",
       "title": "Rtgdir early review of draft-ietf-ccamp-otn-path-computation-yang-08",
       "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/issues/11",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "italobusi",
       "authorAssociation": "MEMBER",
       "assignees": [
@@ -282,8 +282,8 @@
       ],
       "body": "> Document: draft-ietf-ccamp-otn-path-computation-yang\n> Title: A YANG Data Model for requesting Path Computation in an Optical\n> Transport Network (OTN) Reviewer: Dhruv Dhody Review result: Has Nits\n> \n> Hello\n> \n> I have been selected to do a routing directorate \u201cearly\u201d review of this draft.\n> https://datatracker.ietf.org/doc/draft-ietf-ccamp-otn-path-computation-yang/\n> \n> The routing directorate will, on request from the working group chair, perform\n> an \u201cearly\u201d review of a draft before it is submitted for publication to the\n> IESG. The early review can be performed at any time during the draft\u2019s lifetime\n> as a working group document. The purpose of the early review depends on the\n> stage that the document has reached.\n> \n> As this document is in working group last call, my focus for the review was to\n> determine whether the document is ready to be published. Please consider my\n> comments along with the other working group last call comments.\n> \n> For more information about the Routing Directorate, please see\n> https://wiki.ietf.org/en/group/rtg/RtgDir\n> \n> Document: draft-ietf-ccamp-otn-path-computation-yang\n> Reviewer: Dhruv Dhody\n> Review Date: 2026-07-12\n> Intended Status: Standards\n> \n> ## Summary:\n> I have some minor concerns about this document that I think should be resolved\n> before it is submitted to the IESG.\n> \n> ## Comments:\n> \n> The document is generally well organized and readable. It clearly builds on the\n> existing TE Path Computation YANG model and limits itself to OTN-specific\n> augmentations. The structure follows that of the underlying model closely,\n> which makes the document relatively easy to follow for readers familiar with it.\n> \n> ## Minor:\n> \n> - Remove otn-link-bandwidth from this text - \"with the OTN technology-specific\n> attributes using the otn-link-bandwidth and otn-path-bandwidth groupings\", as I\n> did not find any use of that grouping in the YANG model.\n> \n\n[Authors] We have removed the otn-link-bandwidth, as suggested, in the latest draft update\n\n- [x] To fix\n\n> - This might be a copy-paste-error, where the description says 'end' but it\n> should be 'step'\n> ````\n>   augment \"/te:tunnels-path-compute/te:input/te:path-compute-info/\"\n>         + \"te-pc:path-request/te-pc:path-out-segment/\"\n>         + \"te-pc:label-restrictions/te-pc:label-restriction/\"\n>         + \"te-pc:label-step/te-pc:technology\" {\n>     description\n>       \"Augment TE label range end for the egress segment\n>        of the requested path.\";\n>     case otn {\n>       uses l1-types:otn-label-step;\n>     }\n> ````\n> \n\n[Authors] We have c/end/step/, as suggested, in the latest draft update\n\n- [x] To fix\n\n> - The security consideration says that the YANG module defined in this document\n> augments the \"tunnels-path-compute\" and the \"tunnel-actions\" RPCs; but i did\n> not find any \"tunnel-actions\" in the YANG.\n> \n\n[Authors] We have removed the tunnel-actions since it is not augmented by this model in the latest draft update\n\n- [x] To fix\n\n> - RFC 9907 recommends usage examples for YANG modules, did the WG consider\n> adding it?\n> \n\n[Authors] We have added a JSON example in the latest draft update\n\nSee #12 \n\n> Thanks!\n> Dhruv\n> \n\nSee: https://mailarchive.ietf.org/arch/msg/ccamp/aChbscem8uqPuLid9qHSlRCrJtA/",
       "createdAt": "2026-07-13T12:24:53Z",
-      "updatedAt": "2026-07-30T09:33:43Z",
-      "closedAt": null,
+      "updatedAt": "2026-08-13T17:01:28Z",
+      "closedAt": "2026-08-13T17:01:28Z",
       "comments": [
         {
           "author": "italobusi",
@@ -291,6 +291,13 @@
           "body": "- [ ] Send reply after the update draft has been uploaded",
           "createdAt": "2026-07-30T09:31:47Z",
           "updatedAt": "2026-07-30T09:31:47Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "See: https://mailarchive.ietf.org/arch/msg/ccamp/kzZaWo1obo9Tpvne-RaK9n2djQE/",
+          "createdAt": "2026-08-13T17:01:28Z",
+          "updatedAt": "2026-08-13T17:01:28Z"
         }
       ]
     },
@@ -299,7 +306,7 @@
       "id": "I_kwDOHEJQVM8AAAABIn3qAw",
       "title": "Add JSON example",
       "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/issues/12",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "italobusi",
       "authorAssociation": "MEMBER",
       "assignees": [
@@ -310,8 +317,8 @@
       ],
       "body": "> - RFC 9907 recommends usage examples for YANG modules, did the WG consider\n> adding it?\n> \n\nSee: https://mailarchive.ietf.org/arch/msg/ccamp/aChbscem8uqPuLid9qHSlRCrJtA/",
       "createdAt": "2026-07-13T12:32:10Z",
-      "updatedAt": "2026-07-13T12:33:20Z",
-      "closedAt": null,
+      "updatedAt": "2026-08-13T13:46:48Z",
+      "closedAt": "2026-08-13T13:46:48Z",
       "comments": []
     }
   ],
@@ -547,24 +554,26 @@
       "id": "PR_kwDOHEJQVM74ObNT",
       "title": "Address Rtgdir early review comments",
       "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-otn-path-computation/pull/13",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "italobusi",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "Address Rtgdir early review comments: see #11 \r\n- Added JSON examples: fix #12 \r\n\r\n---\r\n\r\n[Diff with main](https://author-tools.ietf.org/api/iddiff?url_1=https://ietf-ccamp-wg.github.io/ietf-ccamp-otn-path-computation/draft-ietf-ccamp-otn-path-computation-yang.txt&url_2=https://ietf-ccamp-wg.github.io/ietf-ccamp-otn-path-computation/rtg-dir/draft-ietf-ccamp-otn-path-computation-yang.txt)",
       "createdAt": "2026-07-29T22:16:59Z",
-      "updatedAt": "2026-08-04T21:54:35Z",
+      "updatedAt": "2026-08-13T13:46:47Z",
       "baseRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
       "baseRefName": "main",
       "baseRefOid": "58dd07d92fbbe12ab04817f41d714321e5785c64",
       "headRepository": "ietf-ccamp-wg/ietf-ccamp-otn-path-computation",
       "headRefName": "rtg-dir",
-      "headRefOid": "b53dac2cf58acd0114d4c9a260ae6d11e43d5753",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "6afca840b03054811b38209d170ce230964ecb0d",
+      "closedAt": "2026-08-13T13:46:47Z",
+      "mergedAt": "2026-08-13T13:46:47Z",
+      "mergedBy": "italobusi",
+      "mergeCommit": {
+        "oid": "40cae78d7e1710fe7c7c6c5964358b9a617a444a"
+      },
       "comments": [],
       "reviews": [
         {
