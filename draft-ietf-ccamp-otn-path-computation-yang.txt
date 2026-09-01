@@ -5,10 +5,10 @@
 CCAMP Working Group                                              I. Busi
 Internet-Draft                                       Huawei Technologies
 Intended status: Standards Track                                  A. Guo
-Expires: 14 February 2027                         Futurewei Technologies
+Expires: 5 March 2027                             Futurewei Technologies
                                                               S. Belotti
                                                                    Nokia
-                                                          13 August 2026
+                                                        1 September 2026
 
 
     A YANG Data Model for requesting Path Computation in an Optical
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 14 February 2027.
+   This Internet-Draft will expire on 5 March 2027.
 
 Copyright Notice
 
@@ -651,18 +651,18 @@ Table of Contents
               Zheng, H., Busi, I., Belotti, S., Lopez, V., and Y. Xu, "A
               YANG Data Model for Optical Transport Network (OTN)
               Tunnels and Label Switched Paths", Work in Progress,
-              Internet-Draft, draft-ietf-ccamp-otn-tunnel-model-25, 27
-              May 2026, <https://datatracker.ietf.org/doc/html/draft-
-              ietf-ccamp-otn-tunnel-model-25>.
+              Internet-Draft, draft-ietf-ccamp-otn-tunnel-model-26, 13
+              August 2026, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-ccamp-otn-tunnel-model-26>.
 
    [I-D.ietf-teas-actn-poi-applicability]
               Peruzzini, F., Bouquier, J., Busi, I., King, D., and D.
               Ceccarelli, "Applicability of Abstraction and Control of
               Traffic Engineered Networks (ACTN) to Packet Optical
               Integration (POI)", Work in Progress, Internet-Draft,
-              draft-ietf-teas-actn-poi-applicability-19, 11 June 2026,
+              draft-ietf-teas-actn-poi-applicability-20, 31 August 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              actn-poi-applicability-19>.
+              actn-poi-applicability-20>.
 
    [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,
               DOI 10.17487/RFC3688, January 2004,
