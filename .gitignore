@@ -24,6 +24,7 @@
 /.refcache
 /.refcache
 /.targets.mk
+/.targets.mk
 /.venv/
 /.venv/
 /.vscode/
